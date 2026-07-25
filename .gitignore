@@ -12,3 +12,5 @@ htmlcov/
 *.sqlite3
 dist/
 coverage/
+.cache/
+tmp/
