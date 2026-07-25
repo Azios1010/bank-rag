@@ -1,5 +1,10 @@
 # System Architecture Document (ARCHITECTURE.md)
 
+> **Current-state document:** This file records the architecture implemented by
+> the repository. The narrower unsecured product target is defined in
+> [Product scope](PRODUCT-SCOPE.md), and known differences are tracked in
+> [Implementation gaps](IMPLEMENTATION-GAPS.md).
+
 This document describes the technical architecture, component design, and data flows for the **Digital Expert Agents** system. The architecture is modular, domain-oriented, and structured around a **3-Tier Deep Agent Pipeline** using the **Shared Board (Blackboard)** pattern.
 
 ---
@@ -84,6 +89,11 @@ Operates as a **Blackboard Architecture (Shared Board)** where agents communicat
 *   Utilizes **pgvector** inside PostgreSQL for vector similarity searches.
 *   Indexes internal banking policies, credit underwriting guidelines, and risk calculation formulas.
 *   Provides semantic retrieval with exact document section citations (`page_number`, `section_id`) to all Tier 2 agents.
+
+The accepted MVP target extends this current vector-only implementation with
+full-text retrieval, RRF merging, reranking, policy-version filters and typed
+EvidencePacks. See [RAG architecture](RAG-ARCHITECTURE.md). HyDE is deferred
+behind an evaluation gate, and full GraphRAG is outside the MVP.
 
 ### 2.5. Mock SHB APIs
 *   Simulates enterprise banking systems (`Customer Master`, `Credit Ledger`, `Document Management System`).

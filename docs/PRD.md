@@ -1,5 +1,12 @@
 # Product Requirements Document (PRD) - Digital Expert Agents
 
+> **Scope notice (2026-07-25):** This file describes the original broad
+> corporate-loan concept and is retained as implementation history. The
+> authoritative v1 product scope is
+> [SME unsecured working-capital loan pre-screening](PRODUCT-SCOPE.md).
+> When the documents conflict, `PRODUCT-SCOPE.md`, `BUSINESS-PROCESS.md` and
+> `DECISION-STATES.md` take precedence.
+
 **Version:** 1.1.0  
 **Status:** Approved  
 **Author:** Senior Software Architect  

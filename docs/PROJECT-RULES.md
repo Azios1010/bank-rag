@@ -1,5 +1,11 @@
 # Project Rules & Development Guidelines (PROJECT-RULES.md)
 
+> **Product-scope precedence:** New work must follow
+> [PRODUCT-SCOPE.md](PRODUCT-SCOPE.md). Agents that are irrelevant to the
+> selected unsecured workflow must return `NOT_APPLICABLE` or be disabled by
+> product configuration; their presence in the original architecture does not
+> expand the v1 scope.
+
 **Project:** Digital Expert Agents  
 **Target Audience:** Developers & AI Coding Assistants  
 **Enforcement:** Mandatory for all architectural design, code generation, and pull requests.
@@ -61,6 +67,14 @@ class SpecialistAssessment(BaseModel):
 
 ## 4. AI & Data Rules (RAG & Privacy)
 *   **Policy-Driven Conclusions via RAG:** Every regulatory, credit threshold, or compliance conclusion must be supported by an explicit RAG citation (`AgentCitation`) from indexed internal banking policies.
+*   **Accepted MVP Retrieval:** Policy retrieval must follow
+    [RAG-ARCHITECTURE.md](RAG-ARCHITECTURE.md): hard metadata/version filters,
+    full-text plus vector candidate generation, RRF merge, reranking, and a
+    typed EvidencePack.
+*   **HyDE Boundary:** Hypothetical text may only be used as evaluated query
+    expansion. It must never be stored or displayed as policy evidence.
+*   **Graph Boundary:** Full GraphRAG is outside the MVP. Policy relationships
+    must be verified metadata, not unreviewed LLM-generated legal facts.
 *   **No Guessing (`Zero-Hallucination Policy`):** If required data is missing from the uploaded documents (e.g., missing 2025 cash flow statement or unclear LTV appraisal), the agent **must not guess or impute** values. It must return status `INCOMPLETE` or `MANUAL_REVIEW` to the Shared Board and request the specific document.
 *   **Customer Data Isolation:** Each loan application (`case_id`) must have strictly isolated document storage and vector query filtering.
 *   **No Long-Term Memory Storage:** Customer Personally Identifiable Information (PII) and financial data must not be written to long-term LLM memory or vector indices. Only anonymized internal banking guidelines reside in `pgvector`.
