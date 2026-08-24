@@ -23,9 +23,9 @@ from sqlalchemy import (
     func,
     text,
 )
-from sqlalchemy.dialects.postgresql import JSONB, UUID as PostgreSQLUUID
+from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.dialects.postgresql import UUID as PostgreSQLUUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-
 
 EMBEDDING_DIMENSIONS = 1024
 
@@ -581,6 +581,15 @@ class PolicyDocument(Base):
     effective_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), nullable=True
     )
+    canonical_source_id: Mapped[str | None] = mapped_column(
+        String(255), nullable=True
+    )
+    canonical_version_id: Mapped[str | None] = mapped_column(
+        String(255), nullable=True
+    )
+    canonical_metadata: Mapped[dict[str, object] | None] = mapped_column(
+        JSONB, nullable=True
+    )
     active: Mapped[bool] = mapped_column(
         Boolean, nullable=False, default=True, server_default=text("true")
     )
@@ -592,10 +601,19 @@ class PolicyDocument(Base):
 class PolicyEmbedding(Base):
     __tablename__ = "policy_embeddings"
     __table_args__ = (
-        UniqueConstraint(
+        Index(
+            "uq_policy_embeddings_canonical",
+            "policy_document_id",
+            "canonical_chunk_id",
+            unique=True,
+            postgresql_where=text("canonical_chunk_id IS NOT NULL"),
+        ),
+        Index(
+            "uq_policy_embeddings_legacy",
             "policy_document_id",
             "content_hash",
-            name="uq_policy_embeddings_document_content_hash",
+            unique=True,
+            postgresql_where=text("canonical_chunk_id IS NULL"),
         ),
         CheckConstraint("chunk_index >= 0", name="chunk_index_non_negative"),
         ForeignKeyConstraint(
@@ -633,6 +651,9 @@ class PolicyEmbedding(Base):
     )
     metadata_: Mapped[dict[str, object]] = mapped_column(
         "metadata", JSONB, nullable=False
+    )
+    canonical_chunk_id: Mapped[str | None] = mapped_column(
+        String(255), nullable=True
     )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, server_default=func.now()

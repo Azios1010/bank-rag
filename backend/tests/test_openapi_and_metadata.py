@@ -2,8 +2,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from sqlalchemy import CheckConstraint, ForeignKeyConstraint, UniqueConstraint
-
 from app.db.models import (
     EMBEDDING_DIMENSIONS,
     AgentKnowledgeBase,
@@ -21,6 +19,7 @@ from app.db.models import (
     SharedBoard,
 )
 from app.main import app
+from sqlalchemy import CheckConstraint, ForeignKeyConstraint, UniqueConstraint
 
 
 def _constraint_names(model: type[object], constraint_type: type[object]) -> set[str]:
@@ -85,9 +84,11 @@ def test_model_metadata_encodes_critical_uniqueness_scope_and_check_constraints(
     assert "uq_operation_executions_case_id" in _constraint_names(
         OperationExecution, UniqueConstraint
     )
-    assert "uq_policy_embeddings_document_content_hash" in _constraint_names(
-        PolicyEmbedding, UniqueConstraint
-    )
+
+    # We replaced the uniqueness constraint on PolicyEmbedding with partial indexes.
+    indexes = {index.name: index for index in PolicyEmbedding.__table__.indexes}
+    assert "uq_policy_embeddings_canonical" in indexes
+    assert "uq_policy_embeddings_legacy" in indexes
     assert "fk_policy_embeddings_document_scope" in _constraint_names(
         PolicyEmbedding, ForeignKeyConstraint
     )
