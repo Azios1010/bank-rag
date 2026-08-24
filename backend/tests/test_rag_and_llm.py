@@ -57,6 +57,50 @@ def test_deterministic_embedding_provider_returns_stable_1024d_unit_vectors() ->
     assert math.sqrt(sum(value * value for value in first)) == pytest.approx(1.0)
 
 
+def test_create_embedding_provider_uses_only_embedding_credentials() -> None:
+    from app.config import Settings
+    from app.services.rag import (
+        OpenAICompatibleEmbeddingProvider,
+        create_embedding_provider,
+    )
+
+    settings = Settings(
+        _env_file=None,
+        llm_api_base="https://llm.example",
+        llm_api_key="llm_key",
+        embedding_api_base="https://emb.example",
+        embedding_api_key="emb_key",
+        embedding_provider="openai_compatible",
+    )
+    provider = create_embedding_provider(settings)
+    assert isinstance(provider, OpenAICompatibleEmbeddingProvider)
+    assert str(provider._client.base_url) == "https://emb.example"
+    assert provider._client.api_key == "emb_key"
+
+
+def test_create_embedding_provider_fails_clearly_if_missing_embedding_key() -> None:
+    from app.config import Settings
+    from app.services.rag import create_embedding_provider
+
+    settings = Settings(
+        _env_file=None,
+        llm_api_key="llm_key",
+        embedding_api_key=None,
+        embedding_provider="openai_compatible",
+    )
+    with pytest.raises(ValueError, match="EMBEDDING_API_KEY is required"):
+        create_embedding_provider(settings)
+
+    settings_blank = Settings(
+        _env_file=None,
+        llm_api_key="llm_key",
+        embedding_api_key="   ",
+        embedding_provider="openai_compatible",
+    )
+    with pytest.raises(ValueError, match="EMBEDDING_API_KEY is required"):
+        create_embedding_provider(settings_blank)
+
+
 def test_supplied_hhb_policy_parses_into_scoped_self_contained_sections() -> None:
     policy_path = Path(__file__).parents[1] / "resources/policies/QD-HHB-2026-01.txt"
     sections = parse_hhb_policy(policy_path.read_text(encoding="utf-8"))

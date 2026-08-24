@@ -16,7 +16,7 @@ The versioned, machine-readable dataset contract lives in
 ## Run the real-agent demo
 
 1. Revoke any API key that has been pasted into chat or source control, then create a fresh key.
-2. Copy `.env.example` to `.env` and set `LLM_API_KEY` there. Never commit `.env`.
+2. Copy `.env.example` to `.env` and set `LLM_API_KEY` and `EMBEDDING_API_KEY` there. Never commit `.env`.
 3. Start the stack:
 
    ```bash
@@ -29,7 +29,7 @@ The case workspace now contains a live Agent Control Center. Assessment requests
 
 If you already have an older Minh An demo stopped in `TIER1_PLANNING` or `TIER2_DEBATING`, use “Khôi phục phiên thẩm định”. On the next `docker compose up --build`, Alembic automatically adds the runtime/checkpoint tables before the API starts.
 
-The default runtime uses the FPT AI Marketplace OpenAI-compatible endpoint, `GLM-5.2` for structured agent calls, and `Vietnamese_Embedding` for RAG. It fails closed when a model call fails; deterministic embeddings are accepted only when `ENVIRONMENT=test`.
+The default runtime uses the FPT AI Marketplace OpenAI-compatible endpoint (https://mkp-api.fptcloud.com). Generation and embeddings are configured independently: set `LLM_API_KEY` for `GLM-5.2` (structured agent calls) and `EMBEDDING_API_KEY` for `Vietnamese_Embedding` (RAG). You can override the endpoint for either by setting `LLM_API_BASE` and `EMBEDDING_API_BASE` independently. It fails closed when a model call fails; deterministic embeddings are accepted only when `ENVIRONMENT=test`.
 
 ## Local verification
 
