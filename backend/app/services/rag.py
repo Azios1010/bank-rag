@@ -139,11 +139,14 @@ def create_embedding_provider(
     if current.embedding_provider == "deterministic_test":
         return DeterministicEmbeddingProvider(current.embedding_dimension)
 
-    if current.llm_api_key is None:
-        raise ValueError("LLM_API_KEY is required for openai-compatible embeddings")
+    if (
+        not current.embedding_api_key
+        or not current.embedding_api_key.get_secret_value().strip()
+    ):
+        raise ValueError("EMBEDDING_API_KEY is required for openai-compatible embeddings")
     return OpenAICompatibleEmbeddingProvider(
-        api_key=current.llm_api_key.get_secret_value(),
-        base_url=current.llm_api_base,
+        api_key=current.embedding_api_key.get_secret_value(),
+        base_url=current.embedding_api_base,
         model=current.embedding_model,
         dimension=current.embedding_dimension,
     )

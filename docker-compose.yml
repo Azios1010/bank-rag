@@ -42,6 +42,8 @@ services:
       MINIO_CASE_BUCKET: ${MINIO_CASE_BUCKET:-case-documents}
       MINIO_POLICY_BUCKET: ${MINIO_POLICY_BUCKET:-bank-policies}
       EMBEDDING_PROVIDER: ${EMBEDDING_PROVIDER:-openai_compatible}
+      EMBEDDING_API_BASE: ${EMBEDDING_API_BASE:-https://mkp-api.fptcloud.com}
+      EMBEDDING_API_KEY: ${EMBEDDING_API_KEY:-}
       EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-1024}
       EMBEDDING_MODEL: ${EMBEDDING_MODEL:-Vietnamese_Embedding}
       LLM_PROVIDER: ${LLM_PROVIDER:-openai_compatible}

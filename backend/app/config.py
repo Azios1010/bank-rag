@@ -54,6 +54,8 @@ class Settings(BaseSettings):
     )
 
     embedding_provider: str = "openai_compatible"
+    embedding_api_base: str | None = "https://mkp-api.fptcloud.com"
+    embedding_api_key: SecretStr | None = None
     embedding_dimension: int = 1024
     embedding_model: str = "Vietnamese_Embedding"
     llm_provider: str = "openai_compatible"

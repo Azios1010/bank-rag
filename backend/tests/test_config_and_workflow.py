@@ -14,13 +14,31 @@ def test_settings_are_valid_without_an_api_key(monkeypatch: pytest.MonkeyPatch) 
     settings = Settings(
         _env_file=None,
         llm_api_key=None,
+        embedding_api_key=None,
         embedding_provider="deterministic_test",
         environment="test",
     )
 
     assert settings.llm_api_key is None
+    assert settings.embedding_api_key is None
     assert settings.embedding_dimension == 1024
     assert settings.embedding_provider == "deterministic_test"
+
+
+def test_settings_decouple_llm_and_embedding_endpoints() -> None:
+    settings = Settings(
+        _env_file=None,
+        llm_api_base="https://llm.example.com",
+        llm_api_key="llm_secret",
+        embedding_api_base="https://emb.example.com",
+        embedding_api_key="emb_secret",
+        embedding_provider="deterministic_test",
+        environment="test",
+    )
+    assert settings.llm_api_base == "https://llm.example.com"
+    assert settings.llm_api_key.get_secret_value() == "llm_secret"
+    assert settings.embedding_api_base == "https://emb.example.com"
+    assert settings.embedding_api_key.get_secret_value() == "emb_secret"
 
 
 def test_settings_reject_embedding_dimension_that_does_not_match_schema() -> None:
