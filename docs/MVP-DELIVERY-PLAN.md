@@ -34,6 +34,8 @@ decision support; it is not a generic lending platform.
 
 - Add product profile and `pre_screen_outcome`.
 - Add normalized facts, evidence links and reason codes.
+- Validate dataset records against
+  [the canonical JSON Schema](../dataset/schemas/bank-rag-dataset.schema.json).
 - Disable collateral appraisal for the unsecured profile.
 
 Exit condition: schemas can represent all cases in

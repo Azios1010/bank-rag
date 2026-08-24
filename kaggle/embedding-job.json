@@ -1,0 +1,19 @@
+{
+  "contract_version": "1.0.0",
+  "index_tier": "experimental",
+  "model_id": "Qwen/Qwen3-Embedding-0.6B",
+  "requested_revision": "main",
+  "embedding_dimension": 1024,
+  "similarity": "cosine",
+  "normalize_embeddings": true,
+  "max_sequence_length": 3072,
+  "batch_size": 2,
+  "output_dtype": "float32",
+  "input_template_version": "policy-title-heading-content-v1",
+  "input_template": "Document: {title}\nSection: {heading_path}\nText:\n{content}",
+  "query_instruction": "Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.",
+  "allowed_source_statuses": [
+    "IN_REVIEW"
+  ],
+  "output_filename": "embeddings.parquet"
+}

@@ -1,0 +1,206 @@
+{
+  "manifest_version": "1.0.0",
+  "retrieved_at": "2026-07-25T14:36:15Z",
+  "source_portal": "https://congbao.chinhphu.vn/",
+  "jurisdiction": "VN",
+  "language": "vi",
+  "corpus_scope": "SME unsecured working-capital loan pre-screening MVP",
+  "rights": {
+    "license_id": null,
+    "redistribution_assessment": "ATTRIBUTION_REQUIRED",
+    "notice": "Ghi rõ nguồn congbao.chinhphu.vn khi phát hành lại thông tin. Re-check redistribution terms before publishing a derived dataset."
+  },
+  "policy_bundles": [
+    {
+      "bundle_id": "vn-lending-regulation-current-2025",
+      "description": "Use all three documents together. The 2024 consolidated text does not include the 2025 amendment or its correction.",
+      "document_ids": [
+        "vn-nhnn-21-vbhn-2024-lending",
+        "vn-nhnn-52-2025-amendment",
+        "vn-nhnn-4033-2025-correction"
+      ]
+    },
+    {
+      "bundle_id": "vn-credit-institutions-law-158-vbhn-2025",
+      "description": "One logical consolidated law published by the official gazette in two consecutive PDF files.",
+      "document_ids": [
+        "vn-vpqh-158-vbhn-2025-part-1",
+        "vn-vpqh-158-vbhn-2025-part-2"
+      ]
+    },
+    {
+      "bundle_id": "vn-personal-data-protection-2026",
+      "description": "Personal-data law and its implementing decree, both effective from 2026-01-01.",
+      "document_ids": [
+        "vn-qh15-law-91-2025-personal-data",
+        "vn-cp-decree-356-2025-personal-data"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "document_id": "vn-nhnn-21-vbhn-2024-lending",
+      "filename": "circular-lending-21-vbhn-nhnn.pdf",
+      "document_number": "21/VBHN-NHNN",
+      "title": "Văn bản hợp nhất Thông tư quy định về hoạt động cho vay của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đối với khách hàng",
+      "issuer": "Ngân hàng Nhà nước Việt Nam",
+      "issued_on": "2024-07-16",
+      "effective_note": "Consolidated snapshot. Effective dates remain provision-specific according to the incorporated circulars.",
+      "canonical_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-21-vbhn-nhnn-42346.htm",
+      "sha256": "512cc34bcaf20a0dde6b1a6409228d21b293a702cfbce9c4cf4dc4b1b0aa227e",
+      "bytes": 829233,
+      "pages": 36,
+      "media_type": "application/pdf",
+      "ingestion_status": "ACQUIRED",
+      "corpus_role": "CORE_POLICY",
+      "relations": [
+        {
+          "type": "AMENDED_BY",
+          "target_document_id": "vn-nhnn-52-2025-amendment"
+        }
+      ]
+    },
+    {
+      "document_id": "vn-nhnn-52-2025-amendment",
+      "filename": "circular-52-2025-tt-nhnn.pdf",
+      "document_number": "52/2025/TT-NHNN",
+      "title": "Thông tư sửa đổi, bổ sung một số điều của Thông tư 39/2016/TT-NHNN về hoạt động cho vay",
+      "issuer": "Ngân hàng Nhà nước Việt Nam",
+      "issued_on": "2025-12-25",
+      "effective_from": "2025-12-25",
+      "canonical_url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-52-2025-tt-nhnn-467971.htm",
+      "sha256": "af58113dea33eae465d8880bba19b13f613011ed98872e70d5a737cc42c20573",
+      "bytes": 248722,
+      "pages": 2,
+      "media_type": "application/pdf",
+      "ingestion_status": "ACQUIRED",
+      "corpus_role": "CORE_POLICY",
+      "relations": [
+        {
+          "type": "AMENDS",
+          "target_document_id": "vn-nhnn-21-vbhn-2024-lending"
+        },
+        {
+          "type": "CORRECTED_BY",
+          "target_document_id": "vn-nhnn-4033-2025-correction"
+        }
+      ]
+    },
+    {
+      "document_id": "vn-nhnn-4033-2025-correction",
+      "filename": "decision-4033-correction-circular-52-2025.pdf",
+      "document_number": "4033/QĐ-NHNN",
+      "title": "Quyết định đính chính Thông tư 52/2025/TT-NHNN",
+      "issuer": "Ngân hàng Nhà nước Việt Nam",
+      "issued_on": "2025-12-25",
+      "effective_from": "2025-12-25",
+      "canonical_url": "https://congbao.chinhphu.vn/van-ban/quyet-dinh-so-4033-qd-nhnn-468191.htm",
+      "sha256": "caf74c2a51a387a25938d3b856ad1884f6d1bc860f45452d5e2b0cb4c0911098",
+      "bytes": 268188,
+      "pages": 1,
+      "media_type": "application/pdf",
+      "ingestion_status": "ACQUIRED",
+      "corpus_role": "CORE_POLICY",
+      "relations": [
+        {
+          "type": "CORRECTS",
+          "target_document_id": "vn-nhnn-52-2025-amendment"
+        }
+      ]
+    },
+    {
+      "document_id": "vn-qh15-law-91-2025-personal-data",
+      "filename": "law-91-2025-qh15-personal-data.pdf",
+      "document_number": "91/2025/QH15",
+      "title": "Luật Bảo vệ dữ liệu cá nhân",
+      "issuer": "Quốc hội",
+      "issued_on": "2025-06-26",
+      "effective_from": "2026-01-01",
+      "canonical_url": "https://congbao.chinhphu.vn/van-ban/luat-so-91-2025-qh15-45578/57730.htm",
+      "sha256": "226dd6da66a6eea348e04db0f8c496d884021b730298991c6f6683720a0dfa2e",
+      "bytes": 357221,
+      "pages": 25,
+      "media_type": "application/pdf",
+      "ingestion_status": "ACQUIRED",
+      "corpus_role": "COMPLIANCE_POLICY",
+      "relations": [
+        {
+          "type": "IMPLEMENTED_BY",
+          "target_document_id": "vn-cp-decree-356-2025-personal-data"
+        }
+      ]
+    },
+    {
+      "document_id": "vn-cp-decree-356-2025-personal-data",
+      "filename": "decree-356-2025-nd-cp-personal-data.pdf",
+      "document_number": "356/2025/NĐ-CP",
+      "title": "Nghị định quy định chi tiết một số điều và biện pháp thi hành Luật Bảo vệ dữ liệu cá nhân",
+      "issuer": "Chính phủ",
+      "issued_on": "2025-12-31",
+      "effective_from": "2026-01-01",
+      "canonical_url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-356-2025-nd-cp-468371.htm",
+      "sha256": "f24747bf3c374b04901e66704423ea1e1a60460376c4d052d649ecc8a2a2f1eb",
+      "bytes": 2035364,
+      "pages": 70,
+      "media_type": "application/pdf",
+      "ingestion_status": "ACQUIRED",
+      "corpus_role": "COMPLIANCE_POLICY",
+      "relations": [
+        {
+          "type": "IMPLEMENTS",
+          "target_document_id": "vn-qh15-law-91-2025-personal-data"
+        }
+      ]
+    },
+    {
+      "document_id": "vn-vpqh-158-vbhn-2025-part-1",
+      "logical_document_id": "vn-vpqh-158-vbhn-2025",
+      "part": 1,
+      "part_count": 2,
+      "filename": "law-credit-institutions-158-vbhn-vpqh-part-1.pdf",
+      "document_number": "158/VBHN-VPQH",
+      "title": "Văn bản hợp nhất Luật Các tổ chức tín dụng - phần 1/2",
+      "issuer": "Văn phòng Quốc hội",
+      "issued_on": "2025-09-09",
+      "effective_note": "Consolidated snapshot. Effective dates remain provision-specific according to the incorporated laws.",
+      "canonical_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-158-vbhn-vpqh-46225/58999.htm",
+      "sha256": "b9ce30b825b8e19b8f956e565377df28fded82a565a0e76145f4dbb177a54aab",
+      "bytes": 588734,
+      "pages": 58,
+      "media_type": "application/pdf",
+      "ingestion_status": "ACQUIRED",
+      "corpus_role": "SUPPORTING_LAW",
+      "relations": [
+        {
+          "type": "CONTINUED_BY",
+          "target_document_id": "vn-vpqh-158-vbhn-2025-part-2"
+        }
+      ]
+    },
+    {
+      "document_id": "vn-vpqh-158-vbhn-2025-part-2",
+      "logical_document_id": "vn-vpqh-158-vbhn-2025",
+      "part": 2,
+      "part_count": 2,
+      "filename": "law-credit-institutions-158-vbhn-vpqh-part-2.pdf",
+      "document_number": "158/VBHN-VPQH",
+      "title": "Văn bản hợp nhất Luật Các tổ chức tín dụng - phần 2/2",
+      "issuer": "Văn phòng Quốc hội",
+      "issued_on": "2025-09-09",
+      "effective_note": "Consolidated snapshot. Effective dates remain provision-specific according to the incorporated laws.",
+      "canonical_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-158-vbhn-vpqh-46225/58999.htm",
+      "sha256": "d09fcd010a9c1870af72b8d4d40f9e3aaf74b6e1461cc6f34423a1d3cf687246",
+      "bytes": 725977,
+      "pages": 95,
+      "media_type": "application/pdf",
+      "ingestion_status": "ACQUIRED",
+      "corpus_role": "SUPPORTING_LAW",
+      "relations": [
+        {
+          "type": "CONTINUATION_OF",
+          "target_document_id": "vn-vpqh-158-vbhn-2025-part-1"
+        }
+      ]
+    }
+  ]
+}

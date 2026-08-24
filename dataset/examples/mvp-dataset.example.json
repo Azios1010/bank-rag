@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_id": "bank-rag-mvp-example-v1",
+  "name": "Bank RAG MVP example dataset",
+  "description": "Minimal synthetic example showing every dataset record type.",
+  "product_code": "SME_UNSECURED_WORKING_CAPITAL",
+  "jurisdiction": "VN",
+  "language": "vi",
+  "created_at": "2026-07-25T00:00:00Z",
+  "data_classification": "PUBLIC_AND_SYNTHETIC",
+  "contains_real_personal_data": false,
+  "usage_notice": "Synthetic example only. Not a real credit policy or customer record.",
+  "sources": [
+    {
+      "source_id": "demo-underwriting-policy",
+      "title": "Chính sách thẩm định tín chấp SME mẫu",
+      "namespace": "UNDERWRITING_POLICY",
+      "issuer": "bank-rag demo",
+      "authority_level": "INTERNAL_POLICY",
+      "jurisdiction": "VN",
+      "language": "vi",
+      "canonical_url": "https://example.invalid/bank-rag/demo-underwriting-policy",
+      "synthetic": true,
+      "usage_rights": {
+        "license_id": "CC0-1.0",
+        "redistribution": "ALLOWED",
+        "notes": "Synthetic content created for this repository."
+      },
+      "allowed_product_codes": [
+        "SME_UNSECURED_WORKING_CAPITAL"
+      ],
+      "allowed_agent_scopes": [
+        "Credit",
+        "RiskManagement",
+        "ReviewerAgent"
+      ],
+      "versions": [
+        {
+          "version_id": "demo-underwriting-policy-v1",
+          "version_label": "1.0.0",
+          "effective_from": "2026-01-01",
+          "effective_to": null,
+          "status": "ACTIVE",
+          "retrieved_at": "2026-07-25T00:00:00Z",
+          "content_hash": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "object_path": "raw/policies/demo-underwriting-policy-v1.md",
+          "media_type": "text/markdown",
+          "amendment_source_ids": [],
+          "supersedes_version_id": null,
+          "review": {
+            "status": "REVIEWED",
+            "reviewed_by": "dataset-maintainer",
+            "reviewed_at": "2026-07-25T00:00:00Z",
+            "notes": "Synthetic thresholds for tests only."
+          }
+        }
+      ]
+    }
+  ],
+  "policy_chunks": [
+    {
+      "chunk_id": "demo-underwriting-policy-v1-section-dscr",
+      "source_id": "demo-underwriting-policy",
+      "version_id": "demo-underwriting-policy-v1",
+      "namespace": "UNDERWRITING_POLICY",
+      "chunk_index": 0,
+      "parent_chunk_id": null,
+      "heading_path": [
+        "Khả năng trả nợ",
+        "DSCR mẫu"
+      ],
+      "locator": {
+        "chapter": "Khả năng trả nợ",
+        "article": null,
+        "clause": null,
+        "point": null,
+        "section_id": "section-dscr",
+        "page_start": 1,
+        "page_end": 1
+      },
+      "content": "Ngưỡng DSCR trong bộ dữ liệu demo là tham số synthetic và không phải quy định pháp luật.",
+      "content_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "effective_from": "2026-01-01",
+      "effective_to": null,
+      "allowed_product_codes": [
+        "SME_UNSECURED_WORKING_CAPITAL"
+      ],
+      "allowed_agent_scopes": [
+        "Credit",
+        "RiskManagement",
+        "ReviewerAgent"
+      ],
+      "token_count": 22,
+      "parser_version": "manual-v1",
+      "chunker_version": "structure-v1"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "case-synthetic-001",
+      "synthetic": true,
+      "product_code": "SME_UNSECURED_WORKING_CAPITAL",
+      "applicant": {
+        "legal_name": "Công ty TNHH Dữ liệu Mẫu Một",
+        "registration_number": "SYNTHETIC-0001",
+        "established_on": "2020-01-15",
+        "industry_code": "DEMO-RETAIL"
+      },
+      "loan_request": {
+        "amount": 1000000000,
+        "currency": "VND",
+        "tenor_months": 12,
+        "purpose": "Bổ sung vốn lưu động phục vụ hoạt động kinh doanh giả lập."
+      },
+      "documents": [
+        {
+          "document_id": "case-synthetic-001-financials-2025",
+          "document_type": "FINANCIAL_STATEMENTS",
+          "object_path": "raw/cases/case-synthetic-001/financials-2025.json",
+          "media_type": "application/json",
+          "content_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+          "status": "AVAILABLE",
+          "reporting_period_start": "2025-01-01",
+          "reporting_period_end": "2025-12-31"
+        },
+        {
+          "document_id": "case-synthetic-001-consent",
+          "document_type": "CONSENT_RECORD",
+          "object_path": "raw/cases/case-synthetic-001/consent.json",
+          "media_type": "application/json",
+          "content_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+          "status": "AVAILABLE",
+          "reporting_period_start": null,
+          "reporting_period_end": null
+        }
+      ],
+      "consent": {
+        "required": true,
+        "status": "PRESENT",
+        "document_id": "case-synthetic-001-consent"
+      },
+      "expected_assessment": {
+        "pre_screen_outcome": "ELIGIBLE_FOR_MANUAL_REVIEW",
+        "reason_codes": [
+          "DEMO_RULES_PASSED"
+        ]
+      },
+      "tags": [
+        "happy-path",
+        "synthetic"
+      ]
+    }
+  ],
+  "case_facts": [
+    {
+      "fact_id": "case-synthetic-001-annual-revenue-2025",
+      "case_id": "case-synthetic-001",
+      "field": "annual_revenue",
+      "value_type": "INTEGER",
+      "value": 12000000000,
+      "currency": "VND",
+      "unit": null,
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "status": "EXTRACTED",
+      "evidence": [
+        {
+          "document_id": "case-synthetic-001-financials-2025",
+          "page": null,
+          "section": "income_statement",
+          "text_span": null,
+          "quote": "annual_revenue: 12000000000"
+        }
+      ],
+      "extraction": {
+        "method": "RULE",
+        "extractor_version": "json-fixture-v1",
+        "confidence": 1,
+        "extracted_at": "2026-07-25T00:00:00Z"
+      }
+    }
+  ],
+  "retrieval_evaluations": [
+    {
+      "evaluation_id": "retrieval-demo-dscr-001",
+      "query": "Ngưỡng DSCR trong chính sách demo được hiểu như thế nào?",
+      "query_type": "POLICY_LOOKUP",
+      "agent_scope": "Credit",
+      "assessment_date": "2026-07-25",
+      "filters": {
+        "namespaces": [
+          "UNDERWRITING_POLICY"
+        ],
+        "product_code": "SME_UNSECURED_WORKING_CAPITAL"
+      },
+      "gold_evidence": [
+        {
+          "source_id": "demo-underwriting-policy",
+          "version_id": "demo-underwriting-policy-v1",
+          "section_id": "section-dscr",
+          "chunk_id": "demo-underwriting-policy-v1-section-dscr"
+        }
+      ],
+      "forbidden_version_ids": [],
+      "expected_coverage": "SUFFICIENT",
+      "tags": [
+        "single-source",
+        "synthetic-policy"
+      ]
+    }
+  ],
+  "embedding_runs": [
+    {
+      "embedding_run_id": "embedding-demo-001",
+      "model": {
+        "provider": "local",
+        "name": "example-vietnamese-embedding-model",
+        "revision": "immutable-example-revision",
+        "dimension": 1024,
+        "normalization": "L2",
+        "pooling": "MODEL_DEFAULT"
+      },
+      "preprocessing": {
+        "parser_version": "manual-v1",
+        "chunker_version": "structure-v1"
+      },
+      "input": {
+        "chunk_count": 1,
+        "manifest_hash": "sha256:4444444444444444444444444444444444444444444444444444444444444444"
+      },
+      "output": {
+        "object_path": "derived/embeddings/embedding-demo-001.parquet",
+        "content_hash": "sha256:5555555555555555555555555555555555555555555555555555555555555555"
+      },
+      "runtime": "KAGGLE",
+      "generated_at": "2026-07-25T00:00:00Z"
+    }
+  ]
+}

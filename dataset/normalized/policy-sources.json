@@ -1,0 +1,326 @@
+[
+  {
+    "source_id": "vn-nhnn-21-vbhn-2024-lending",
+    "title": "Văn bản hợp nhất Thông tư quy định về hoạt động cho vay của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đối với khách hàng",
+    "namespace": "REGULATION",
+    "issuer": "Ngân hàng Nhà nước Việt Nam",
+    "authority_level": "REGULATION",
+    "jurisdiction": "VN",
+    "language": "vi",
+    "canonical_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-21-vbhn-nhnn-42346.htm",
+    "synthetic": false,
+    "usage_rights": {
+      "license_id": null,
+      "redistribution": "UNKNOWN",
+      "notes": "Official gazette source; attribution to congbao.chinhphu.vn is required. Verify redistribution terms before publication."
+    },
+    "allowed_product_codes": [
+      "SME_UNSECURED_WORKING_CAPITAL"
+    ],
+    "allowed_agent_scopes": [
+      "Credit",
+      "LegalCompliance",
+      "ReviewerAgent",
+      "RiskManagement"
+    ],
+    "versions": [
+      {
+        "version_id": "vn-nhnn-21-vbhn-2024-lending-v1",
+        "version_label": "21/VBHN-NHNN snapshot 2024-07-16",
+        "effective_from": "2017-03-15",
+        "effective_to": null,
+        "status": "IN_REVIEW",
+        "retrieved_at": "2026-07-25T14:36:15Z",
+        "content_hash": "sha256:512cc34bcaf20a0dde6b1a6409228d21b293a702cfbce9c4cf4dc4b1b0aa227e",
+        "object_path": "raw/policies/circular-lending-21-vbhn-nhnn.pdf",
+        "media_type": "application/pdf",
+        "amendment_source_ids": [
+          "vn-nhnn-52-2025-amendment"
+        ],
+        "supersedes_version_id": null,
+        "review": {
+          "status": "UNREVIEWED",
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "notes": "Automatically extracted; legal/content review pending."
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "vn-nhnn-52-2025-amendment",
+    "title": "Thông tư sửa đổi, bổ sung một số điều của Thông tư 39/2016/TT-NHNN về hoạt động cho vay",
+    "namespace": "REGULATION",
+    "issuer": "Ngân hàng Nhà nước Việt Nam",
+    "authority_level": "REGULATION",
+    "jurisdiction": "VN",
+    "language": "vi",
+    "canonical_url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-52-2025-tt-nhnn-467971.htm",
+    "synthetic": false,
+    "usage_rights": {
+      "license_id": null,
+      "redistribution": "UNKNOWN",
+      "notes": "Official gazette source; attribution to congbao.chinhphu.vn is required. Verify redistribution terms before publication."
+    },
+    "allowed_product_codes": [
+      "SME_UNSECURED_WORKING_CAPITAL"
+    ],
+    "allowed_agent_scopes": [
+      "Credit",
+      "LegalCompliance",
+      "ReviewerAgent",
+      "RiskManagement"
+    ],
+    "versions": [
+      {
+        "version_id": "vn-nhnn-52-2025-amendment-v1",
+        "version_label": "52/2025/TT-NHNN snapshot 2025-12-25",
+        "effective_from": "2025-12-25",
+        "effective_to": null,
+        "status": "IN_REVIEW",
+        "retrieved_at": "2026-07-25T14:36:15Z",
+        "content_hash": "sha256:af58113dea33eae465d8880bba19b13f613011ed98872e70d5a737cc42c20573",
+        "object_path": "raw/policies/circular-52-2025-tt-nhnn.pdf",
+        "media_type": "application/pdf",
+        "amendment_source_ids": [
+          "vn-nhnn-4033-2025-correction"
+        ],
+        "supersedes_version_id": null,
+        "review": {
+          "status": "UNREVIEWED",
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "notes": "Automatically extracted; legal/content review pending."
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "vn-nhnn-4033-2025-correction",
+    "title": "Quyết định đính chính Thông tư 52/2025/TT-NHNN",
+    "namespace": "REGULATION",
+    "issuer": "Ngân hàng Nhà nước Việt Nam",
+    "authority_level": "OFFICIAL_GUIDANCE",
+    "jurisdiction": "VN",
+    "language": "vi",
+    "canonical_url": "https://congbao.chinhphu.vn/van-ban/quyet-dinh-so-4033-qd-nhnn-468191.htm",
+    "synthetic": false,
+    "usage_rights": {
+      "license_id": null,
+      "redistribution": "UNKNOWN",
+      "notes": "Official gazette source; attribution to congbao.chinhphu.vn is required. Verify redistribution terms before publication."
+    },
+    "allowed_product_codes": [
+      "SME_UNSECURED_WORKING_CAPITAL"
+    ],
+    "allowed_agent_scopes": [
+      "Credit",
+      "LegalCompliance",
+      "ReviewerAgent",
+      "RiskManagement"
+    ],
+    "versions": [
+      {
+        "version_id": "vn-nhnn-4033-2025-correction-v1",
+        "version_label": "4033/QĐ-NHNN snapshot 2025-12-25",
+        "effective_from": "2025-12-25",
+        "effective_to": null,
+        "status": "IN_REVIEW",
+        "retrieved_at": "2026-07-25T14:36:15Z",
+        "content_hash": "sha256:caf74c2a51a387a25938d3b856ad1884f6d1bc860f45452d5e2b0cb4c0911098",
+        "object_path": "raw/policies/decision-4033-correction-circular-52-2025.pdf",
+        "media_type": "application/pdf",
+        "amendment_source_ids": [],
+        "supersedes_version_id": null,
+        "review": {
+          "status": "UNREVIEWED",
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "notes": "Automatically extracted; legal/content review pending."
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "vn-qh15-law-91-2025-personal-data",
+    "title": "Luật Bảo vệ dữ liệu cá nhân",
+    "namespace": "REGULATION",
+    "issuer": "Quốc hội",
+    "authority_level": "STATUTE",
+    "jurisdiction": "VN",
+    "language": "vi",
+    "canonical_url": "https://congbao.chinhphu.vn/van-ban/luat-so-91-2025-qh15-45578/57730.htm",
+    "synthetic": false,
+    "usage_rights": {
+      "license_id": null,
+      "redistribution": "UNKNOWN",
+      "notes": "Official gazette source; attribution to congbao.chinhphu.vn is required. Verify redistribution terms before publication."
+    },
+    "allowed_product_codes": [
+      "SME_UNSECURED_WORKING_CAPITAL"
+    ],
+    "allowed_agent_scopes": [
+      "CustomerRelationship",
+      "LegalCompliance",
+      "ReviewerAgent"
+    ],
+    "versions": [
+      {
+        "version_id": "vn-qh15-law-91-2025-personal-data-v1",
+        "version_label": "91/2025/QH15 snapshot 2025-06-26",
+        "effective_from": "2026-01-01",
+        "effective_to": null,
+        "status": "IN_REVIEW",
+        "retrieved_at": "2026-07-25T14:36:15Z",
+        "content_hash": "sha256:226dd6da66a6eea348e04db0f8c496d884021b730298991c6f6683720a0dfa2e",
+        "object_path": "raw/policies/law-91-2025-qh15-personal-data.pdf",
+        "media_type": "application/pdf",
+        "amendment_source_ids": [],
+        "supersedes_version_id": null,
+        "review": {
+          "status": "UNREVIEWED",
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "notes": "Automatically extracted; legal/content review pending."
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "vn-cp-decree-356-2025-personal-data",
+    "title": "Nghị định quy định chi tiết một số điều và biện pháp thi hành Luật Bảo vệ dữ liệu cá nhân",
+    "namespace": "REGULATION",
+    "issuer": "Chính phủ",
+    "authority_level": "REGULATION",
+    "jurisdiction": "VN",
+    "language": "vi",
+    "canonical_url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-356-2025-nd-cp-468371.htm",
+    "synthetic": false,
+    "usage_rights": {
+      "license_id": null,
+      "redistribution": "UNKNOWN",
+      "notes": "Official gazette source; attribution to congbao.chinhphu.vn is required. Verify redistribution terms before publication."
+    },
+    "allowed_product_codes": [
+      "SME_UNSECURED_WORKING_CAPITAL"
+    ],
+    "allowed_agent_scopes": [
+      "CustomerRelationship",
+      "LegalCompliance",
+      "ReviewerAgent"
+    ],
+    "versions": [
+      {
+        "version_id": "vn-cp-decree-356-2025-personal-data-v1",
+        "version_label": "356/2025/NĐ-CP snapshot 2025-12-31",
+        "effective_from": "2026-01-01",
+        "effective_to": null,
+        "status": "IN_REVIEW",
+        "retrieved_at": "2026-07-25T14:36:15Z",
+        "content_hash": "sha256:f24747bf3c374b04901e66704423ea1e1a60460376c4d052d649ecc8a2a2f1eb",
+        "object_path": "raw/policies/decree-356-2025-nd-cp-personal-data.pdf",
+        "media_type": "application/pdf",
+        "amendment_source_ids": [],
+        "supersedes_version_id": null,
+        "review": {
+          "status": "UNREVIEWED",
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "notes": "Automatically extracted; legal/content review pending."
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "vn-vpqh-158-vbhn-2025-part-1",
+    "title": "Văn bản hợp nhất Luật Các tổ chức tín dụng - phần 1/2",
+    "namespace": "REGULATION",
+    "issuer": "Văn phòng Quốc hội",
+    "authority_level": "STATUTE",
+    "jurisdiction": "VN",
+    "language": "vi",
+    "canonical_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-158-vbhn-vpqh-46225/58999.htm",
+    "synthetic": false,
+    "usage_rights": {
+      "license_id": null,
+      "redistribution": "UNKNOWN",
+      "notes": "Official gazette source; attribution to congbao.chinhphu.vn is required. Verify redistribution terms before publication."
+    },
+    "allowed_product_codes": [
+      "SME_UNSECURED_WORKING_CAPITAL"
+    ],
+    "allowed_agent_scopes": [
+      "Credit",
+      "LegalCompliance",
+      "ReviewerAgent",
+      "RiskManagement"
+    ],
+    "versions": [
+      {
+        "version_id": "vn-vpqh-158-vbhn-2025-part-1-v1",
+        "version_label": "158/VBHN-VPQH snapshot 2025-09-09",
+        "effective_from": "2024-07-01",
+        "effective_to": null,
+        "status": "IN_REVIEW",
+        "retrieved_at": "2026-07-25T14:36:15Z",
+        "content_hash": "sha256:b9ce30b825b8e19b8f956e565377df28fded82a565a0e76145f4dbb177a54aab",
+        "object_path": "raw/policies/law-credit-institutions-158-vbhn-vpqh-part-1.pdf",
+        "media_type": "application/pdf",
+        "amendment_source_ids": [],
+        "supersedes_version_id": null,
+        "review": {
+          "status": "UNREVIEWED",
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "notes": "Automatically extracted; legal/content review pending."
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "vn-vpqh-158-vbhn-2025-part-2",
+    "title": "Văn bản hợp nhất Luật Các tổ chức tín dụng - phần 2/2",
+    "namespace": "REGULATION",
+    "issuer": "Văn phòng Quốc hội",
+    "authority_level": "STATUTE",
+    "jurisdiction": "VN",
+    "language": "vi",
+    "canonical_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-158-vbhn-vpqh-46225/58999.htm",
+    "synthetic": false,
+    "usage_rights": {
+      "license_id": null,
+      "redistribution": "UNKNOWN",
+      "notes": "Official gazette source; attribution to congbao.chinhphu.vn is required. Verify redistribution terms before publication."
+    },
+    "allowed_product_codes": [
+      "SME_UNSECURED_WORKING_CAPITAL"
+    ],
+    "allowed_agent_scopes": [
+      "Credit",
+      "LegalCompliance",
+      "ReviewerAgent",
+      "RiskManagement"
+    ],
+    "versions": [
+      {
+        "version_id": "vn-vpqh-158-vbhn-2025-part-2-v1",
+        "version_label": "158/VBHN-VPQH snapshot 2025-09-09",
+        "effective_from": "2024-07-01",
+        "effective_to": null,
+        "status": "IN_REVIEW",
+        "retrieved_at": "2026-07-25T14:36:15Z",
+        "content_hash": "sha256:d09fcd010a9c1870af72b8d4d40f9e3aaf74b6e1461cc6f34423a1d3cf687246",
+        "object_path": "raw/policies/law-credit-institutions-158-vbhn-vpqh-part-2.pdf",
+        "media_type": "application/pdf",
+        "amendment_source_ids": [],
+        "supersedes_version_id": null,
+        "review": {
+          "status": "UNREVIEWED",
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "notes": "Automatically extracted; legal/content review pending."
+        }
+      }
+    ]
+  }
+]

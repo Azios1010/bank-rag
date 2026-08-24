@@ -280,8 +280,9 @@ backend/
 │   │   │   ├── reviewer.py     # Debate & error checking engine
 │   │   │   └── specialists/    # Parallel worker agents
 │   │   │       ├── credit.py
-│   │   │       ├── compliance.py
-│   │   │       └── legal.py
+│   │   │       ├── customer_relationship.py
+│   │   │       ├── legal_compliance.py
+│   │   │       └── risk_management.py
 │   │   └── tier3_operations/   # Post-approval operations agent
 │   │       └── operations.py
 │   └── mock_apis/              # SHB Mock Core Systems

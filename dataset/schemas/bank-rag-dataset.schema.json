@@ -1,0 +1,1462 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Azios1010/bank-rag/main/dataset/schemas/bank-rag-dataset.schema.json",
+  "title": "Bank RAG MVP Dataset",
+  "description": "Canonical dataset contract for SME unsecured working-capital loan pre-screening.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "name",
+    "product_code",
+    "jurisdiction",
+    "language",
+    "created_at",
+    "data_classification",
+    "contains_real_personal_data",
+    "sources",
+    "policy_chunks",
+    "cases",
+    "case_facts",
+    "retrieval_evaluations",
+    "embedding_runs"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "dataset_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "product_code": {
+      "$ref": "#/$defs/productCode"
+    },
+    "jurisdiction": {
+      "const": "VN"
+    },
+    "language": {
+      "const": "vi"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "data_classification": {
+      "const": "PUBLIC_AND_SYNTHETIC"
+    },
+    "contains_real_personal_data": {
+      "const": false
+    },
+    "usage_notice": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/policySource"
+      }
+    },
+    "policy_chunks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/policyChunk"
+      }
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/syntheticCase"
+      }
+    },
+    "case_facts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/caseFact"
+      }
+    },
+    "retrieval_evaluations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/retrievalEvaluation"
+      }
+    },
+    "embedding_runs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/embeddingRun"
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "productCode": {
+      "const": "SME_UNSECURED_WORKING_CAPITAL"
+    },
+    "agentId": {
+      "enum": [
+        "CustomerRelationship",
+        "Credit",
+        "RiskManagement",
+        "LegalCompliance",
+        "ReviewerAgent"
+      ]
+    },
+    "namespace": {
+      "enum": [
+        "REGULATION",
+        "BANK_PRODUCT",
+        "UNDERWRITING_POLICY",
+        "CALCULATION_GUIDE"
+      ]
+    },
+    "policySource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "title",
+        "namespace",
+        "issuer",
+        "authority_level",
+        "jurisdiction",
+        "language",
+        "canonical_url",
+        "synthetic",
+        "usage_rights",
+        "allowed_product_codes",
+        "allowed_agent_scopes",
+        "versions"
+      ],
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 500
+        },
+        "namespace": {
+          "$ref": "#/$defs/namespace"
+        },
+        "issuer": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 300
+        },
+        "authority_level": {
+          "enum": [
+            "STATUTE",
+            "REGULATION",
+            "OFFICIAL_GUIDANCE",
+            "BANK_PRODUCT",
+            "INTERNAL_POLICY",
+            "CALCULATION_GUIDE"
+          ]
+        },
+        "jurisdiction": {
+          "const": "VN"
+        },
+        "language": {
+          "const": "vi"
+        },
+        "canonical_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "synthetic": {
+          "type": "boolean"
+        },
+        "usage_rights": {
+          "$ref": "#/$defs/usageRights"
+        },
+        "allowed_product_codes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/productCode"
+          }
+        },
+        "allowed_agent_scopes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/agentId"
+          }
+        },
+        "versions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/policyVersion"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "namespace": {
+                "const": "REGULATION"
+              }
+            },
+            "required": [
+              "namespace"
+            ]
+          },
+          "then": {
+            "properties": {
+              "synthetic": {
+                "const": false
+              },
+              "authority_level": {
+                "enum": [
+                  "STATUTE",
+                  "REGULATION",
+                  "OFFICIAL_GUIDANCE"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "usageRights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "license_id",
+        "redistribution",
+        "notes"
+      ],
+      "properties": {
+        "license_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "redistribution": {
+          "enum": [
+            "ALLOWED",
+            "RESTRICTED",
+            "UNKNOWN"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000
+        }
+      }
+    },
+    "policyVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version_id",
+        "version_label",
+        "effective_from",
+        "effective_to",
+        "status",
+        "retrieved_at",
+        "content_hash",
+        "object_path",
+        "media_type",
+        "amendment_source_ids",
+        "supersedes_version_id",
+        "review"
+      ],
+      "properties": {
+        "version_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version_label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "effective_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "effective_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "status": {
+          "enum": [
+            "DRAFT",
+            "IN_REVIEW",
+            "ACTIVE",
+            "SUPERSEDED",
+            "RETIRED"
+          ]
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "content_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "object_path": {
+          "type": "string",
+          "pattern": "^raw/policies/"
+        },
+        "media_type": {
+          "enum": [
+            "application/pdf",
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "text/html",
+            "text/plain",
+            "text/markdown"
+          ]
+        },
+        "amendment_source_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "supersedes_version_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "review": {
+          "$ref": "#/$defs/reviewRecord"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ACTIVE"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "review": {
+                "allOf": [
+                  {
+                    "$ref": "#/$defs/reviewRecord"
+                  },
+                  {
+                    "properties": {
+                      "status": {
+                        "const": "REVIEWED"
+                      },
+                      "reviewed_by": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "reviewed_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "reviewRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reviewed_by",
+        "reviewed_at"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "UNREVIEWED",
+            "REVIEWED",
+            "REJECTED"
+          ]
+        },
+        "reviewed_by": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 200
+        },
+        "reviewed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "UNREVIEWED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "reviewed_by": {
+                "type": "null"
+              },
+              "reviewed_at": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "policyChunk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chunk_id",
+        "source_id",
+        "version_id",
+        "namespace",
+        "chunk_index",
+        "parent_chunk_id",
+        "heading_path",
+        "locator",
+        "content",
+        "content_hash",
+        "effective_from",
+        "effective_to",
+        "allowed_product_codes",
+        "allowed_agent_scopes",
+        "parser_version",
+        "chunker_version"
+      ],
+      "properties": {
+        "chunk_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "source_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "namespace": {
+          "$ref": "#/$defs/namespace"
+        },
+        "chunk_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "parent_chunk_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "heading_path": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        },
+        "locator": {
+          "$ref": "#/$defs/policyLocator"
+        },
+        "content": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 12000
+        },
+        "content_hash": {
+          "$ref": "#/$defs/sha256"
+        },
+        "effective_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "effective_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "allowed_product_codes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/productCode"
+          }
+        },
+        "allowed_agent_scopes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/agentId"
+          }
+        },
+        "token_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "parser_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "chunker_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      }
+    },
+    "policyLocator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "section_id",
+        "page_start",
+        "page_end"
+      ],
+      "properties": {
+        "chapter": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "article": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "clause": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "point": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        },
+        "section_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "page_start": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "page_end": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    },
+    "syntheticCase": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "synthetic",
+        "product_code",
+        "applicant",
+        "loan_request",
+        "documents",
+        "consent",
+        "expected_assessment"
+      ],
+      "properties": {
+        "case_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "synthetic": {
+          "const": true
+        },
+        "product_code": {
+          "$ref": "#/$defs/productCode"
+        },
+        "applicant": {
+          "$ref": "#/$defs/applicant"
+        },
+        "loan_request": {
+          "$ref": "#/$defs/loanRequest"
+        },
+        "documents": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/caseDocument"
+          }
+        },
+        "consent": {
+          "$ref": "#/$defs/consentRecord"
+        },
+        "expected_assessment": {
+          "$ref": "#/$defs/expectedAssessment"
+        },
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        }
+      }
+    },
+    "applicant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "legal_name",
+        "registration_number",
+        "established_on",
+        "industry_code"
+      ],
+      "properties": {
+        "legal_name": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 300
+        },
+        "registration_number": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 50
+        },
+        "established_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "industry_code": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30
+        }
+      }
+    },
+    "loanRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "amount",
+        "currency",
+        "tenor_months",
+        "purpose"
+      ],
+      "properties": {
+        "amount": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "currency": {
+          "const": "VND"
+        },
+        "tenor_months": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 120
+        },
+        "purpose": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 1000
+        }
+      }
+    },
+    "caseDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "document_type",
+        "object_path",
+        "media_type",
+        "content_hash",
+        "status"
+      ],
+      "properties": {
+        "document_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "document_type": {
+          "enum": [
+            "LOAN_APPLICATION",
+            "BUSINESS_REGISTRATION",
+            "FINANCIAL_STATEMENTS",
+            "CASH_FLOW_STATEMENT",
+            "BANK_STATEMENT",
+            "DEBT_SCHEDULE",
+            "OWNERSHIP_RECORD",
+            "CONSENT_RECORD",
+            "OTHER"
+          ]
+        },
+        "object_path": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^raw/cases/"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "media_type": {
+          "enum": [
+            "application/pdf",
+            "application/json",
+            "text/csv",
+            "text/plain",
+            "text/markdown"
+          ]
+        },
+        "content_hash": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/sha256"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "AVAILABLE",
+            "MISSING",
+            "UNREADABLE",
+            "REJECTED"
+          ]
+        },
+        "reporting_period_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "reporting_period_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "MISSING"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "object_path": {
+                "type": "null"
+              },
+              "content_hash": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "object_path": {
+                "type": "string",
+                "pattern": "^raw/cases/"
+              },
+              "content_hash": {
+                "$ref": "#/$defs/sha256"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "consentRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "status",
+        "document_id"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "NOT_REQUIRED",
+            "PRESENT",
+            "MISSING",
+            "WITHDRAWN"
+          ]
+        },
+        "document_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "expectedAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pre_screen_outcome",
+        "reason_codes"
+      ],
+      "properties": {
+        "pre_screen_outcome": {
+          "enum": [
+            "FAILED_DATA_VALIDATION",
+            "MISSING_DOCUMENTS",
+            "INELIGIBLE_BY_RULE",
+            "REFER_TO_CREDIT_OFFICER",
+            "ELIGIBLE_FOR_MANUAL_REVIEW"
+          ]
+        },
+        "reason_codes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]{2,99}$"
+          }
+        }
+      }
+    },
+    "caseFact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fact_id",
+        "case_id",
+        "field",
+        "value_type",
+        "value",
+        "status",
+        "evidence",
+        "extraction"
+      ],
+      "properties": {
+        "fact_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "case_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "field": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{2,99}$"
+        },
+        "value_type": {
+          "enum": [
+            "STRING",
+            "INTEGER",
+            "DECIMAL",
+            "BOOLEAN",
+            "DATE"
+          ]
+        },
+        "value": {
+          "type": [
+            "string",
+            "integer",
+            "number",
+            "boolean",
+            "null"
+          ]
+        },
+        "currency": {
+          "enum": [
+            "VND",
+            "USD",
+            null
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 50
+        },
+        "period_start": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "period_end": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "status": {
+          "enum": [
+            "EXTRACTED",
+            "CONFLICTING",
+            "MISSING",
+            "REJECTED"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/documentEvidence"
+          }
+        },
+        "extraction": {
+          "$ref": "#/$defs/extractionRecord"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "EXTRACTED"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "not": {
+                  "type": "null"
+                }
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "MISSING"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              },
+              "evidence": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "CONFLICTING"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 2
+              }
+            }
+          }
+        }
+      ]
+    },
+    "documentEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "page",
+        "section",
+        "text_span",
+        "quote"
+      ],
+      "properties": {
+        "document_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "section": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300
+        },
+        "text_span": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/textSpan"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "quote": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 1000
+        }
+      }
+    },
+    "textSpan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "extractionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "extractor_version",
+        "confidence",
+        "extracted_at"
+      ],
+      "properties": {
+        "method": {
+          "enum": [
+            "MANUAL",
+            "RULE",
+            "MODEL"
+          ]
+        },
+        "extractor_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "extracted_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "retrievalEvaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluation_id",
+        "query",
+        "query_type",
+        "agent_scope",
+        "assessment_date",
+        "filters",
+        "gold_evidence",
+        "forbidden_version_ids",
+        "expected_coverage",
+        "tags"
+      ],
+      "properties": {
+        "evaluation_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "query": {
+          "type": "string",
+          "minLength": 5,
+          "maxLength": 2000
+        },
+        "query_type": {
+          "enum": [
+            "POLICY_LOOKUP",
+            "ELIGIBILITY_SUPPORT",
+            "CALCULATION_GUIDANCE",
+            "MULTI_SOURCE",
+            "NEGATIVE_NO_EVIDENCE"
+          ]
+        },
+        "agent_scope": {
+          "$ref": "#/$defs/agentId"
+        },
+        "assessment_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "filters": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "namespaces",
+            "product_code"
+          ],
+          "properties": {
+            "namespaces": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/namespace"
+              }
+            },
+            "product_code": {
+              "$ref": "#/$defs/productCode"
+            }
+          }
+        },
+        "gold_evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/goldEvidence"
+          }
+        },
+        "forbidden_version_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "expected_coverage": {
+          "enum": [
+            "SUFFICIENT",
+            "INSUFFICIENT",
+            "CONFLICTING"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "query_type": {
+                "const": "NEGATIVE_NO_EVIDENCE"
+              }
+            },
+            "required": [
+              "query_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "gold_evidence": {
+                "maxItems": 0
+              },
+              "expected_coverage": {
+                "const": "INSUFFICIENT"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "gold_evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "goldEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "version_id",
+        "section_id",
+        "chunk_id"
+      ],
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "version_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "section_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "chunk_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "embeddingRun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "embedding_run_id",
+        "model",
+        "preprocessing",
+        "input",
+        "output",
+        "runtime",
+        "generated_at"
+      ],
+      "properties": {
+        "embedding_run_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "model": {
+          "$ref": "#/$defs/embeddingModel"
+        },
+        "preprocessing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "parser_version",
+            "chunker_version"
+          ],
+          "properties": {
+            "parser_version": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            },
+            "chunker_version": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100
+            }
+          }
+        },
+        "input": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "chunk_count",
+            "manifest_hash"
+          ],
+          "properties": {
+            "chunk_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "manifest_hash": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        },
+        "output": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "object_path",
+            "content_hash"
+          ],
+          "properties": {
+            "object_path": {
+              "type": "string",
+              "pattern": "^derived/embeddings/"
+            },
+            "content_hash": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        },
+        "runtime": {
+          "enum": [
+            "LOCAL",
+            "KAGGLE",
+            "API",
+            "CI"
+          ]
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "embeddingModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "name",
+        "revision",
+        "dimension",
+        "normalization",
+        "pooling"
+      ],
+      "properties": {
+        "provider": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "dimension": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65536
+        },
+        "normalization": {
+          "enum": [
+            "NONE",
+            "L2"
+          ]
+        },
+        "pooling": {
+          "enum": [
+            "MODEL_DEFAULT",
+            "CLS",
+            "MEAN",
+            "LAST_TOKEN"
+          ]
+        }
+      }
+    }
+  }
+}

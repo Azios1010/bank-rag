@@ -13,6 +13,7 @@ decision or disburse funds.
 2. [Business process](BUSINESS-PROCESS.md)
 3. [Decision states](DECISION-STATES.md)
 4. [Data and evidence contract](DATA-EVIDENCE-CONTRACT.md)
+   - [Machine-readable dataset schema](../dataset/README.md)
 5. [Policy source registry](POLICY-SOURCE-REGISTRY.md)
 6. [Underwriting rules](UNDERWRITING-RULES.md)
 7. [Evaluation cases](EVALUATION-CASES.md)

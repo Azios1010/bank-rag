@@ -1,0 +1,5 @@
+sentence-transformers>=5.0,<6.0
+transformers>=4.51,<6.0
+huggingface-hub>=0.30,<2.0
+pyarrow>=18,<24
+pandas>=2.2,<3.0

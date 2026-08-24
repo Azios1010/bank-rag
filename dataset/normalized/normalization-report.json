@@ -1,0 +1,85 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-07-25T15:27:28.140365+00:00",
+  "parser_version": "pypdf-structure-v1",
+  "chunker_version": "article-clause-v1",
+  "source_status": "IN_REVIEW",
+  "documents": [
+    {
+      "document_id": "vn-nhnn-21-vbhn-2024-lending",
+      "filename": "circular-lending-21-vbhn-nhnn.pdf",
+      "pages": 36,
+      "extracted_lines": 1117,
+      "articles": 42,
+      "chunks": 151,
+      "unstructured_lines": 105
+    },
+    {
+      "document_id": "vn-nhnn-52-2025-amendment",
+      "filename": "circular-52-2025-tt-nhnn.pdf",
+      "pages": 2,
+      "extracted_lines": 40,
+      "articles": 4,
+      "chunks": 5,
+      "unstructured_lines": 19
+    },
+    {
+      "document_id": "vn-nhnn-4033-2025-correction",
+      "filename": "decision-4033-correction-circular-52-2025.pdf",
+      "pages": 1,
+      "extracted_lines": 36,
+      "articles": 3,
+      "chunks": 4,
+      "unstructured_lines": 22
+    },
+    {
+      "document_id": "vn-qh15-law-91-2025-personal-data",
+      "filename": "law-91-2025-qh15-personal-data.pdf",
+      "pages": 25,
+      "extracted_lines": 834,
+      "articles": 39,
+      "chunks": 188,
+      "unstructured_lines": 18
+    },
+    {
+      "document_id": "vn-cp-decree-356-2025-personal-data",
+      "filename": "decree-356-2025-nd-cp-personal-data.pdf",
+      "pages": 70,
+      "extracted_lines": 2192,
+      "articles": 42,
+      "chunks": 318,
+      "unstructured_lines": 23
+    },
+    {
+      "document_id": "vn-vpqh-158-vbhn-2025-part-1",
+      "filename": "law-credit-institutions-158-vbhn-vpqh-part-1.pdf",
+      "pages": 58,
+      "extracted_lines": 1879,
+      "articles": 75,
+      "chunks": 401,
+      "unstructured_lines": 27
+    },
+    {
+      "document_id": "vn-vpqh-158-vbhn-2025-part-2",
+      "filename": "law-credit-institutions-158-vbhn-vpqh-part-2.pdf",
+      "pages": 95,
+      "extracted_lines": 2964,
+      "articles": 137,
+      "chunks": 642,
+      "unstructured_lines": 43
+    }
+  ],
+  "totals": {
+    "documents": 7,
+    "pages": 287,
+    "articles": 342,
+    "chunks": 1709,
+    "unstructured_lines": 257
+  },
+  "warnings": [
+    "Chunks are extraction candidates and require content/legal review.",
+    "Page locators are physical PDF page numbers, not gazette page numbers.",
+    "No automatic OCR was applied; image-only pages would be reported as empty.",
+    "pypdf may preserve embedded-font spacing artifacts in Vietnamese words; review extracted text before embedding."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-07-26T14:43:00.734178+00:00",
+  "index_tier": "experimental",
+  "model_id": "Qwen/Qwen3-Embedding-0.6B",
+  "requested_revision": "main",
+  "resolved_revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+  "embedding_dimension": 1024,
+  "similarity": "cosine",
+  "normalize_embeddings": true,
+  "output_dtype": "float32",
+  "max_sequence_length": 3072,
+  "batch_size": 2,
+  "input_template_version": "policy-title-heading-content-v1",
+  "input_template": "Document: {title}\nSection: {heading_path}\nText:\n{content}",
+  "query_instruction": "Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.",
+  "parser_versions": [
+    "pypdf-structure-v1"
+  ],
+  "chunker_versions": [
+    "article-clause-v1"
+  ],
+  "source_registry_sha256": "sha256:752954c946c4c4d91a7ad36a8847711e080bdccce2289431519711fd2af356d8",
+  "chunk_file_sha256": "sha256:c4ee19b56a41b5ad9db148862b133bca61bd07498dead293b5d0bc87ea543c3f",
+  "chunk_content_hash_digest": "sha256:e5c560b098a80b5fe2751dd64bc8f7eb2b4bebc8e5402473e2138143c738bdb9",
+  "chunk_count": 1709,
+  "source_count": 7,
+  "dependencies": {
+    "sentence-transformers": "5.4.1",
+    "transformers": "5.0.0",
+    "huggingface-hub": "1.11.0",
+    "pyarrow": "23.0.1",
+    "numpy": "2.0.2",
+    "torch": "2.10.0+cu128"
+  },
+  "output": {
+    "filename": "embeddings.parquet",
+    "sha256": "sha256:1dcc5b9de3b6c1c05fc4e79a95efb0f29bf866fce2fd64c7459700a3228c012a",
+    "rows": 1709
+  }
+}

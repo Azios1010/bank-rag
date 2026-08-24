@@ -1,0 +1,15 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-07-26T14:43:00.734178+00:00",
+  "status": "PASS",
+  "checks": {
+    "rows": 1709,
+    "duplicate_chunk_ids": 0,
+    "missing_source_records": 0,
+    "all_vectors_finite": true,
+    "vector_dimension": 1024,
+    "norm_min": 0.9999998807907104,
+    "norm_mean": 1.0,
+    "norm_max": 1.0000001192092896
+  }
+}

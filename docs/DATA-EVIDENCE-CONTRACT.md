@@ -1,5 +1,10 @@
 # Data and evidence contract
 
+The machine-readable source of truth is the
+[Bank RAG dataset JSON Schema](../dataset/schemas/bank-rag-dataset.schema.json).
+This document explains the business meaning; ingestion code must validate
+against the versioned schema.
+
 ## Case inputs
 
 The minimum public-demo case contains:

@@ -10,6 +10,9 @@ The accepted MVP retrieval design is documented in
 [RAG architecture](docs/RAG-ARCHITECTURE.md), with the implementation order in
 the [MVP delivery plan](docs/MVP-DELIVERY-PLAN.md).
 
+The versioned, machine-readable dataset contract lives in
+[dataset/README.md](dataset/README.md).
+
 ## Run the real-agent demo
 
 1. Revoke any API key that has been pasted into chat or source control, then create a fresh key.
