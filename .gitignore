@@ -14,3 +14,7 @@ dist/
 coverage/
 .cache/
 tmp/
+
+evaluation-results/
+
+.pytest-tmp/
