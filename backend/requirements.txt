@@ -19,3 +19,4 @@ PyYAML>=6.0,<7.0
 httpx>=0.28,<1.0
 reportlab>=4.2,<5.0
 tenacity>=9.0,<10.0
+pyarrow>=14.0.0,<26.0.0
