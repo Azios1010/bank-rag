@@ -1,0 +1,187 @@
+{
+  "audit_version": "v2",
+  "retrieved_on": "2026-08-27",
+  "scope": "Only the seven user-specified V2 canonical source families are represented. Metadata was checked against official Government Gazette, Government legal-document, and National Database of Legal Documents pages; no source document was downloaded.",
+  "records": [
+    {
+      "source_id": "v2-01-86-vbhn-nhnn",
+      "document_number": "86/VBHN-NHNN",
+      "title": "Quy định về hoạt động cho vay của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đối với khách hàng",
+      "issuer": "Ngân hàng Nhà nước Việt Nam",
+      "official_url": "https://vanban.chinhphu.vn/?classid=2629&docid=218993&pageid=27160",
+      "download_url": [
+        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/7/86-vbhn-nhnn.pdf"
+      ],
+      "issue_date": "2026-06-30",
+      "effective_date": null,
+      "status": "STATUS_CURRENT",
+      "current_status_evidence": {
+        "official_evidence_url": "https://congbao.chinhphu.vn/van-ban-dang-cong-bao/van-ban-hop-nhat-l7/trang-4.htm",
+        "observed_on": "2026-08-27",
+        "observed": "The official Government Gazette current listing identifies 86/VBHN-NHNN, dated 2026-06-30, for this lending text and leaves its 'Ngày hết hiệu lực' field blank. The Government legal-document page independently identifies the same number, issuer, date, title, and PDF attachment."
+      },
+      "retrieval_scope": "Eligible for canonical retrieval as the full consolidated lending text. Retain the consolidation heading, all incorporated amendments, and all transition/effect clauses; this audit did not download the document.",
+      "selected_sections_strategy": "Select the provisions governing scope and terms, borrower/lending conditions, prohibited or ineligible lending, lending methods and currency, loan agreement and dossier, approval and disbursement, repayment and debt adjustment, interest and fees, risk handling, reporting, and transition/effect clauses. Preserve cross-references and amendment notes with each selected provision.",
+      "canonical_eligible": true
+    },
+    {
+      "source_id": "v2-02-100-vbhn-vpqh",
+      "document_number": "100/VBHN-VPQH",
+      "title": "Luật Các tổ chức tín dụng",
+      "issuer": "Văn phòng Quốc hội",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-100-vbhn-vpqh-469442.htm",
+      "download_url": [
+        "https://congbaocdn.chinhphu.vn/180507251028987904/2026/5/8/469442-1778059861_v1_1778230148_signed.pdf"
+      ],
+      "issue_date": "2026-04-22",
+      "effective_date": null,
+      "status": "STATUS_CURRENT",
+      "current_status_evidence": {
+        "official_evidence_url": "https://congbao.chinhphu.vn/van-ban-dang-cong-bao/van-ban-hop-nhat-l7/trang-15.htm",
+        "observed_on": "2026-08-27",
+        "observed": "The official Government Gazette identifies the 2026-04-22 consolidated Law on Credit Institutions as 100/VBHN-VPQH, issued by the Office of the National Assembly, and shows no expiry date. The publication page supplies the official PDF."
+      },
+      "retrieval_scope": "Eligible for canonical retrieval as the full consolidated statute. The consolidated-document publication does not state a standalone effective date, so effective_date is null rather than a derived date.",
+      "selected_sections_strategy": "Select statutory definitions and scope; permitted banking and credit activities; credit-extension limits and restrictions; governance and related-party controls; prudential requirements; intervention, special control, and resolution; and all transition/effect provisions. Retain section, article, clause, and amendment context.",
+      "canonical_eligible": true
+    },
+    {
+      "source_id": "v2-03-27-vbhn-nhnn",
+      "document_number": "27/VBHN-NHNN",
+      "title": "Quy định về phân loại tài sản có trong hoạt động của ngân hàng thương mại, tổ chức tín dụng phi ngân hàng, chi nhánh ngân hàng nước ngoài",
+      "issuer": "Ngân hàng Nhà nước Việt Nam",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/van-ban-hop-nhat-so-27-vbhn-nhnn-46658.htm",
+      "download_url": [
+        "https://congbaocdn.chinhphu.vn/CongBaoCP/VanBan/2025/11/46658/59897-1-20251643-164427-vbhn-nhnn.pdf"
+      ],
+      "issue_date": "2025-11-21",
+      "effective_date": null,
+      "status": "STATUS_CURRENT",
+      "current_status_evidence": {
+        "official_evidence_url": "https://congbao.chinhphu.vn/van-ban-dang-cong-bao/trang-196.htm",
+        "observed_on": "2026-08-27",
+        "observed": "The official Government Gazette current listing identifies the 2025-11-21 consolidated text as 27/VBHN-NHNN, with this title, and leaves 'Ngày hết hiệu lực' blank. The consolidated-document publication supplies the official PDF."
+      },
+      "retrieval_scope": "Eligible for canonical retrieval as the full consolidated asset-classification and credit-risk text. The consolidated-document publication does not state a standalone effective date, so effective_date is null rather than a derived date.",
+      "selected_sections_strategy": "Select scope and definitions; asset and debt classification rules; reclassification, restructuring, and group-retention conditions; specific and general provisioning; risk-reserve use; reporting and implementation; and transition/effect clauses. Preserve every condition, exception, threshold, and incorporated-amendment note.",
+      "canonical_eligible": true
+    },
+    {
+      "source_id": "v2-04-21-2021-nd-cp",
+      "document_number": "21/2021/NĐ-CP",
+      "title": "Quy định thi hành Bộ luật Dân sự về bảo đảm thực hiện nghĩa vụ",
+      "issuer": "Chính phủ",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-21-2021-nd-cp-33477.htm",
+      "download_url": [
+        "https://congbaocdn.chinhphu.vn/CongBaoCP/VanBan/2021/3/33477/35291-1-2021487-48821-2021-nd-cp.pdf"
+      ],
+      "issue_date": "2021-03-19",
+      "effective_date": "2021-05-15",
+      "status": "STATUS_CURRENT",
+      "current_status_evidence": {
+        "official_evidence_url": "https://congbao.chinhphu.vn/van-ban-dang-cong-bao/chinh-phu-c1/trang-148.htm",
+        "observed_on": "2026-08-27",
+        "observed": "The official Government Gazette gives the issue and effective dates on the document publication and its current Government listing identifies 21/2021/NĐ-CP with no expiry date. The National Database of Legal Documents also records the document as 'Còn hiệu lực'."
+      },
+      "retrieval_scope": "Eligible for canonical retrieval as the complete decree, including appendices and transitional provisions; this audit did not download the document.",
+      "selected_sections_strategy": "Select scope and definitions; security property and secured obligations; establishment, effectiveness, and enforceability of security measures; third-party rights; collateral management and disposal; priority and proceeds; and transition/effect clauses. Keep all exceptions and statutory cross-references.",
+      "canonical_eligible": true
+    },
+    {
+      "source_id": "v2-05-2161-vbhn-btp",
+      "document_number": "2161/VBHN-BTP",
+      "title": "Về đăng ký biện pháp bảo đảm",
+      "issuer": "Bộ Tư pháp",
+      "official_url": "https://chinhphu.vn/?classid=0&docid=217846&pageid=27160",
+      "download_url": [
+        "https://datafiles.chinhphu.vn/cpp/files/vbpq/2026/4/2161-vbhn-btp.pdf"
+      ],
+      "issue_date": "2026-04-07",
+      "effective_date": null,
+      "status": "STATUS_CURRENT",
+      "current_status_evidence": {
+        "official_evidence_urls": [
+          "https://chinhphu.vn/?classid=0&docid=217846&pageid=27160",
+          "https://vbpl.vn/botuphap/Pages/vbpq-thuoctinh-hopnhat.aspx?ItemID=187976&dvid=41"
+        ],
+        "observed_on": "2026-08-27",
+        "observed": "The official Government Portal identifies 2161/VBHN-BTP, issued by the Ministry of Justice on 2026-04-07, as the consolidated text 'Về đăng ký biện pháp bảo đảm' and supplies its PDF attachment. The official National Database consolidated-text attributes page identifies the same number, title, consolidating authority, and authentication date."
+      },
+      "official_url_verification": {
+        "verified_on": "2026-08-27",
+        "evidence": "The official Government Portal publication names 2161/VBHN-BTP and presents 2161-vbhn-btp.pdf as its attachment. The attachment URL uses the Government Portal datafiles.chinhphu.vn host and was checked for usability without downloading the file."
+      },
+      "version_provenance": [
+        {
+          "document_number": "99/2022/NĐ-CP",
+          "title": "Về đăng ký biện pháp bảo đảm",
+          "issuer": "Chính phủ",
+          "issue_date": "2022-11-30",
+          "effective_date": "2023-01-15",
+          "role": "Base instrument incorporated into 2161/VBHN-BTP; retained only as version provenance and must not be semantically chunked separately."
+        },
+        {
+          "document_number": "18/2026/NĐ-CP",
+          "title": "Sửa đổi, bổ sung một số nghị định để cắt giảm, đơn giản hóa thủ tục hành chính, điều kiện kinh doanh thuộc phạm vi quản lý của Bộ Tư pháp",
+          "issuer": "Chính phủ",
+          "issue_date": "2026-01-14",
+          "effective_date": "2026-01-15",
+          "role": "Amending instrument incorporated into 2161/VBHN-BTP; retained only as version provenance and must not be semantically chunked separately."
+        }
+      ],
+      "retrieval_scope": "Eligible for canonical retrieval as the complete consolidated security-interest-registration text, including incorporated amendments, appendices, and transition/effect clauses. Retrieve only 2161/VBHN-BTP as the semantic source; its incorporated instruments remain version provenance only. This audit did not download the document.",
+      "selected_sections_strategy": "Select scope and definitions; registrable security interests; registration authorities and competence; registration dossiers, methods, procedures, and time limits; provision of registration information; change, correction, cancellation, and restoration of registrations; forms and appendices; implementation and transition/effect clauses. Preserve incorporated-amendment notes and all conditions, exceptions, and cross-references.",
+      "canonical_eligible": true
+    },
+    {
+      "source_id": "v2-06-80-2021-nd-cp",
+      "document_number": "80/2021/NĐ-CP",
+      "title": "Quy định chi tiết và hướng dẫn thi hành một số điều của Luật Hỗ trợ doanh nghiệp nhỏ và vừa",
+      "issuer": "Chính phủ",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/nghi-dinh-so-80-2021-nd-cp-34251.htm",
+      "download_url": [
+        "https://congbaocdn.chinhphu.vn/CongBaoCP/VanBan/2021/8/34251/36697-1-2021749-75080-2021-nd-cp.pdf"
+      ],
+      "issue_date": "2021-08-26",
+      "effective_date": "2021-10-15",
+      "status": "STATUS_CURRENT",
+      "current_status_evidence": {
+        "official_evidence_url": "https://congbao.chinhphu.vn/van-ban-dang-cong-bao/trang-837.htm",
+        "observed_on": "2026-08-27",
+        "observed": "The official Government Gazette document page provides the issue and effective dates, and its current listing identifies 80/2021/NĐ-CP with no expiry date. The National Database of Legal Documents records the decree as 'Còn hiệu lực'."
+      },
+      "retrieval_scope": "Eligible for canonical retrieval as the complete decree, with the SME-classification provisions prioritized; this audit did not download the document.",
+      "selected_sections_strategy": "Select definitions and the SME-identification and classification criteria, including employment, revenue, and capital thresholds, together with calculation rules, evidence requirements, exceptions, appendices, and transition/effect clauses. Preserve sector-specific distinctions and all units of measure.",
+      "canonical_eligible": true
+    },
+    {
+      "source_id": "v2-07-15-2023-tt-nhnn",
+      "document_number": "15/2023/TT-NHNN",
+      "title": "Quy định về hoạt động thông tin tín dụng của Ngân hàng Nhà nước Việt Nam",
+      "issuer": "Ngân hàng Nhà nước Việt Nam",
+      "official_url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-15-2023-tt-nhnn-40591/47377.htm",
+      "download_url": [
+        "https://congbaocdn.chinhphu.vn/CongBaoCP/VanBan/2023/12/40591/47377-1-20231291-129215-2023-tt-nhnn.pdf"
+      ],
+      "issue_date": "2023-12-05",
+      "effective_date": "2025-01-01",
+      "status": "ACTIVE",
+      "status_label_vi": "Còn hiệu lực",
+      "current_status_evidence": {
+        "official_evidence_urls": [
+          "https://congbao.chinhphu.vn/van-ban/thong-tu-so-15-2023-tt-nhnn-40591/47377.htm",
+          "https://vbpl.vn/nganhangnhanuoc/Pages/vbpq-thuoctinh.aspx?ItemID=163727"
+        ],
+        "observed_on": "2026-08-27",
+        "observed": "The official Government Gazette publication identifies 15/2023/TT-NHNN and presents its official PDF attachment. The official National Database of Legal Documents attributes page records the Circular as 'Còn hiệu lực' with an effective date of 2025-01-01; the human-resolved audit metadata treats that official attributes record as controlling."
+      },
+      "official_url_verification": {
+        "verified_on": "2026-08-27",
+        "evidence": "The official Government Gazette publication identifies 15/2023/TT-NHNN and presents the listed PDF attachment. The attachment URL uses the official congbaocdn.chinhphu.vn host and was checked for usability without downloading the file."
+      },
+      "retrieval_scope": "Eligible for canonical retrieval as the complete current Circular governing credit-information activity of the State Bank of Vietnam, including appendices and transition/effect clauses. This audit did not download the document.",
+      "selected_sections_strategy": "Select scope, subjects, and definitions; collection, reporting, processing, storage, exploitation, provision, and use of credit information; rights, responsibilities, accuracy, confidentiality, and information-security requirements; implementation, reporting, inspection, and transition/effect clauses. Preserve every condition, exception, time limit, cross-reference, and appendix context.",
+      "canonical_eligible": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["source", "page", "bbox", "text", "hash", "reason"],
+  "properties": {
+    "source": { "type": "string" },
+    "page": { "type": "integer" },
+    "bbox": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "text": { "type": "string" },
+    "hash": { "type": "string" },
+    "reason": { "type": "string" }
+  },
+  "additionalProperties": false
+}

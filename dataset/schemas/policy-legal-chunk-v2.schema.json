@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "canonical_chunk_id", "chunker_version", "source_id", "version_id",
+    "chapter", "section", "article", "clause", "point", "heading_path",
+    "content", "page_start", "page_end", "provenance", "is_long_unsplittable",
+    "is_fragment", "fragment_index"
+  ],
+  "properties": {
+    "canonical_chunk_id": { "type": "string" },
+    "chunker_version": { "type": "string" },
+    "source_id": { "type": "string" },
+    "version_id": { "type": "string" },
+    "chapter": { "type": ["string", "null"] },
+    "section": { "type": ["string", "null"] },
+    "article": { "type": ["string", "null"] },
+    "clause": { "type": ["string", "null"] },
+    "point": { "type": ["string", "null"] },
+    "heading_path": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "content": { "type": "string" },
+    "page_start": { "type": "integer" },
+    "page_end": { "type": "integer" },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["input_ordinal", "content_hash"],
+        "properties": {
+          "input_ordinal": { "type": "integer" },
+          "content_hash": { "type": "string" }
+        }
+      },
+      "description": "Represents the source provisions. If is_fragment is true, this indicates the parent lineage rather than exact exact segment coverage."
+    },
+    "is_long_unsplittable": { "type": "boolean" },
+    "is_fragment": { "type": "boolean" },
+    "fragment_index": { "type": "integer" }
+  },
+  "additionalProperties": false
+}

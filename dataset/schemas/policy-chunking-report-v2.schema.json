@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "chunker_version", "total_input_provisions", "total_emitted_chunks",
+    "total_anomalies", "anomalies_by_type"
+  ],
+  "properties": {
+    "chunker_version": { "type": "string" },
+    "total_input_provisions": { "type": "integer" },
+    "total_emitted_chunks": { "type": "integer" },
+    "total_anomalies": { "type": "integer" },
+    "anomalies_by_type": {
+      "type": "object",
+      "additionalProperties": { "type": "integer" }
+    }
+  },
+  "additionalProperties": false
+}

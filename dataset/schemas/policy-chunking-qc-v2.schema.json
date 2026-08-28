@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "anomaly_id", "anomaly_type", "severity", "source_id", "input_ordinals", "details"
+  ],
+  "properties": {
+    "anomaly_id": { "type": "string" },
+    "anomaly_type": { "enum": ["DUPLICATE_HIERARCHY_KEY", "ORPHAN_POINT_WITHOUT_CLAUSE", "LONG_UNSPLITTABLE", "EXACT_DUPLICATE_CONTENT"] },
+    "severity": { "enum": ["WARNING", "ERROR"] },
+    "source_id": { "type": "string" },
+    "input_ordinals": {
+      "type": "array",
+      "items": { "type": "integer" }
+    },
+    "details": { "type": "string" },
+    "canonical_chunk_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}
