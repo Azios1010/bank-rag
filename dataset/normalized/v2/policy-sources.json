@@ -1,0 +1,72 @@
+[
+  {
+    "source_id": "v2-01-86-vbhn-nhnn",
+    "version_id": "v2-01-86-vbhn-nhnn-2026-06-30-92f9c4e45252",
+    "document_number": "86/VBHN-NHNN",
+    "title": "Quy định về hoạt động cho vay của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài đối với khách hàng",
+    "issuer": "Ngân hàng Nhà nước Việt Nam",
+    "issue_date": "2026-06-30",
+    "effective_date": null,
+    "status": "STATUS_CURRENT"
+  },
+  {
+    "source_id": "v2-02-100-vbhn-vpqh",
+    "version_id": "v2-02-100-vbhn-vpqh-2026-04-22-584568fa5972",
+    "document_number": "100/VBHN-VPQH",
+    "title": "Luật Các tổ chức tín dụng",
+    "issuer": "Văn phòng Quốc hội",
+    "issue_date": "2026-04-22",
+    "effective_date": null,
+    "status": "STATUS_CURRENT"
+  },
+  {
+    "source_id": "v2-03-27-vbhn-nhnn",
+    "version_id": "v2-03-27-vbhn-nhnn-2025-11-21-5ced19467135",
+    "document_number": "27/VBHN-NHNN",
+    "title": "Quy định về phân loại tài sản có trong hoạt động của ngân hàng thương mại, tổ chức tín dụng phi ngân hàng, chi nhánh ngân hàng nước ngoài",
+    "issuer": "Ngân hàng Nhà nước Việt Nam",
+    "issue_date": "2025-11-21",
+    "effective_date": null,
+    "status": "STATUS_CURRENT"
+  },
+  {
+    "source_id": "v2-04-21-2021-nd-cp",
+    "version_id": "v2-04-21-2021-nd-cp-2021-03-19-83c5805f1fa4",
+    "document_number": "21/2021/NĐ-CP",
+    "title": "Quy định thi hành Bộ luật Dân sự về bảo đảm thực hiện nghĩa vụ",
+    "issuer": "Chính phủ",
+    "issue_date": "2021-03-19",
+    "effective_date": "2021-05-15",
+    "status": "STATUS_CURRENT"
+  },
+  {
+    "source_id": "v2-05-2161-vbhn-btp",
+    "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+    "document_number": "2161/VBHN-BTP",
+    "title": "Về đăng ký biện pháp bảo đảm",
+    "issuer": "Bộ Tư pháp",
+    "issue_date": "2026-04-07",
+    "effective_date": null,
+    "status": "STATUS_CURRENT"
+  },
+  {
+    "source_id": "v2-06-80-2021-nd-cp",
+    "version_id": "v2-06-80-2021-nd-cp-2021-08-26-20a1d22961e9",
+    "document_number": "80/2021/NĐ-CP",
+    "title": "Quy định chi tiết và hướng dẫn thi hành một số điều của Luật Hỗ trợ doanh nghiệp nhỏ và vừa",
+    "issuer": "Chính phủ",
+    "issue_date": "2021-08-26",
+    "effective_date": "2021-10-15",
+    "status": "STATUS_CURRENT"
+  },
+  {
+    "source_id": "v2-07-15-2023-tt-nhnn",
+    "version_id": "v2-07-15-2023-tt-nhnn-2023-12-05-5de19f587bf4",
+    "document_number": "15/2023/TT-NHNN",
+    "title": "Quy định về hoạt động thông tin tín dụng của Ngân hàng Nhà nước Việt Nam",
+    "issuer": "Ngân hàng Nhà nước Việt Nam",
+    "issue_date": "2023-12-05",
+    "effective_date": "2025-01-01",
+    "status": "ACTIVE"
+  }
+]

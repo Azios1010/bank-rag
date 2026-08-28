@@ -1,0 +1,6 @@
+{
+  "parser_version": "bank-rag-v2-pymupdf-structure-1.0.0",
+  "total_sources": 7,
+  "total_provisions": 3341,
+  "total_noise_blocks_removed": 583
+}

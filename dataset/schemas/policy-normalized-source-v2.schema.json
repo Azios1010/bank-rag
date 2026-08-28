@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["source_id", "version_id", "document_number", "title", "issuer", "issue_date", "effective_date", "status"],
+  "properties": {
+    "source_id": { "type": "string" },
+    "version_id": { "type": "string" },
+    "document_number": { "type": "string" },
+    "title": { "type": "string" },
+    "issuer": { "type": "string" },
+    "issue_date": { "type": "string", "format": "date" },
+    "effective_date": { "type": ["string", "null"], "format": "date" },
+    "status": { "type": "string" }
+  },
+  "additionalProperties": false
+}

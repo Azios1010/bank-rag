@@ -1,0 +1,12 @@
+{
+  "chunker_version": "bank-rag-v2-chunker-1.0.0",
+  "total_input_provisions": 3341,
+  "total_emitted_chunks": 1162,
+  "total_anomalies": 79,
+  "anomalies_by_type": {
+    "ORPHAN_POINT_WITHOUT_CLAUSE": 5,
+    "DUPLICATE_HIERARCHY_KEY": 14,
+    "LONG_UNSPLITTABLE": 47,
+    "EXACT_DUPLICATE_CONTENT": 13
+  }
+}

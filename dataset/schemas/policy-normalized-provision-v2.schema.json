@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "source_id", "version_id", "chapter", "section", "article", 
+    "clause", "point", "heading_path", "content", "page_start", 
+    "page_end", "content_hash", "inventory_type", "selection_reason"
+  ],
+  "properties": {
+    "source_id": { "type": "string" },
+    "version_id": { "type": "string" },
+    "chapter": { "type": ["string", "null"] },
+    "section": { "type": ["string", "null"] },
+    "article": { "type": ["string", "null"] },
+    "clause": { "type": ["string", "null"] },
+    "point": { "type": ["string", "null"] },
+    "heading_path": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "content": { "type": "string" },
+    "page_start": { "type": "integer" },
+    "page_end": { "type": "integer" },
+    "content_hash": { "type": "string" },
+    "inventory_type": { "enum": ["SELECTED", "BACKGROUND"] },
+    "selection_reason": { "type": "string" }
+  },
+  "additionalProperties": false
+}
