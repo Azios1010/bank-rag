@@ -924,6 +924,9 @@ class DeepAgentOrchestrator:
         return state
 
     def _retrieve_all_policies(self) -> dict[AgentID, list[AgentCitation]]:
+        # Existing application workflow remains on legacy R01 RAG until a
+        # separately approved application cutover.  Stage 11D evaluation uses
+        # CanonicalV2Retriever and Supabase RPC instead.
         embedding_provider = self._embedding_provider or create_embedding_provider()
         results: dict[AgentID, list[AgentCitation]] = {}
         for agent_id, queries in POLICY_QUERIES.items():

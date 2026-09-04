@@ -34,9 +34,30 @@ class Settings(BaseSettings):
         "postgresql+psycopg2://postgres:postgres@localhost:5432/"
         "digital_expert_agents"
     )
+    # Supabase is an additive V2 foundation. DATABASE_URL and MinIO below remain
+    # the active legacy runtime configuration until an explicit cutover.
+    supabase_url: str | None = None
+    supabase_publishable_key: str | None = None
+    supabase_service_role_key: SecretStr | None = None
+    supabase_db_url: SecretStr | None = None
+    supabase_storage_policy_bucket: str = "policy-sources"
+    supabase_storage_case_bucket: str = "case-documents"
+    supabase_storage_artifact_bucket: str = "corpus-artifacts"
+    llama_embedding_base_url: str = "http://127.0.0.1:8081"
+    llama_reranker_base_url: str = "http://127.0.0.1:8082"
     backend_cors_origins: list[str] = Field(
         default_factory=lambda: ["http://localhost:3000"]
     )
+
+    @property
+    def admin_database_url(self) -> str:
+        """Return the trusted migration/bulk database URL without exposing secrets."""
+
+        if self.supabase_db_url is not None:
+            configured_url = self.supabase_db_url.get_secret_value()
+            if configured_url.strip():
+                return configured_url
+        return self.database_url
 
     minio_url: str = "http://localhost:9000"
     minio_root_user: str = "minioadmin"

@@ -1,0 +1,2651 @@
+{
+  "stage": "13C0",
+  "status": "completed",
+  "created_at": "2026-09-03T14:47:51.516054+00:00",
+  "diagnostic_only": true,
+  "identity": {
+    "gold_path": "dataset/evaluation/retrieval-v2-gold-pilot.jsonl",
+    "gold_sha256": "c645869f205e0101cb604cdcf8712820bf0e09aeb85802b590bc695fa8ac424a",
+    "corpus_name": "policy-corpus-v2",
+    "corpus_version": "V2",
+    "corpus_chunk_count": 1610,
+    "corpus_unique_id_count": 1610,
+    "corpus_manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "embedding_dimension": 1024,
+    "embedding_artifact_path": "dataset/embeddings/v2/embeddings.parquet",
+    "embedding_artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+    "embedding_manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863"
+  },
+  "query_runtime": {
+    "backend": "llama.cpp",
+    "endpoint": "http://127.0.0.1:8081/v1/embeddings",
+    "instruction": "Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.",
+    "format": "Instruct: {instruction}\\nQuery: {query}",
+    "vector_dimension": 1024,
+    "norm_tolerance": 0.0001
+  },
+  "scope_rule": "visibility=SHARED OR explicit requested-scope authorization",
+  "target_analysis": {
+    "evaluation_id": "stage12a-024",
+    "question": "Hồ sơ đăng ký biện pháp bảo đảm được phép nộp bằng những phương thức nào, và có giới hạn nào với đất hoặc tài sản gắn liền với đất?",
+    "scope": "collateral_appraisal",
+    "gold_canonical_chunk_ids": [
+      "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9"
+    ],
+    "gold_source": {
+      "document_number": "2161/VBHN-BTP",
+      "effective_date": null,
+      "issue_date": "2026-04-07",
+      "issuer": "Bộ Tư pháp",
+      "namespace": "REGULATION",
+      "provenance": "real_authoritative",
+      "source_artifact_path": "dataset/raw/policies/v2/05_2161-VBHN-BTP_2026_security-registration.pdf",
+      "source_artifact_sha256": "sha256:9a6298b60a4a48f5bd33820f0ebf26eaa023a8574285b85a434a33fe82746ff8",
+      "source_id": "v2-05-2161-vbhn-btp",
+      "synthetic": false,
+      "title": "Về đăng ký biện pháp bảo đảm",
+      "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a"
+    },
+    "eligible_chunk_count": 1573,
+    "exact_gold_ranks": {
+      "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9": 49
+    },
+    "gold_exact_rank": 49,
+    "gold_exact_cosine": 0.7158800325415499,
+    "rank10_cosine": 0.7586132390368914,
+    "rank20_cosine": 0.7448221219548709,
+    "gold_minus_rank20_cosine": -0.028942089413320993,
+    "exact_top1": [
+      {
+        "rank": 1,
+        "canonical_chunk_id": "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+        "similarity": 0.7955364534728682,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "1",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm không chỉ có quyền sử dụng đất, tài sản gắn liền với đất mà còn có tài sản khác nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai thông tin về quyền sử dụng đất, tài sản gắn liền với đất."
+      }
+    ],
+    "exact_top5": [
+      {
+        "rank": 1,
+        "canonical_chunk_id": "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+        "similarity": 0.7955364534728682,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "1",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm không chỉ có quyền sử dụng đất, tài sản gắn liền với đất mà còn có tài sản khác nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai thông tin về quyền sử dụng đất, tài sản gắn liền với đất."
+      },
+      {
+        "rank": 2,
+        "canonical_chunk_id": "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+        "similarity": 0.7883074091083648,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "2",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm bao gồm cả quyền sử dụng đất và tài sản gắn liền với đất nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai quyền sử dụng đất hoặc chỉ kê khai tài sản gắn liền với đất thì Văn phòng đăng ký đất đai thực hiện việc đăng ký đối với tài sản được kê khai trên Phiếu yêu cầu đăng ký."
+      },
+      {
+        "rank": 3,
+        "canonical_chunk_id": "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+        "similarity": 0.7854733900870972,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": null,
+          "point": null,
+          "page_start": 50,
+          "page_end": 50
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 45. Mô tả tài sản bảo đảm trên Phiếu yêu cầu đăng ký"
+      },
+      {
+        "rank": 4,
+        "canonical_chunk_id": "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+        "similarity": 0.7794575920764576,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "27",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "27",
+          "clause": null,
+          "point": null,
+          "page_start": 34,
+          "page_end": 34
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 27. Hồ sơ đăng ký đối với quyền sử dụng đất, tài sản gắn liền với đất đã được chứng nhận quyền sở hữu 1. Phiếu yêu cầu theo Mẫu số 01a tại Phụ lục (01 bản chính). 2. Hợp đồng bảo đảm hoặc hợp đồng bảo đảm có công chứng, chứng thực trong trường hợp Luật Đất đai, Luật Nhà ở, luật khác có liên quan quy định (01 bản chính hoặc 01 bản sao có chứng thực). 3. Giấy chứng nhận (bản gốc), trừ trường hợp quy định tại…"
+      },
+      {
+        "rank": 5,
+        "canonical_chunk_id": "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb",
+        "similarity": 0.7720407453312885,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "3",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "3. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm và Phiếu yêu cầu đăng ký bao gồm cả quyền sử dụng đất, tài sản gắn liền với đất mà quyền sử dụng đất đủ điều kiện dùng để bảo đảm nhưng tài sản gắn liền với đất thuộc diện phải đăng ký quyền sở hữu theo quy định của pháp luật mà chưa được chứng nhận quyền sở hữu thì Văn phòng đăng ký đất đai thực hiện đăng ký đối với quyền sử dụng đất. Người yêu cầu đăng ký có…"
+      }
+    ],
+    "exact_top10": [
+      {
+        "rank": 1,
+        "canonical_chunk_id": "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+        "similarity": 0.7955364534728682,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "1",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm không chỉ có quyền sử dụng đất, tài sản gắn liền với đất mà còn có tài sản khác nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai thông tin về quyền sử dụng đất, tài sản gắn liền với đất."
+      },
+      {
+        "rank": 2,
+        "canonical_chunk_id": "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+        "similarity": 0.7883074091083648,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "2",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm bao gồm cả quyền sử dụng đất và tài sản gắn liền với đất nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai quyền sử dụng đất hoặc chỉ kê khai tài sản gắn liền với đất thì Văn phòng đăng ký đất đai thực hiện việc đăng ký đối với tài sản được kê khai trên Phiếu yêu cầu đăng ký."
+      },
+      {
+        "rank": 3,
+        "canonical_chunk_id": "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+        "similarity": 0.7854733900870972,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": null,
+          "point": null,
+          "page_start": 50,
+          "page_end": 50
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 45. Mô tả tài sản bảo đảm trên Phiếu yêu cầu đăng ký"
+      },
+      {
+        "rank": 4,
+        "canonical_chunk_id": "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+        "similarity": 0.7794575920764576,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "27",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "27",
+          "clause": null,
+          "point": null,
+          "page_start": 34,
+          "page_end": 34
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 27. Hồ sơ đăng ký đối với quyền sử dụng đất, tài sản gắn liền với đất đã được chứng nhận quyền sở hữu 1. Phiếu yêu cầu theo Mẫu số 01a tại Phụ lục (01 bản chính). 2. Hợp đồng bảo đảm hoặc hợp đồng bảo đảm có công chứng, chứng thực trong trường hợp Luật Đất đai, Luật Nhà ở, luật khác có liên quan quy định (01 bản chính hoặc 01 bản sao có chứng thực). 3. Giấy chứng nhận (bản gốc), trừ trường hợp quy định tại…"
+      },
+      {
+        "rank": 5,
+        "canonical_chunk_id": "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb",
+        "similarity": 0.7720407453312885,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "3",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "3. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm và Phiếu yêu cầu đăng ký bao gồm cả quyền sử dụng đất, tài sản gắn liền với đất mà quyền sử dụng đất đủ điều kiện dùng để bảo đảm nhưng tài sản gắn liền với đất thuộc diện phải đăng ký quyền sở hữu theo quy định của pháp luật mà chưa được chứng nhận quyền sở hữu thì Văn phòng đăng ký đất đai thực hiện đăng ký đối với quyền sử dụng đất. Người yêu cầu đăng ký có…"
+      },
+      {
+        "rank": 6,
+        "canonical_chunk_id": "5ee7554527eda08eb66adcc94025cc85f90571f5051b84af57f044e720bd1d55",
+        "similarity": 0.770830362345918,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "44",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "44",
+          "clause": null,
+          "point": null,
+          "page_start": 49,
+          "page_end": 50
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 44. Trường hợp đăng ký thuộc thẩm quyền của Trung tâm đăng ký giao dịch, tài sản 1. Các trường hợp đăng ký theo yêu cầu hoặc theo quy định của pháp luật bao gồm: a) Thế chấp động sản; b) Bảo lưu quyền sở hữu động sản; c) Cầm cố, đặt cọc, ký cược hoặc ký quỹ bằng động sản theo thỏa thuận hoặc theo yêu cầu của bên nhận bảo đảm; d) Biện pháp bảo đảm bằng chứng khoán chưa đăng ký tập trung; cổ tức, quyền tài sản…"
+      },
+      {
+        "rank": 7,
+        "canonical_chunk_id": "90237b2a218ed0cf5da81e3a606277e6f3e69d7c3a4a4e7d4227845bde1771df",
+        "similarity": 0.7648579003222882,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "36",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "36",
+          "clause": "10",
+          "point": null,
+          "page_start": 43,
+          "page_end": 43
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "10. Trường hợp người yêu cầu đăng ký nộp đồng thời hồ sơ đăng ký biến động đất đai và hồ sơ đăng ký biện pháp bảo đảm quy định tại khoản 1 Điều này hoặc nộp đồng thời hồ sơ đề nghị chứng nhận quyền sở hữu tài sản gắn liền với đất và hồ sơ đăng ký thay đổi quy định tại khoản 7 Điều này thì thực hiện theo thủ tục quy định tại khoản 2 Điều 35 Nghị định này."
+      },
+      {
+        "rank": 8,
+        "canonical_chunk_id": "58dd325b5c737a1219915639205d7a23a48280027e57cfc37842af65e1ecca37",
+        "similarity": 0.7607544854797412,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": "6",
+          "point": null,
+          "page_start": 51,
+          "page_end": 51
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "6. Tài sản bảo đảm là động sản đang được lắp đặt, đặt tại hoặc đặt trên đất, nhà ở, công trình xây dựng không phải là nhà ở thì thông tin mô tả phải thể hiện được tài sản bảo đảm là động sản, không phải là tài sản gắn liền với đất đai, nhà ở, công trình xây dựng."
+      },
+      {
+        "rank": 9,
+        "canonical_chunk_id": "ca0848c2431fa85b2bad4c0b26238d30c671cbad8fd9706d1ebdd5034e809064",
+        "similarity": 0.7586843475975121,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "2",
+          "point": null,
+          "page_start": 30,
+          "page_end": 30
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Các trường hợp đăng ký theo yêu cầu:"
+      },
+      {
+        "rank": 10,
+        "canonical_chunk_id": "8558d2527aa3119090af7f38dbd4f814e7d67747e1250ce1e87ce5ef08293ad4",
+        "similarity": 0.7586132390368914,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "4",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "4. Tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất thuộc tài sản chung của vợ chồng mà Giấy chứng nhận chỉ ghi họ, tên của vợ hoặc của chồng là người sử dụng đất, chủ sở hữu nhà ở, tài sản khác gắn liền với đất nhưng thông tin về bên bảo đảm trong hợp đồng bảo đảm bao gồm cả vợ và chồng thì người yêu cầu đăng ký kê khai thông tin về bên bảo đảm trên Phiếu yêu cầu đăng ký bao gồm cả vợ và chồng."
+      }
+    ],
+    "exact_top20": [
+      {
+        "rank": 1,
+        "canonical_chunk_id": "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+        "similarity": 0.7955364534728682,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "1",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm không chỉ có quyền sử dụng đất, tài sản gắn liền với đất mà còn có tài sản khác nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai thông tin về quyền sử dụng đất, tài sản gắn liền với đất."
+      },
+      {
+        "rank": 2,
+        "canonical_chunk_id": "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+        "similarity": 0.7883074091083648,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "2",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm bao gồm cả quyền sử dụng đất và tài sản gắn liền với đất nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai quyền sử dụng đất hoặc chỉ kê khai tài sản gắn liền với đất thì Văn phòng đăng ký đất đai thực hiện việc đăng ký đối với tài sản được kê khai trên Phiếu yêu cầu đăng ký."
+      },
+      {
+        "rank": 3,
+        "canonical_chunk_id": "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+        "similarity": 0.7854733900870972,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": null,
+          "point": null,
+          "page_start": 50,
+          "page_end": 50
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 45. Mô tả tài sản bảo đảm trên Phiếu yêu cầu đăng ký"
+      },
+      {
+        "rank": 4,
+        "canonical_chunk_id": "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+        "similarity": 0.7794575920764576,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "27",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "27",
+          "clause": null,
+          "point": null,
+          "page_start": 34,
+          "page_end": 34
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 27. Hồ sơ đăng ký đối với quyền sử dụng đất, tài sản gắn liền với đất đã được chứng nhận quyền sở hữu 1. Phiếu yêu cầu theo Mẫu số 01a tại Phụ lục (01 bản chính). 2. Hợp đồng bảo đảm hoặc hợp đồng bảo đảm có công chứng, chứng thực trong trường hợp Luật Đất đai, Luật Nhà ở, luật khác có liên quan quy định (01 bản chính hoặc 01 bản sao có chứng thực). 3. Giấy chứng nhận (bản gốc), trừ trường hợp quy định tại…"
+      },
+      {
+        "rank": 5,
+        "canonical_chunk_id": "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb",
+        "similarity": 0.7720407453312885,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "3",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "3. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm và Phiếu yêu cầu đăng ký bao gồm cả quyền sử dụng đất, tài sản gắn liền với đất mà quyền sử dụng đất đủ điều kiện dùng để bảo đảm nhưng tài sản gắn liền với đất thuộc diện phải đăng ký quyền sở hữu theo quy định của pháp luật mà chưa được chứng nhận quyền sở hữu thì Văn phòng đăng ký đất đai thực hiện đăng ký đối với quyền sử dụng đất. Người yêu cầu đăng ký có…"
+      },
+      {
+        "rank": 6,
+        "canonical_chunk_id": "5ee7554527eda08eb66adcc94025cc85f90571f5051b84af57f044e720bd1d55",
+        "similarity": 0.770830362345918,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "44",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "44",
+          "clause": null,
+          "point": null,
+          "page_start": 49,
+          "page_end": 50
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 44. Trường hợp đăng ký thuộc thẩm quyền của Trung tâm đăng ký giao dịch, tài sản 1. Các trường hợp đăng ký theo yêu cầu hoặc theo quy định của pháp luật bao gồm: a) Thế chấp động sản; b) Bảo lưu quyền sở hữu động sản; c) Cầm cố, đặt cọc, ký cược hoặc ký quỹ bằng động sản theo thỏa thuận hoặc theo yêu cầu của bên nhận bảo đảm; d) Biện pháp bảo đảm bằng chứng khoán chưa đăng ký tập trung; cổ tức, quyền tài sản…"
+      },
+      {
+        "rank": 7,
+        "canonical_chunk_id": "90237b2a218ed0cf5da81e3a606277e6f3e69d7c3a4a4e7d4227845bde1771df",
+        "similarity": 0.7648579003222882,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "36",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "36",
+          "clause": "10",
+          "point": null,
+          "page_start": 43,
+          "page_end": 43
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "10. Trường hợp người yêu cầu đăng ký nộp đồng thời hồ sơ đăng ký biến động đất đai và hồ sơ đăng ký biện pháp bảo đảm quy định tại khoản 1 Điều này hoặc nộp đồng thời hồ sơ đề nghị chứng nhận quyền sở hữu tài sản gắn liền với đất và hồ sơ đăng ký thay đổi quy định tại khoản 7 Điều này thì thực hiện theo thủ tục quy định tại khoản 2 Điều 35 Nghị định này."
+      },
+      {
+        "rank": 8,
+        "canonical_chunk_id": "58dd325b5c737a1219915639205d7a23a48280027e57cfc37842af65e1ecca37",
+        "similarity": 0.7607544854797412,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": "6",
+          "point": null,
+          "page_start": 51,
+          "page_end": 51
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "6. Tài sản bảo đảm là động sản đang được lắp đặt, đặt tại hoặc đặt trên đất, nhà ở, công trình xây dựng không phải là nhà ở thì thông tin mô tả phải thể hiện được tài sản bảo đảm là động sản, không phải là tài sản gắn liền với đất đai, nhà ở, công trình xây dựng."
+      },
+      {
+        "rank": 9,
+        "canonical_chunk_id": "ca0848c2431fa85b2bad4c0b26238d30c671cbad8fd9706d1ebdd5034e809064",
+        "similarity": 0.7586843475975121,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "2",
+          "point": null,
+          "page_start": 30,
+          "page_end": 30
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Các trường hợp đăng ký theo yêu cầu:"
+      },
+      {
+        "rank": 10,
+        "canonical_chunk_id": "8558d2527aa3119090af7f38dbd4f814e7d67747e1250ce1e87ce5ef08293ad4",
+        "similarity": 0.7586132390368914,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "4",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "4. Tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất thuộc tài sản chung của vợ chồng mà Giấy chứng nhận chỉ ghi họ, tên của vợ hoặc của chồng là người sử dụng đất, chủ sở hữu nhà ở, tài sản khác gắn liền với đất nhưng thông tin về bên bảo đảm trong hợp đồng bảo đảm bao gồm cả vợ và chồng thì người yêu cầu đăng ký kê khai thông tin về bên bảo đảm trên Phiếu yêu cầu đăng ký bao gồm cả vợ và chồng."
+      },
+      {
+        "rank": 11,
+        "canonical_chunk_id": "f1b93da1a22fe00e6497ce431e9c3f5dd8025b70a8621ca627e8546988a450cf",
+        "similarity": 0.757257785301489,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "36",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "36",
+          "clause": "1",
+          "point": null,
+          "page_start": 41,
+          "page_end": 41
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Người yêu cầu đăng ký có thể nộp đồng thời hồ sơ đăng ký biện pháp bảo đảm với hồ sơ đăng ký biến động đất đai, tài sản gắn liền với đất hoặc thực hiện đăng ký biến động đất đai, tài sản gắn liền với đất trước khi đăng ký biện pháp bảo đảm trong trường hợp có sự thay đổi thông tin sau đây:"
+      },
+      {
+        "rank": 12,
+        "canonical_chunk_id": "128dd9eda66a262d5ace2d760b476e6ee1188a62c53c2b7375cc29acb42712df",
+        "similarity": 0.7566865186051345,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "1",
+          "point": "b",
+          "page_start": 30,
+          "page_end": 30
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Thế chấp nhà ở, tài sản khác gắn liền với đất trong trường hợp tài sản đã được chứng nhận quyền sở hữu trên Giấy chứng nhận;"
+      },
+      {
+        "rank": 13,
+        "canonical_chunk_id": "958e9abfee9fee18e3de8c3d1c9906a548bb782d300e4e3d766183802bd92651",
+        "similarity": 0.7559208074011255,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "2",
+          "point": "d",
+          "page_start": 31,
+          "page_end": 31
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "d) Đăng ký thông báo xử lý tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất;"
+      },
+      {
+        "rank": 14,
+        "canonical_chunk_id": "0f839b671bb0b78ffe701d25c77e96764f32854b75c9a46b4fba194f0aab77b8",
+        "similarity": 0.751785355216694,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "4",
+          "point": null,
+          "page_start": 31,
+          "page_end": 31
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "4. Đăng ký bảo lưu quyền sở hữu nhà ở, tài sản khác gắn liền với đất hoặc đăng ký cầm cố tài sản gắn liền với đất thực hiện trong trường hợp Luật Đất đai có quy định."
+      },
+      {
+        "rank": 15,
+        "canonical_chunk_id": "25b4861d3f0a33c794f19ba8e6209901ed538418b896711fb7bceac94d2e0d6e",
+        "similarity": 0.7494778327229752,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "2",
+          "point": "b",
+          "page_start": 32,
+          "page_end": 33
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Chuyển tiếp đăng ký theo quy định tại điểm b khoản 1 Điều này và đăng ký thế chấp quyền sử dụng đất."
+      },
+      {
+        "rank": 16,
+        "canonical_chunk_id": "0eed41e86133ec3e9d4a4978fd26b77bf852038c9d3f037bc25a6b92da6eff9c",
+        "similarity": 0.7473201161228039,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "3",
+          "point": "b",
+          "page_start": 33,
+          "page_end": 33
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Văn bản chứng nhận đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở (01 bản chính);"
+      },
+      {
+        "rank": 17,
+        "canonical_chunk_id": "1de62adc2578863c929c3ca2c556a971c9aa2b5d352ef422c877360687c68652",
+        "similarity": 0.7463692646395086,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "55",
+        "heading_path": [
+          "Chương IV QUẢN LÝ NHÀ NƯỚC VỀ ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM"
+        ],
+        "locator": {
+          "article": "55",
+          "clause": "6",
+          "point": "đ",
+          "page_start": 61,
+          "page_end": 61
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "đ) Kiểm tra công tác đăng ký biện pháp bảo đảm bằng quyền sử dụng đất, tài sản gắn liền với đất tại Văn phòng đăng ký đất đai theo thẩm quyền;"
+      },
+      {
+        "rank": 18,
+        "canonical_chunk_id": "c046d41e13b55478c9d7586217010bca03cdecca4ecf6370486ae4e7474c0d31",
+        "similarity": 0.7453919571825953,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "5",
+          "point": null,
+          "page_start": 44,
+          "page_end": 45
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "5. Tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất là tài sản chung của các thành viên hộ gia đình mà Giấy chứng nhận chỉ ghi Hộ ông và họ, tên của chủ hộ hoặc Hộ bà và họ, tên của chủ hộ nhưng thông tin về bên bảo đảm trong hợp đồng bảo đảm có công chứng, chứng thực xác định ngoài họ, tên của chủ hộ hoặc của người đại diện hợp pháp của chủ hộ còn có họ, tên của thành viên khác của hộ gia đình có…"
+      },
+      {
+        "rank": 19,
+        "canonical_chunk_id": "5cf9650aa1262413294591a7fa1e21e2039bd216ad5bb73e753082d91f2f198c",
+        "similarity": 0.7453387241077987,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": null,
+          "point": null,
+          "page_start": 43,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 37. Giải quyết đăng ký trong trường hợp thông tin về tài sản bảo đảm trong hợp đồng bảo đảm bao gồm tài sản khác ngoài quyền sử dụng đất, tài sản gắn liền với đất; quyền sử dụng đất, tài sản gắn liền với đất là tài sản chung của vợ chồng, của các thành viên hộ gia đình, của nhóm người sử dụng đất hoặc thuộc doanh nghiệp tư nhân Văn phòng đăng ký đất đai không từ chối đăng ký theo căn cứ quy định tại điểm d…"
+      },
+      {
+        "rank": 20,
+        "canonical_chunk_id": "8d302a77147d973869986a3b46a476773a78de0a5f610195c2614ef7daca0915",
+        "similarity": 0.7448221219548709,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": null,
+          "point": null,
+          "page_start": 32,
+          "page_end": 32
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 26. Chuyển tiếp đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở hoặc từ hợp đồng mua bán tài sản khác gắn liền với đất"
+      }
+    ],
+    "exact_top50_diagnostic_only": [
+      {
+        "rank": 1,
+        "canonical_chunk_id": "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+        "similarity": 0.7955364534728682,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "1",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm không chỉ có quyền sử dụng đất, tài sản gắn liền với đất mà còn có tài sản khác nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai thông tin về quyền sử dụng đất, tài sản gắn liền với đất."
+      },
+      {
+        "rank": 2,
+        "canonical_chunk_id": "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+        "similarity": 0.7883074091083648,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "2",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm bao gồm cả quyền sử dụng đất và tài sản gắn liền với đất nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai quyền sử dụng đất hoặc chỉ kê khai tài sản gắn liền với đất thì Văn phòng đăng ký đất đai thực hiện việc đăng ký đối với tài sản được kê khai trên Phiếu yêu cầu đăng ký."
+      },
+      {
+        "rank": 3,
+        "canonical_chunk_id": "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+        "similarity": 0.7854733900870972,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": null,
+          "point": null,
+          "page_start": 50,
+          "page_end": 50
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 45. Mô tả tài sản bảo đảm trên Phiếu yêu cầu đăng ký"
+      },
+      {
+        "rank": 4,
+        "canonical_chunk_id": "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+        "similarity": 0.7794575920764576,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "27",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "27",
+          "clause": null,
+          "point": null,
+          "page_start": 34,
+          "page_end": 34
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 27. Hồ sơ đăng ký đối với quyền sử dụng đất, tài sản gắn liền với đất đã được chứng nhận quyền sở hữu 1. Phiếu yêu cầu theo Mẫu số 01a tại Phụ lục (01 bản chính). 2. Hợp đồng bảo đảm hoặc hợp đồng bảo đảm có công chứng, chứng thực trong trường hợp Luật Đất đai, Luật Nhà ở, luật khác có liên quan quy định (01 bản chính hoặc 01 bản sao có chứng thực). 3. Giấy chứng nhận (bản gốc), trừ trường hợp quy định tại…"
+      },
+      {
+        "rank": 5,
+        "canonical_chunk_id": "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb",
+        "similarity": 0.7720407453312885,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "3",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "3. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm và Phiếu yêu cầu đăng ký bao gồm cả quyền sử dụng đất, tài sản gắn liền với đất mà quyền sử dụng đất đủ điều kiện dùng để bảo đảm nhưng tài sản gắn liền với đất thuộc diện phải đăng ký quyền sở hữu theo quy định của pháp luật mà chưa được chứng nhận quyền sở hữu thì Văn phòng đăng ký đất đai thực hiện đăng ký đối với quyền sử dụng đất. Người yêu cầu đăng ký có…"
+      },
+      {
+        "rank": 6,
+        "canonical_chunk_id": "5ee7554527eda08eb66adcc94025cc85f90571f5051b84af57f044e720bd1d55",
+        "similarity": 0.770830362345918,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "44",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "44",
+          "clause": null,
+          "point": null,
+          "page_start": 49,
+          "page_end": 50
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 44. Trường hợp đăng ký thuộc thẩm quyền của Trung tâm đăng ký giao dịch, tài sản 1. Các trường hợp đăng ký theo yêu cầu hoặc theo quy định của pháp luật bao gồm: a) Thế chấp động sản; b) Bảo lưu quyền sở hữu động sản; c) Cầm cố, đặt cọc, ký cược hoặc ký quỹ bằng động sản theo thỏa thuận hoặc theo yêu cầu của bên nhận bảo đảm; d) Biện pháp bảo đảm bằng chứng khoán chưa đăng ký tập trung; cổ tức, quyền tài sản…"
+      },
+      {
+        "rank": 7,
+        "canonical_chunk_id": "90237b2a218ed0cf5da81e3a606277e6f3e69d7c3a4a4e7d4227845bde1771df",
+        "similarity": 0.7648579003222882,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "36",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "36",
+          "clause": "10",
+          "point": null,
+          "page_start": 43,
+          "page_end": 43
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "10. Trường hợp người yêu cầu đăng ký nộp đồng thời hồ sơ đăng ký biến động đất đai và hồ sơ đăng ký biện pháp bảo đảm quy định tại khoản 1 Điều này hoặc nộp đồng thời hồ sơ đề nghị chứng nhận quyền sở hữu tài sản gắn liền với đất và hồ sơ đăng ký thay đổi quy định tại khoản 7 Điều này thì thực hiện theo thủ tục quy định tại khoản 2 Điều 35 Nghị định này."
+      },
+      {
+        "rank": 8,
+        "canonical_chunk_id": "58dd325b5c737a1219915639205d7a23a48280027e57cfc37842af65e1ecca37",
+        "similarity": 0.7607544854797412,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": "6",
+          "point": null,
+          "page_start": 51,
+          "page_end": 51
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "6. Tài sản bảo đảm là động sản đang được lắp đặt, đặt tại hoặc đặt trên đất, nhà ở, công trình xây dựng không phải là nhà ở thì thông tin mô tả phải thể hiện được tài sản bảo đảm là động sản, không phải là tài sản gắn liền với đất đai, nhà ở, công trình xây dựng."
+      },
+      {
+        "rank": 9,
+        "canonical_chunk_id": "ca0848c2431fa85b2bad4c0b26238d30c671cbad8fd9706d1ebdd5034e809064",
+        "similarity": 0.7586843475975121,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "2",
+          "point": null,
+          "page_start": 30,
+          "page_end": 30
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Các trường hợp đăng ký theo yêu cầu:"
+      },
+      {
+        "rank": 10,
+        "canonical_chunk_id": "8558d2527aa3119090af7f38dbd4f814e7d67747e1250ce1e87ce5ef08293ad4",
+        "similarity": 0.7586132390368914,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "4",
+          "point": null,
+          "page_start": 44,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "4. Tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất thuộc tài sản chung của vợ chồng mà Giấy chứng nhận chỉ ghi họ, tên của vợ hoặc của chồng là người sử dụng đất, chủ sở hữu nhà ở, tài sản khác gắn liền với đất nhưng thông tin về bên bảo đảm trong hợp đồng bảo đảm bao gồm cả vợ và chồng thì người yêu cầu đăng ký kê khai thông tin về bên bảo đảm trên Phiếu yêu cầu đăng ký bao gồm cả vợ và chồng."
+      },
+      {
+        "rank": 11,
+        "canonical_chunk_id": "f1b93da1a22fe00e6497ce431e9c3f5dd8025b70a8621ca627e8546988a450cf",
+        "similarity": 0.757257785301489,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "36",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "36",
+          "clause": "1",
+          "point": null,
+          "page_start": 41,
+          "page_end": 41
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Người yêu cầu đăng ký có thể nộp đồng thời hồ sơ đăng ký biện pháp bảo đảm với hồ sơ đăng ký biến động đất đai, tài sản gắn liền với đất hoặc thực hiện đăng ký biến động đất đai, tài sản gắn liền với đất trước khi đăng ký biện pháp bảo đảm trong trường hợp có sự thay đổi thông tin sau đây:"
+      },
+      {
+        "rank": 12,
+        "canonical_chunk_id": "128dd9eda66a262d5ace2d760b476e6ee1188a62c53c2b7375cc29acb42712df",
+        "similarity": 0.7566865186051345,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "1",
+          "point": "b",
+          "page_start": 30,
+          "page_end": 30
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Thế chấp nhà ở, tài sản khác gắn liền với đất trong trường hợp tài sản đã được chứng nhận quyền sở hữu trên Giấy chứng nhận;"
+      },
+      {
+        "rank": 13,
+        "canonical_chunk_id": "958e9abfee9fee18e3de8c3d1c9906a548bb782d300e4e3d766183802bd92651",
+        "similarity": 0.7559208074011255,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "2",
+          "point": "d",
+          "page_start": 31,
+          "page_end": 31
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "d) Đăng ký thông báo xử lý tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất;"
+      },
+      {
+        "rank": 14,
+        "canonical_chunk_id": "0f839b671bb0b78ffe701d25c77e96764f32854b75c9a46b4fba194f0aab77b8",
+        "similarity": 0.751785355216694,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "4",
+          "point": null,
+          "page_start": 31,
+          "page_end": 31
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "4. Đăng ký bảo lưu quyền sở hữu nhà ở, tài sản khác gắn liền với đất hoặc đăng ký cầm cố tài sản gắn liền với đất thực hiện trong trường hợp Luật Đất đai có quy định."
+      },
+      {
+        "rank": 15,
+        "canonical_chunk_id": "25b4861d3f0a33c794f19ba8e6209901ed538418b896711fb7bceac94d2e0d6e",
+        "similarity": 0.7494778327229752,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "2",
+          "point": "b",
+          "page_start": 32,
+          "page_end": 33
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Chuyển tiếp đăng ký theo quy định tại điểm b khoản 1 Điều này và đăng ký thế chấp quyền sử dụng đất."
+      },
+      {
+        "rank": 16,
+        "canonical_chunk_id": "0eed41e86133ec3e9d4a4978fd26b77bf852038c9d3f037bc25a6b92da6eff9c",
+        "similarity": 0.7473201161228039,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "3",
+          "point": "b",
+          "page_start": 33,
+          "page_end": 33
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Văn bản chứng nhận đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở (01 bản chính);"
+      },
+      {
+        "rank": 17,
+        "canonical_chunk_id": "1de62adc2578863c929c3ca2c556a971c9aa2b5d352ef422c877360687c68652",
+        "similarity": 0.7463692646395086,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "55",
+        "heading_path": [
+          "Chương IV QUẢN LÝ NHÀ NƯỚC VỀ ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM"
+        ],
+        "locator": {
+          "article": "55",
+          "clause": "6",
+          "point": "đ",
+          "page_start": 61,
+          "page_end": 61
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "đ) Kiểm tra công tác đăng ký biện pháp bảo đảm bằng quyền sử dụng đất, tài sản gắn liền với đất tại Văn phòng đăng ký đất đai theo thẩm quyền;"
+      },
+      {
+        "rank": 18,
+        "canonical_chunk_id": "c046d41e13b55478c9d7586217010bca03cdecca4ecf6370486ae4e7474c0d31",
+        "similarity": 0.7453919571825953,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "5",
+          "point": null,
+          "page_start": 44,
+          "page_end": 45
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "5. Tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất là tài sản chung của các thành viên hộ gia đình mà Giấy chứng nhận chỉ ghi Hộ ông và họ, tên của chủ hộ hoặc Hộ bà và họ, tên của chủ hộ nhưng thông tin về bên bảo đảm trong hợp đồng bảo đảm có công chứng, chứng thực xác định ngoài họ, tên của chủ hộ hoặc của người đại diện hợp pháp của chủ hộ còn có họ, tên của thành viên khác của hộ gia đình có…"
+      },
+      {
+        "rank": 19,
+        "canonical_chunk_id": "5cf9650aa1262413294591a7fa1e21e2039bd216ad5bb73e753082d91f2f198c",
+        "similarity": 0.7453387241077987,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": null,
+          "point": null,
+          "page_start": 43,
+          "page_end": 44
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 37. Giải quyết đăng ký trong trường hợp thông tin về tài sản bảo đảm trong hợp đồng bảo đảm bao gồm tài sản khác ngoài quyền sử dụng đất, tài sản gắn liền với đất; quyền sử dụng đất, tài sản gắn liền với đất là tài sản chung của vợ chồng, của các thành viên hộ gia đình, của nhóm người sử dụng đất hoặc thuộc doanh nghiệp tư nhân Văn phòng đăng ký đất đai không từ chối đăng ký theo căn cứ quy định tại điểm d…"
+      },
+      {
+        "rank": 20,
+        "canonical_chunk_id": "8d302a77147d973869986a3b46a476773a78de0a5f610195c2614ef7daca0915",
+        "similarity": 0.7448221219548709,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": null,
+          "point": null,
+          "page_start": 32,
+          "page_end": 32
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 26. Chuyển tiếp đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở hoặc từ hợp đồng mua bán tài sản khác gắn liền với đất"
+      },
+      {
+        "rank": 21,
+        "canonical_chunk_id": "339375d1ccc449a5c46c2e4b43ece640baec0dcce618447e03c1f3cc626b4a11",
+        "similarity": 0.7440940593635661,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "3",
+          "point": "a",
+          "page_start": 33,
+          "page_end": 33
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "a) Phiếu yêu cầu theo Mẫu số 05a tại Phụ lục (01 bản chính);"
+      },
+      {
+        "rank": 22,
+        "canonical_chunk_id": "3a10604da4707ab529cb0d1d295decd5fdbf6e0783b8ea9df167de9cc41daefd",
+        "similarity": 0.7439539141443047,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "55",
+        "heading_path": [
+          "Chương IV QUẢN LÝ NHÀ NƯỚC VỀ ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM"
+        ],
+        "locator": {
+          "article": "55",
+          "clause": "6",
+          "point": "a",
+          "page_start": 60,
+          "page_end": 60
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "a) Quản lý nhà nước đối với hoạt động đăng ký biện pháp bảo đảm bằng quyền sử dụng đất, tài sản gắn liền với đất tại địa phương;"
+      },
+      {
+        "rank": 23,
+        "canonical_chunk_id": "8f279fe3b263b4c7e22ecbfd637e0706d81de028d64519fa9bd2b353113366b0",
+        "similarity": 0.7437283236078653,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "1",
+          "point": "a",
+          "page_start": 30,
+          "page_end": 30
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "a) Thế chấp quyền sử dụng đất;"
+      },
+      {
+        "rank": 24,
+        "canonical_chunk_id": "d9de3ac7ade8fcb6406d33374a0a89d01d97d98fc9716faca70fa7f0364f77f7",
+        "similarity": 0.7436335479216217,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": null,
+          "point": null,
+          "page_start": 30,
+          "page_end": 30
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 25. Trường hợp đăng ký thuộc thẩm quyền của Văn phòng đăng ký đất đai"
+      },
+      {
+        "rank": 25,
+        "canonical_chunk_id": "fa4f032bdc82782dc88a9cc12f1cdf508aba057da8cea274dd6056ee7baa86f1",
+        "similarity": 0.7413829613001764,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "4",
+        "heading_path": [
+          "Chương I QUY ĐỊNH CHUNG"
+        ],
+        "locator": {
+          "article": "4",
+          "clause": null,
+          "point": null,
+          "page_start": 4,
+          "page_end": 4
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 4. Các trường hợp đăng ký 1. Các trường hợp đăng ký bao gồm: a) Đăng ký thế chấp tài sản, cầm cố tài sản, bảo lưu quyền sở hữu theo quy định của Bộ luật Dân sự, luật khác liên quan; b) Đăng ký theo thỏa thuận giữa bên bảo đảm và bên nhận bảo đảm hoặc theo yêu cầu của bên nhận bảo đảm, trừ cầm giữ tài sản; c) Đăng ký thông báo xử lý tài sản bảo đảm trong trường hợp một tài sản được dùng để bảo đảm thực hiện…"
+      },
+      {
+        "rank": 26,
+        "canonical_chunk_id": "94740aff0c50980141f2492ef904add5cca4a0feaab7f17a507eba99eb0a59e0",
+        "similarity": 0.7405967400047243,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "1",
+          "point": null,
+          "page_start": 30,
+          "page_end": 30
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Các trường hợp phải đăng ký:"
+      },
+      {
+        "rank": 27,
+        "canonical_chunk_id": "b68df83e36338a7129bfbd13321444017d2960d13688f3df52d0a6050c194424",
+        "similarity": 0.7398875187699784,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "3",
+          "point": null,
+          "page_start": 33,
+          "page_end": 33
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "3. Trường hợp có yêu cầu chuyển tiếp đăng ký quy định tại điểm b khoản 1 và điểm b khoản 2 Điều này thì hồ sơ chuyển tiếp đăng ký thế chấp bao gồm:"
+      },
+      {
+        "rank": 28,
+        "canonical_chunk_id": "32588de11744926ed335f93ab87a40a882183885d6fc5c241bb0859c76119319",
+        "similarity": 0.7397198776766166,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "3",
+          "point": "c",
+          "page_start": 33,
+          "page_end": 33
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "c) Hợp đồng thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở (01 bản chính hoặc 01 bản sao có chứng thực);"
+      },
+      {
+        "rank": 29,
+        "canonical_chunk_id": "0e5dd69e3d49ecf2d161e4afc150f15667d8fa045665bdd19af190a1e2fd84b2",
+        "similarity": 0.7370205054822567,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "5",
+        "heading_path": [
+          "Chương I QUY ĐỊNH CHUNG"
+        ],
+        "locator": {
+          "article": "5",
+          "clause": "4",
+          "point": null,
+          "page_start": 5,
+          "page_end": 6
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "4. Trường hợp đăng ký để bảo đảm thực hiện nghĩa vụ của người khác hoặc đồng thời để bảo đảm thực hiện nghĩa vụ của bên bảo đảm và của người khác thì bên bảo đảm phải là người có quyền sử dụng đất, quyền sử dụng khu vực biển hoặc là chủ sở hữu tài sản được dùng để bảo đảm, trừ trường hợp bảo lưu quyền sở hữu. Việc bảo đảm thực hiện nghĩa vụ quy định tại khoản này là do bên bảo đảm và bên nhận bảo đảm tự chịu trách…"
+      },
+      {
+        "rank": 30,
+        "canonical_chunk_id": "fbede4545aacaa3e3167316f6dac60dc69519f3084352f8bfeef31bd14b1dccb",
+        "similarity": 0.7365556711093498,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "31",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "31",
+          "clause": null,
+          "point": null,
+          "page_start": 36,
+          "page_end": 37
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 31. Hồ sơ đăng ký đối với tài sản gắn liền với đất không thuộc trường hợp đăng ký tài sản gắn liền với đất theo quy định của pháp luật về đất đai hoặc thuộc trường hợp đăng ký tài sản gắn liền với đất theo quy định của pháp luật về đất đai mà không phải là nhà ở nhưng chưa được đăng ký quyền sở hữu theo yêu cầu25 1. Giấy tờ quy định tại khoản 1 và khoản 2 Điều 27 Nghị định này. 2. Giấy chứng nhận đối với quyền…"
+      },
+      {
+        "rank": 31,
+        "canonical_chunk_id": "4b211b732b5685fecd0ce8c4172b9e34a9d0d46d1d0da1cf34d90db1a96992fc",
+        "similarity": 0.7356088549013128,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "29",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "29",
+          "clause": null,
+          "point": null,
+          "page_start": 35,
+          "page_end": 36
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 29. Hồ sơ đăng ký đối với nhà ở, công trình xây dựng không phải là nhà ở, tài sản khác gắn liền với đất hình thành trong tương lai thuộc dự án đầu tư xây dựng nhà ở; công trình xây dựng, tài sản khác gắn liền với đất hình thành trong tương lai thuộc dự án đầu tư xây dựng công trình không phải là nhà ở, dự án đầu tư nông nghiệp, dự án phát triển rừng, dự án khác có sử dụng đất 1. Trường hợp bên bảo đảm là chủ…"
+      },
+      {
+        "rank": 32,
+        "canonical_chunk_id": "36baf9c87d08c9558fc46cf32dd6d3285e72499f338e23a78ec29efe12306276",
+        "similarity": 0.7298414382885638,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "15",
+        "heading_path": [
+          "Chương II",
+          "Mục 1 THỦ TỤC CHUNG"
+        ],
+        "locator": {
+          "article": "15",
+          "clause": "1",
+          "point": "c",
+          "page_start": 19,
+          "page_end": 19
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "c) Tài sản không đủ điều kiện dùng để bảo đảm thực hiện nghĩa vụ theo quy định của Luật Đất đai, Luật Nhà ở, luật khác có liên quan. Trường hợp tài sản có tranh chấp thì cơ quan đăng ký chỉ từ chối đăng ký khi đã nhận được văn bản thụ lý hoặc văn bản chứng minh việc thụ lý giải quyết tranh chấp của Tòa án hoặc của cơ quan khác có thẩm quyền;"
+      },
+      {
+        "rank": 33,
+        "canonical_chunk_id": "d7a8654cb4104ec3a1d95ce811a0d2d619bd800c2b0cc2d844245e236dd06383",
+        "similarity": 0.727440352991858,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "12",
+        "heading_path": [
+          "Chương II",
+          "Mục 1 THỦ TỤC CHUNG"
+        ],
+        "locator": {
+          "article": "12",
+          "clause": "1",
+          "point": "c",
+          "page_start": 16,
+          "page_end": 16
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "c) Đăng ký cầm cố tài sản, đặt cọc, ký cược hoặc ký quỹ trong trường hợp pháp luật về bảo đảm thực hiện nghĩa vụ có quy định hoặc có thỏa thuận trong hợp đồng bảo đảm thì chỉ cần có chữ ký, con dấu (nếu có) của bên nhận bảo đảm, trừ trường hợp có thỏa thuận khác trong hợp đồng bảo đảm;"
+      },
+      {
+        "rank": 34,
+        "canonical_chunk_id": "0897e0716b9d01632d495e1a44af7e8e2bf1c64c5355fa3b3c09ecd9e47ee0b0",
+        "similarity": 0.7259449908727131,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "30",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "30",
+          "clause": null,
+          "point": null,
+          "page_start": 36,
+          "page_end": 36
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 30. Hồ sơ đăng ký đối với nhà ở hình thành trong tương lai, tài sản khác gắn liền với đất hình thành trong tương lai không thuộc dự án đầu tư xây dựng nhà ở, dự án đầu tư xây dựng công trình không phải là nhà ở, dự án đầu tư nông nghiệp, dự án phát triển rừng, dự án khác có sử dụng đất 1. Trường hợp bên bảo đảm đồng thời là người sử dụng đất, hồ sơ đăng ký bao gồm: a) Giấy tờ quy định tại khoản 1 và khoản 2…"
+      },
+      {
+        "rank": 35,
+        "canonical_chunk_id": "8df44d9812159d156f7ebff821a9891f51230c0b77e7512330c1754f92943c63",
+        "similarity": 0.7248273087870772,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "9",
+        "heading_path": [
+          "Chương I QUY ĐỊNH CHUNG"
+        ],
+        "locator": {
+          "article": "9",
+          "clause": "3",
+          "point": null,
+          "page_start": 13,
+          "page_end": 13
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "3. Trường hợp quy định tại điểm đ khoản 1 Điều này thì người yêu cầu đăng ký có quyền lựa chọn cung cấp một trong giấy tờ, tài liệu sau đây vào trong hồ sơ đăng ký: Hợp đồng bảo đảm hoặc hợp đồng tín dụng hoặc văn bản khác có thông tin về việc thuộc diện được miễn nghĩa vụ nộp phí đăng ký, thanh toán giá dịch vụ, nghĩa vụ thanh toán khác (01 bản chính hoặc 01 bản sao có chứng thực hoặc 01 bản sao kèm bản chính để…"
+      },
+      {
+        "rank": 36,
+        "canonical_chunk_id": "a0cda7e449def74660213711669f22aa52fa777308cabc6fd8e48344512c30bd",
+        "similarity": 0.7236102773790615,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "35",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "35",
+          "clause": "2",
+          "point": "c",
+          "page_start": 40,
+          "page_end": 41
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "c) Gửi bản sao Phiếu yêu cầu chuyển tiếp đăng ký thế chấp thể hiện nội dung quy định tại điểm a hoặc điểm b khoản này và giấy tờ quy định tại điểm b khoản 3 Điều 26 Nghị định này cho Trung tâm đăng ký giao dịch, tài sản để thực hiện xóa đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở hoặc xóa đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán tài sản khác gắn liền với đất. 5a.30 Trường…"
+      },
+      {
+        "rank": 37,
+        "canonical_chunk_id": "038444e5927d521cc4f822fecd325494d471c5fc8c38e9549e2c0cc285cb71f0",
+        "similarity": 0.7233603248892323,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "25",
+          "clause": "9",
+          "point": null,
+          "page_start": 32,
+          "page_end": 32
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "9. Trường hợp tài sản gắn liền với đất quy định tại Điều này là cây hằng năm theo quy định của Luật Trồng trọt, công trình tạm theo quy định của Luật Xây dựng thì thực hiện việc đăng ký theo quy định tại Mục 4 Chương này."
+      },
+      {
+        "rank": 38,
+        "canonical_chunk_id": "9b694d711eb33231db3bd6c69698df05c1bf921d1aa3d44475eb124d6022e476",
+        "similarity": 0.7228503373562956,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "1",
+          "point": null,
+          "page_start": 32,
+          "page_end": 32
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Trường hợp đã đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở tại Trung tâm đăng ký giao dịch, tài sản mà có yêu cầu chuyển sang thế chấp nhà ở hình thành trong tương lai hoặc chuyển sang thế chấp nhà ở đã được cấp Giấy chứng nhận mà có cùng bên nhận bảo đảm thì người yêu cầu đăng ký có thể lựa chọn thực hiện:"
+      },
+      {
+        "rank": 39,
+        "canonical_chunk_id": "e8da5189688612456ef877b5f93ee6d03124d1898b9ddd8385bc014d7aa7abc2",
+        "similarity": 0.7225915550928591,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "34",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "34",
+          "clause": null,
+          "point": null,
+          "page_start": 38,
+          "page_end": 39
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 34. Hồ sơ đăng ký thông báo xử lý tài sản bảo đảm 1. Phiếu yêu cầu theo Mẫu số 04a tại Phụ lục (01 bản chính). 2. Văn bản thông báo xử lý tài sản bảo đảm (01 bản chính). 3. Trường hợp đăng ký thay đổi, xóa đăng ký thông báo xử lý tài sản bảo đảm thì hồ sơ đăng ký là Phiếu yêu cầu theo Mẫu số 04a tại Phụ lục (01 bản chính)."
+      },
+      {
+        "rank": 40,
+        "canonical_chunk_id": "179c3ab24d9bb0a9b4b617f49bed66fe2433d5ada8a98b50df0dd55c72083e69",
+        "similarity": 0.7224113698601557,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "26",
+          "clause": "3",
+          "point": "đ",
+          "page_start": 33,
+          "page_end": 33
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "đ) Giấy chứng nhận (bản gốc) trong trường hợp chuyển tiếp sang đăng ký thế chấp nhà ở đã được cấp Giấy chứng nhận."
+      },
+      {
+        "rank": 41,
+        "canonical_chunk_id": "aa2462eb1dcea54a1a5f85e24deef8a67bd8694fe1bc878de4453939a39dc759",
+        "similarity": 0.7215556621931636,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": "5",
+          "point": null,
+          "page_start": 51,
+          "page_end": 51
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "5. Tài sản bảo đảm là công trình tạm hoặc cây hằng năm thì thông tin mô tả phải thể hiện được loại tài sản là công trình tạm theo quy định của pháp luật về xây dựng hoặc là cây hằng năm theo quy định của pháp luật về trồng trọt. Trường hợp người yêu cầu đăng ký không có yêu cầu khác thì tài sản bảo đảm quy định tại khoản này bao gồm cả hoa lợi hoặc tài sản khác có được từ việc thu hoạch đối với cây hằng năm hoặc từ…"
+      },
+      {
+        "rank": 42,
+        "canonical_chunk_id": "d69115e37ede4f2982e2d0dcf45e34ac6f6854fbe7508c3f58d9c39e7ebb122c",
+        "similarity": 0.7201510791038213,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "35",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "35",
+          "clause": "2",
+          "point": null,
+          "page_start": 39,
+          "page_end": 40
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Trường hợp nộp đồng thời hồ sơ đăng ký biện pháp bảo đảm với hồ sơ đăng ký biến động đất đai, tài sản gắn liền với đất hoặc với hồ sơ chứng nhận quyền sở hữu tài sản gắn liền với đất quy định tại khoản 1, khoản 7 Điều 36 và khoản 3 Điều 37 Nghị định này thì Văn phòng đăng ký đất đai thực hiện việc tiếp nhận cả hai hồ sơ; thực hiện thủ tục đăng ký đất đai, tài sản gắn liền với đất theo quy định của pháp luật về…"
+      },
+      {
+        "rank": 43,
+        "canonical_chunk_id": "19e63e2883e510136507308eba05e48f1c0053e403790b07881d90effe3fbc9c",
+        "similarity": 0.7200306910427716,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "46",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "46",
+          "clause": null,
+          "point": null,
+          "page_start": 51,
+          "page_end": 51
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 46. Hồ sơ đăng ký đối với động sản, cây hằng năm, công trình tạm"
+      },
+      {
+        "rank": 44,
+        "canonical_chunk_id": "db2ef326782fc7378ed3347c4ae123604182c8f4396ea0b8afc7fca08fc18cc0",
+        "similarity": 0.7197761039805252,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "46",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "46",
+          "clause": "1",
+          "point": null,
+          "page_start": 51,
+          "page_end": 51
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Hồ sơ đăng ký bao gồm Phiếu yêu cầu theo Mẫu số 01d tại Phụ lục (01 bản chính) và nộp thêm giấy tờ, tài liệu sau đây:"
+      },
+      {
+        "rank": 45,
+        "canonical_chunk_id": "b57828f3da9dbcf7a5e3a226d71debf819e45a92e285c9a6778959418aaca0d3",
+        "similarity": 0.7190487369089406,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "article": "37",
+          "clause": "6",
+          "point": null,
+          "page_start": 45,
+          "page_end": 45
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "6. Bảo đảm bằng quyền sử dụng đất, tài sản gắn liền với đất mà Giấy chứng nhận ghi tên doanh nghiệp tư nhân nhưng thông tin về bên bảo đảm trong hợp đồng bảo đảm là họ, tên của chủ doanh nghiệp tư nhân hoặc họ, tên của chủ doanh nghiệp tư nhân và vợ, chồng của chủ doanh nghiệp tư nhân thì người yêu cầu đăng ký kê khai thông tin về bên bảo đảm trên Phiếu yêu cầu đăng ký theo thông tin được ghi trong hợp đồng bảo đảm."
+      },
+      {
+        "rank": 46,
+        "canonical_chunk_id": "e29172a810b45392e1f284548a80eead508aabf1dd8b0ed033fdda9c707dd8c2",
+        "similarity": 0.7186003451322479,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "1",
+        "heading_path": [
+          "Chương I QUY ĐỊNH CHUNG"
+        ],
+        "locator": {
+          "article": "1",
+          "clause": null,
+          "point": null,
+          "page_start": 2,
+          "page_end": 2
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 1. Phạm vi điều chỉnh 1. Nghị định này quy định về đăng ký, cung cấp thông tin về biện pháp bảo đảm bằng tài sản (sau đây gọi là biện pháp bảo đảm); quản lý nhà nước về đăng ký biện pháp bảo đảm. 2. Đăng ký biện pháp bảo đảm, cung cấp thông tin về biện pháp bảo đảm bằng chứng khoán đã đăng ký tập trung tại Tổng công ty lưu ký và bù trừ chứng khoán Việt Nam thực hiện theo quy định của pháp luật về chứng khoán.…"
+      },
+      {
+        "rank": 47,
+        "canonical_chunk_id": "5442717d6be434b190e5f412b4bee0ffc63fd4744df2ce0af1987290b05d226c",
+        "similarity": 0.7181229454786954,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": "1",
+          "point": null,
+          "page_start": 50,
+          "page_end": 50
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Việc mô tả tài sản bảo đảm phải xác định được phạm vi động sản được dùng để bảo đảm. Trường hợp tài sản thuộc một trong các khoản 2, 3, 4, 5, 6, 7 hoặc 8 Điều này thì việc mô tả tài sản bảo đảm phải có thêm thông tin được quy định tại khoản đó. Phạm vi động sản được dùng để bảo đảm có thể là một, một số hoặc toàn bộ động sản hiện có hoặc động sản hình thành trong tương lai. Trường hợp mô tả tài sản bảo đảm theo…"
+      },
+      {
+        "rank": 48,
+        "canonical_chunk_id": "b8e5480c1d584433e59fe1fd1c0fb0f24dc1c172d5afcf751cd0f34a9ec33c8f",
+        "similarity": 0.7167663522068064,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "article": "45",
+          "clause": "8",
+          "point": null,
+          "page_start": 51,
+          "page_end": 51
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "8. Tài sản bảo đảm là quyền tài sản hoặc một phần quyền tài sản thì thông tin mô tả bao gồm tên quyền và căn cứ phát sinh quyền tài sản. Trường hợp căn cứ phát sinh quyền tài sản là hợp đồng thì thông tin mô tả về hợp đồng bao gồm tên hợp đồng, số hợp đồng (nếu có), thời điểm có hiệu lực của hợp đồng và các bên tham gia giao kết hợp đồng. Trường hợp quyền tài sản phát sinh từ căn cứ khác thì thông tin về căn cứ phát…"
+      },
+      {
+        "rank": 49,
+        "canonical_chunk_id": "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9",
+        "similarity": 0.7158800325415499,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "13",
+        "heading_path": [
+          "Chương II",
+          "Mục 1 THỦ TỤC CHUNG"
+        ],
+        "locator": {
+          "article": "13",
+          "clause": null,
+          "point": null,
+          "page_start": 18,
+          "page_end": 18
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 13. Cách thức nộp hồ sơ đăng ký 1. Hồ sơ đăng ký được nộp theo một trong các cách thức sau đây: a) Qua hệ thống đăng ký trực tuyến; b) Nộp bản giấy trực tiếp hoặc gửi qua dịch vụ bưu chính; c) Qua thư điện tử. 2. Cách thức nộp hồ sơ đăng ký quy định tại điểm a và điểm c khoản 1 Điều này đối với quyền sử dụng đất, tài sản gắn liền với đất, quyền sử dụng khu vực biển, tài sản gắn liền với khu vực biển hoặc đối…"
+      },
+      {
+        "rank": 50,
+        "canonical_chunk_id": "2243dc357d0fc8cdc613ad2b618b17f40c8e7ba50f66027f49a1461ff001e716",
+        "similarity": 0.7147868952571402,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "20",
+        "heading_path": [
+          "Chương II",
+          "Mục 1 THỦ TỤC CHUNG"
+        ],
+        "locator": {
+          "article": "20",
+          "clause": "1",
+          "point": "i",
+          "page_start": 25,
+          "page_end": 25
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "i) Tài sản bảo đảm là cây hằng năm được thu hoạch, là công trình tạm bị phá dỡ mà nội dung đã được đăng ký không bao gồm hoa lợi hoặc tài sản khác có được từ việc thu hoạch cây hằng năm hoặc có được từ phá dỡ công trình tạm;"
+      }
+    ],
+    "hnsw_gold_rank": {
+      "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9": ">20"
+    },
+    "hnsw_top20": [
+      {
+        "rank": 1,
+        "canonical_chunk_id": "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+        "similarity": 0.79553636365696,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "1",
+          "article": "37",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 44,
+          "page_start": 44,
+          "hierarchy_instance": "article=37|clause=1|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm không chỉ có quyền sử dụng đất, tài sản gắn liền với đất mà còn có tài sản khác nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai thông tin về quyền sử dụng đất, tài sản gắn liền với đất."
+      },
+      {
+        "rank": 2,
+        "canonical_chunk_id": "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+        "similarity": 0.788307428359985,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "2",
+          "article": "37",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 44,
+          "page_start": 44,
+          "hierarchy_instance": "article=37|clause=2|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm bao gồm cả quyền sử dụng đất và tài sản gắn liền với đất nhưng trên Phiếu yêu cầu đăng ký chỉ kê khai quyền sử dụng đất hoặc chỉ kê khai tài sản gắn liền với đất thì Văn phòng đăng ký đất đai thực hiện việc đăng ký đối với tài sản được kê khai trên Phiếu yêu cầu đăng ký."
+      },
+      {
+        "rank": 3,
+        "canonical_chunk_id": "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+        "similarity": 0.78547340631485,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "point": null,
+          "clause": null,
+          "article": "45",
+          "chapter": "Chương II",
+          "section": "Mục 4",
+          "page_end": 50,
+          "page_start": 50,
+          "hierarchy_instance": "article=45|clause=-|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 45. Mô tả tài sản bảo đảm trên Phiếu yêu cầu đăng ký"
+      },
+      {
+        "rank": 4,
+        "canonical_chunk_id": "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+        "similarity": 0.779457592351961,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "27",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": null,
+          "article": "27",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 34,
+          "page_start": 34,
+          "hierarchy_instance": "article=27|article-instance=2714"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 27. Hồ sơ đăng ký đối với quyền sử dụng đất, tài sản gắn liền với đất đã được chứng nhận quyền sở hữu 1. Phiếu yêu cầu theo Mẫu số 01a tại Phụ lục (01 bản chính). 2. Hợp đồng bảo đảm hoặc hợp đồng bảo đảm có công chứng, chứng thực trong trường hợp Luật Đất đai, Luật Nhà ở, luật khác có liên quan quy định (01 bản chính hoặc 01 bản sao có chứng thực). 3. Giấy chứng nhận (bản gốc), trừ trường hợp quy định tại…"
+      },
+      {
+        "rank": 5,
+        "canonical_chunk_id": "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb",
+        "similarity": 0.772040724754333,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "3",
+          "article": "37",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 44,
+          "page_start": 44,
+          "hierarchy_instance": "article=37|clause=3|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "3. Thông tin về tài sản bảo đảm trong hợp đồng bảo đảm và Phiếu yêu cầu đăng ký bao gồm cả quyền sử dụng đất, tài sản gắn liền với đất mà quyền sử dụng đất đủ điều kiện dùng để bảo đảm nhưng tài sản gắn liền với đất thuộc diện phải đăng ký quyền sở hữu theo quy định của pháp luật mà chưa được chứng nhận quyền sở hữu thì Văn phòng đăng ký đất đai thực hiện đăng ký đối với quyền sử dụng đất. Người yêu cầu đăng ký có…"
+      },
+      {
+        "rank": 6,
+        "canonical_chunk_id": "5ee7554527eda08eb66adcc94025cc85f90571f5051b84af57f044e720bd1d55",
+        "similarity": 0.770830415810061,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "44",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "point": null,
+          "clause": null,
+          "article": "44",
+          "chapter": "Chương II",
+          "section": "Mục 4",
+          "page_end": 50,
+          "page_start": 49,
+          "hierarchy_instance": "article=44|article-instance=2852"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 44. Trường hợp đăng ký thuộc thẩm quyền của Trung tâm đăng ký giao dịch, tài sản 1. Các trường hợp đăng ký theo yêu cầu hoặc theo quy định của pháp luật bao gồm: a) Thế chấp động sản; b) Bảo lưu quyền sở hữu động sản; c) Cầm cố, đặt cọc, ký cược hoặc ký quỹ bằng động sản theo thỏa thuận hoặc theo yêu cầu của bên nhận bảo đảm; d) Biện pháp bảo đảm bằng chứng khoán chưa đăng ký tập trung; cổ tức, quyền tài sản…"
+      },
+      {
+        "rank": 7,
+        "canonical_chunk_id": "90237b2a218ed0cf5da81e3a606277e6f3e69d7c3a4a4e7d4227845bde1771df",
+        "similarity": 0.764857888221741,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "36",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "10",
+          "article": "36",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 43,
+          "page_start": 43,
+          "hierarchy_instance": "article=36|clause=10|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "10. Trường hợp người yêu cầu đăng ký nộp đồng thời hồ sơ đăng ký biến động đất đai và hồ sơ đăng ký biện pháp bảo đảm quy định tại khoản 1 Điều này hoặc nộp đồng thời hồ sơ đề nghị chứng nhận quyền sở hữu tài sản gắn liền với đất và hồ sơ đăng ký thay đổi quy định tại khoản 7 Điều này thì thực hiện theo thủ tục quy định tại khoản 2 Điều 35 Nghị định này."
+      },
+      {
+        "rank": 8,
+        "canonical_chunk_id": "58dd325b5c737a1219915639205d7a23a48280027e57cfc37842af65e1ecca37",
+        "similarity": 0.760754497141187,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "45",
+        "heading_path": [
+          "Chương II",
+          "Mục 4 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG ĐỘNG SẢN, CÂY HẰNG NĂM, CÔNG TRÌNH TẠM"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "6",
+          "article": "45",
+          "chapter": "Chương II",
+          "section": "Mục 4",
+          "page_end": 51,
+          "page_start": 51,
+          "hierarchy_instance": "article=45|clause=6|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "6. Tài sản bảo đảm là động sản đang được lắp đặt, đặt tại hoặc đặt trên đất, nhà ở, công trình xây dựng không phải là nhà ở thì thông tin mô tả phải thể hiện được tài sản bảo đảm là động sản, không phải là tài sản gắn liền với đất đai, nhà ở, công trình xây dựng."
+      },
+      {
+        "rank": 9,
+        "canonical_chunk_id": "ca0848c2431fa85b2bad4c0b26238d30c671cbad8fd9706d1ebdd5034e809064",
+        "similarity": 0.758684300145039,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "2",
+          "article": "25",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 30,
+          "page_start": 30,
+          "hierarchy_instance": "article=25|clause=2|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "2. Các trường hợp đăng ký theo yêu cầu:"
+      },
+      {
+        "rank": 10,
+        "canonical_chunk_id": "8558d2527aa3119090af7f38dbd4f814e7d67747e1250ce1e87ce5ef08293ad4",
+        "similarity": 0.758613138364185,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "4",
+          "article": "37",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 44,
+          "page_start": 44,
+          "hierarchy_instance": "article=37|clause=4|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "4. Tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất thuộc tài sản chung của vợ chồng mà Giấy chứng nhận chỉ ghi họ, tên của vợ hoặc của chồng là người sử dụng đất, chủ sở hữu nhà ở, tài sản khác gắn liền với đất nhưng thông tin về bên bảo đảm trong hợp đồng bảo đảm bao gồm cả vợ và chồng thì người yêu cầu đăng ký kê khai thông tin về bên bảo đảm trên Phiếu yêu cầu đăng ký bao gồm cả vợ và chồng."
+      },
+      {
+        "rank": 11,
+        "canonical_chunk_id": "f1b93da1a22fe00e6497ce431e9c3f5dd8025b70a8621ca627e8546988a450cf",
+        "similarity": 0.757257864311808,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "36",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "1",
+          "article": "36",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 41,
+          "page_start": 41,
+          "hierarchy_instance": "article=36|clause=1|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "1. Người yêu cầu đăng ký có thể nộp đồng thời hồ sơ đăng ký biện pháp bảo đảm với hồ sơ đăng ký biến động đất đai, tài sản gắn liền với đất hoặc thực hiện đăng ký biến động đất đai, tài sản gắn liền với đất trước khi đăng ký biện pháp bảo đảm trong trường hợp có sự thay đổi thông tin sau đây:"
+      },
+      {
+        "rank": 12,
+        "canonical_chunk_id": "128dd9eda66a262d5ace2d760b476e6ee1188a62c53c2b7375cc29acb42712df",
+        "similarity": 0.756686523158163,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": "b",
+          "clause": "1",
+          "article": "25",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 30,
+          "page_start": 30,
+          "hierarchy_instance": "article=25|clause=1|point=b|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Thế chấp nhà ở, tài sản khác gắn liền với đất trong trường hợp tài sản đã được chứng nhận quyền sở hữu trên Giấy chứng nhận;"
+      },
+      {
+        "rank": 13,
+        "canonical_chunk_id": "958e9abfee9fee18e3de8c3d1c9906a548bb782d300e4e3d766183802bd92651",
+        "similarity": 0.755921006202698,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": "d",
+          "clause": "2",
+          "article": "25",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 31,
+          "page_start": 31,
+          "hierarchy_instance": "article=25|clause=2|point=d|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "d) Đăng ký thông báo xử lý tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất;"
+      },
+      {
+        "rank": 14,
+        "canonical_chunk_id": "0f839b671bb0b78ffe701d25c77e96764f32854b75c9a46b4fba194f0aab77b8",
+        "similarity": 0.751785397529602,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "25",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "4",
+          "article": "25",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 31,
+          "page_start": 31,
+          "hierarchy_instance": "article=25|clause=4|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "4. Đăng ký bảo lưu quyền sở hữu nhà ở, tài sản khác gắn liền với đất hoặc đăng ký cầm cố tài sản gắn liền với đất thực hiện trong trường hợp Luật Đất đai có quy định."
+      },
+      {
+        "rank": 15,
+        "canonical_chunk_id": "25b4861d3f0a33c794f19ba8e6209901ed538418b896711fb7bceac94d2e0d6e",
+        "similarity": 0.749477878244051,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": "b",
+          "clause": "2",
+          "article": "26",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 33,
+          "page_start": 32,
+          "hierarchy_instance": "article=26|clause=2|point=b|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Chuyển tiếp đăng ký theo quy định tại điểm b khoản 1 Điều này và đăng ký thế chấp quyền sử dụng đất."
+      },
+      {
+        "rank": 16,
+        "canonical_chunk_id": "0eed41e86133ec3e9d4a4978fd26b77bf852038c9d3f037bc25a6b92da6eff9c",
+        "similarity": 0.747320160110008,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": "b",
+          "clause": "3",
+          "article": "26",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 33,
+          "page_start": 33,
+          "hierarchy_instance": "article=26|clause=3|point=b|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "b) Văn bản chứng nhận đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở (01 bản chính);"
+      },
+      {
+        "rank": 17,
+        "canonical_chunk_id": "1de62adc2578863c929c3ca2c556a971c9aa2b5d352ef422c877360687c68652",
+        "similarity": 0.74636926491169,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "55",
+        "heading_path": [
+          "Chương IV QUẢN LÝ NHÀ NƯỚC VỀ ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM"
+        ],
+        "locator": {
+          "point": "đ",
+          "clause": "6",
+          "article": "55",
+          "chapter": "Chương IV",
+          "section": null,
+          "page_end": 61,
+          "page_start": 61,
+          "hierarchy_instance": "article=55|clause=6|point=đ|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "đ) Kiểm tra công tác đăng ký biện pháp bảo đảm bằng quyền sử dụng đất, tài sản gắn liền với đất tại Văn phòng đăng ký đất đai theo thẩm quyền;"
+      },
+      {
+        "rank": 18,
+        "canonical_chunk_id": "c046d41e13b55478c9d7586217010bca03cdecca4ecf6370486ae4e7474c0d31",
+        "similarity": 0.745391964912415,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": "5",
+          "article": "37",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 45,
+          "page_start": 44,
+          "hierarchy_instance": "article=37|clause=5|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "5. Tài sản bảo đảm là quyền sử dụng đất, tài sản gắn liền với đất là tài sản chung của các thành viên hộ gia đình mà Giấy chứng nhận chỉ ghi Hộ ông và họ, tên của chủ hộ hoặc Hộ bà và họ, tên của chủ hộ nhưng thông tin về bên bảo đảm trong hợp đồng bảo đảm có công chứng, chứng thực xác định ngoài họ, tên của chủ hộ hoặc của người đại diện hợp pháp của chủ hộ còn có họ, tên của thành viên khác của hộ gia đình có…"
+      },
+      {
+        "rank": 19,
+        "canonical_chunk_id": "5cf9650aa1262413294591a7fa1e21e2039bd216ad5bb73e753082d91f2f198c",
+        "similarity": 0.74533870057281,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "37",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": null,
+          "article": "37",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 44,
+          "page_start": 43,
+          "hierarchy_instance": "article=37|clause=-|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 37. Giải quyết đăng ký trong trường hợp thông tin về tài sản bảo đảm trong hợp đồng bảo đảm bao gồm tài sản khác ngoài quyền sử dụng đất, tài sản gắn liền với đất; quyền sử dụng đất, tài sản gắn liền với đất là tài sản chung của vợ chồng, của các thành viên hộ gia đình, của nhóm người sử dụng đất hoặc thuộc doanh nghiệp tư nhân Văn phòng đăng ký đất đai không từ chối đăng ký theo căn cứ quy định tại điểm d…"
+      },
+      {
+        "rank": 20,
+        "canonical_chunk_id": "8d302a77147d973869986a3b46a476773a78de0a5f610195c2614ef7daca0915",
+        "similarity": 0.74482227070531,
+        "source_id": "v2-05-2161-vbhn-btp",
+        "version_id": "v2-05-2161-vbhn-btp-2026-04-07-9a6298b60a4a",
+        "title": "Về đăng ký biện pháp bảo đảm",
+        "article": "26",
+        "heading_path": [
+          "Chương II",
+          "Mục 2 THỦ TỤC ĐĂNG KÝ BIỆN PHÁP BẢO ĐẢM BẰNG QUYỀN SỬ DỤNG ĐẤT, TÀI SẢN GẮN LIỀN VỚI ĐẤT"
+        ],
+        "locator": {
+          "point": null,
+          "clause": null,
+          "article": "26",
+          "chapter": "Chương II",
+          "section": "Mục 2",
+          "page_end": 32,
+          "page_start": 32,
+          "hierarchy_instance": "article=26|clause=-|point=-|occurrence=1"
+        },
+        "visibility": "SHARED",
+        "source_type": "real_regulation",
+        "content_excerpt": "Điều 26. Chuyển tiếp đăng ký thế chấp quyền tài sản phát sinh từ hợp đồng mua bán nhà ở hoặc từ hợp đồng mua bán tài sản khác gắn liền với đất"
+      }
+    ],
+    "top20_set_overlap_count": 20,
+    "top20_set_overlap_fraction": 1.0,
+    "top20_same_position_count": 20,
+    "exact_top20_missing_from_hnsw": [],
+    "hnsw_top20_not_in_exact_top20": [],
+    "classification": "EMBEDDING_CANDIDATE_FAILURE",
+    "hnsw_latency_ms": {
+      "embedding": 0.0024999972083605826,
+      "retrieval": 365.8237999989069
+    },
+    "query_embedding_latency_ms": 331.29750000080094,
+    "hnsw_total_latency_ms": 366.20870000479044
+  },
+  "other_misses_exact": [
+    {
+      "evaluation_id": "stage12a-007",
+      "scope": "credit",
+      "gold_canonical_chunk_ids": [
+        "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d"
+      ],
+      "exact_gold_ranks": {
+        "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d": 10
+      },
+      "first_exact_gold_rank": 10
+    },
+    {
+      "evaluation_id": "stage12a-008",
+      "scope": "risk_management",
+      "gold_canonical_chunk_ids": [
+        "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17"
+      ],
+      "exact_gold_ranks": {
+        "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17": 8
+      },
+      "first_exact_gold_rank": 8
+    },
+    {
+      "evaluation_id": "stage12a-013",
+      "scope": "legal_compliance",
+      "gold_canonical_chunk_ids": [
+        "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf"
+      ],
+      "exact_gold_ranks": {
+        "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf": 7
+      },
+      "first_exact_gold_rank": 7
+    }
+  ],
+  "remote_state": {
+    "documents": 10,
+    "chunks": 1610,
+    "distinct_ids": 1610,
+    "vectors": 1610,
+    "shared": 1573,
+    "scoped": 37,
+    "scope_rows": 125,
+    "corpus_name": "policy-corpus-v2",
+    "corpus_version": "policy-corpus-v2-freeze-1",
+    "corpus_manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "embedding_dimension": 1024,
+    "migration_head": "20260903_0007",
+    "hnsw_ef_search": "40",
+    "enable_indexscan": "on",
+    "policy_chunk_indexes": [
+      "ix_rag_v2_policy_chunks_document_id",
+      "ix_rag_v2_policy_chunks_embedding_hnsw",
+      "ix_rag_v2_policy_chunks_search_document_gin",
+      "pk_rag_v2_policy_chunks",
+      "uq_rag_v2_policy_chunks_canonical_chunk_id"
+    ],
+    "vector_rpc_used": "public.match_policy_chunks"
+  },
+  "guardrails": {
+    "rpc": "public.match_policy_chunks",
+    "rpc_match_count": 20,
+    "exact_top50_is_offline_only": true,
+    "hnsw_top50_requested": false,
+    "hnsw_settings_modified": false,
+    "fts_used": false,
+    "hybrid_used": false,
+    "reranker_used": false,
+    "sentence_transformer_used": false,
+    "gold_modified": false,
+    "corpus_modified": false,
+    "embeddings_modified": false
+  }
+}

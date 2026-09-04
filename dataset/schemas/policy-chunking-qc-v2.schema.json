@@ -6,7 +6,7 @@
   ],
   "properties": {
     "anomaly_id": { "type": "string" },
-    "anomaly_type": { "enum": ["DUPLICATE_HIERARCHY_KEY", "ORPHAN_POINT_WITHOUT_CLAUSE", "LONG_UNSPLITTABLE", "EXACT_DUPLICATE_CONTENT"] },
+    "anomaly_type": { "enum": ["REPEATED_HIERARCHY_LABEL", "DIRECT_ARTICLE_POINT", "EXACT_DUPLICATE_LEGAL_TEXT"] },
     "severity": { "enum": ["WARNING", "ERROR"] },
     "source_id": { "type": "string" },
     "input_ordinals": {

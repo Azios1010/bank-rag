@@ -1,0 +1,47 @@
+{
+  "arm": "top20",
+  "identity": {
+    "corpus": "policy-corpus-v2",
+    "corpus_chunks": 1610,
+    "corpus_documents": 10,
+    "corpus_manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "corpus_version": "V2",
+    "embedding_artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+    "embedding_dimension": 1024,
+    "embedding_manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863",
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "gold_path": "dataset/evaluation/retrieval-v2-gold-expanded.jsonl",
+    "gold_record_count": 100,
+    "gold_sha256": "1e6d169b220c5a35c66bd38e83af7279eb1bbe0cd2621f1c19a5fcf5c8f8ee69",
+    "gold_status": "REVIEWED",
+    "hnsw_ef_search": "40"
+  },
+  "latency": {
+    "mean_ms": 2539.848633000074,
+    "p50_ms": 2430.853699999716,
+    "p95_ms": 3164.0679449974414
+  },
+  "metrics": {
+    "hit@1": 0.83,
+    "hit@3": 0.95,
+    "hit@5": 0.97,
+    "mrr@1": 0.83,
+    "mrr@3": 0.8883333333333333,
+    "mrr@5": 0.8928333333333334,
+    "ndcg@1": 0.83,
+    "ndcg@3": 0.9035994807843422,
+    "ndcg@5": 0.9117747744374215,
+    "recall@1": 0.825,
+    "recall@3": 0.95,
+    "recall@5": 0.97
+  },
+  "pair_count": 2000,
+  "repeatability": {
+    "gold_rank_agreement": 1.0,
+    "max_score_drift": 0.0,
+    "metrics_equal": true,
+    "ordered_top5_agreement": 1.0
+  },
+  "stage": "13E3 — 100-Query Top10 vs Top20 Reranker Confirmation Benchmark",
+  "trace_count": 100
+}

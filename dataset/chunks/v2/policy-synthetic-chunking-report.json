@@ -1,0 +1,10 @@
+{
+  "anomalies_by_type": {},
+  "chunker_version": "bank-rag-v2-chunker-2.0.0",
+  "context_mode": "metadata_only",
+  "hard_limit": 4800,
+  "max_emitted_characters": 950,
+  "total_anomalies": 0,
+  "total_emitted_chunks": 37,
+  "total_input_provisions": 37
+}

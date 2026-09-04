@@ -1,0 +1,75 @@
+{
+  "version": "v1",
+  "status": "BASELINE_COMPLETE",
+  "gold": {
+    "path": "dataset/evaluation/retrieval-v2-gold-expanded.jsonl",
+    "records": 100,
+    "sha256": "1e6d169b220c5a35c66bd38e83af7279eb1bbe0cd2621f1c19a5fcf5c8f8ee69",
+    "all_reviewed": true
+  },
+  "corpus": {
+    "name": "policy-corpus-v2",
+    "chunk_count": 1610,
+    "real_count": 1573,
+    "synthetic_count": 37,
+    "manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a"
+  },
+  "embedding": {
+    "model": "Qwen3-Embedding-0.6B",
+    "format": "GGUF F16",
+    "dimension": 1024,
+    "artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+    "manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863"
+  },
+  "retrieval": {
+    "service": "backend/app/services/canonical_v2_evidence.py",
+    "candidate_k": 20,
+    "final_k": 5,
+    "hit_at_5": 0.97,
+    "recall_at_5": 0.97,
+    "mrr_at_5": 0.8928,
+    "ndcg_at_5": 0.9118,
+    "candidate_failures": ["stage12a-024", "stage13e-040", "stage13e-042"]
+  },
+  "reranker": {
+    "model": "Qwen3-Reranker-0.6B Q8_0",
+    "sha256": "22c9979ce4fbcdc5acdc310c6641c32797eff1aa980b8f7a2db8a8ea23429a48"
+  },
+  "generator": {
+    "model": "Qwen3.5-4B Q4_K_S",
+    "sha256": "3a6e5e8144696a87d17f136b06fce7fe5008a42737938056df13e11ddba4a01b",
+    "runtime": "llama.cpp build 10603 commit c060ca974 / Vulkan1",
+    "generation_parameters": {
+      "context": 4096,
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "seed": 42,
+      "max_output_tokens": 512,
+      "thinking": "off"
+    }
+  },
+  "human_review": {
+    "authoritative": true,
+    "semantic_judge": "human",
+    "correctness": {"PASS": 78, "PARTIAL": 18, "FAIL": 4},
+    "groundedness": {"FULLY_GROUNDED": 87, "PARTIALLY_GROUNDED": 12, "UNGROUNDED": 1},
+    "citation": {"CORRECT": 81, "PARTIAL": 12, "INCORRECT": 7},
+    "abstention": {"APPROPRIATE": 0, "UNNECESSARY": 0, "MISSING_WHEN_REQUIRED": 4, "N/A": 96},
+    "failure_source": {"NONE": 72, "GENERATION": 19, "CITATION": 6, "MIXED": 3, "RETRIEVAL": 0, "RERANKING": 0},
+    "clean_answers": 72,
+    "gold_present_top5": {"count": 97, "PASS": 78, "PARTIAL": 18, "FAIL": 1},
+    "gold_absent_top5": {"count": 3, "fail": 3, "correct_abstentions": 0}
+  },
+  "known_failures": {
+    "candidate_generation": ["stage12a-024", "stage13e-040", "stage13e-042"],
+    "legal_polarity": ["stage12a-002"],
+    "truncation": ["stage12a-004", "stage12a-013", "stage12a-024", "stage13e-050", "stage13e-059", "stage13e-091", "stage13e-099"],
+    "metadata_bug": "Synthetic/internal-policy evidence may be presented as real_regulation in Stage 14 serialization; corpus metadata was not changed."
+  },
+  "security": {
+    "database": "Supabase PostgreSQL/pgvector",
+    "rls": "enabled",
+    "private_storage_buckets": ["policy-sources", "case-documents", "corpus-artifacts"],
+    "legacy_retrieval_in_canonical_v2": false
+  }
+}

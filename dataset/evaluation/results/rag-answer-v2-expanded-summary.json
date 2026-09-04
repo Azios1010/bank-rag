@@ -1,0 +1,105 @@
+{
+  "constraints": {
+    "fts_used": false,
+    "hybrid_used": false,
+    "legacy_fallback_used": false,
+    "no_gold_in_prompt": true,
+    "no_manual_answer_correction": true,
+    "no_semantic_auto_scoring": true,
+    "retrieval_tuning": false
+  },
+  "generated_at": "2026-09-04T12:46:52.988678+00:00",
+  "generator": {
+    "bytes": 2846156768,
+    "context": 4096,
+    "device": "Vulkan1 / NVIDIA GeForce RTX 2050",
+    "external_api": false,
+    "llama_cpp": "0.2.0-dev (build 10603, commit c060ca974)",
+    "max_output_tokens": 512,
+    "model": "qwen3.5-4b-local",
+    "path": "D:\\llm-models\\Qwen_Qwen3.5-4B-Q4_K_S.gguf",
+    "seed": 42,
+    "sha256": "3a6e5e8144696a87d17f136b06fce7fe5008a42737938056df13e11ddba4a01b",
+    "temperature": 0.0,
+    "thinking_mode": "off",
+    "top_p": 1.0
+  },
+  "gold": {
+    "all_reviewed": true,
+    "path": "dataset/evaluation/retrieval-v2-gold-expanded.jsonl",
+    "records": 100,
+    "sha256": "1e6d169b220c5a35c66bd38e83af7279eb1bbe0cd2621f1c19a5fcf5c8f8ee69"
+  },
+  "known_retrieval_failure_behavior": {
+    "stage12a-024": {
+      "abstention_detected": false,
+      "answer_generated": true,
+      "gold_present_in_top5": false,
+      "semantic_judgment": "NOT ASSIGNED"
+    },
+    "stage13e-040": {
+      "abstention_detected": false,
+      "answer_generated": true,
+      "gold_present_in_top5": false,
+      "semantic_judgment": "NOT ASSIGNED"
+    },
+    "stage13e-042": {
+      "abstention_detected": false,
+      "answer_generated": true,
+      "gold_present_in_top5": false,
+      "semantic_judgment": "NOT ASSIGNED"
+    }
+  },
+  "latency_ms": {
+    "classification": "LOCAL RTX 2050 REFERENCE LATENCY",
+    "generation_mean": 14073.419899999353,
+    "generation_p50": 13850.037249998422,
+    "generation_p95": 25595.01972499711,
+    "tokens_per_second_p50": 21.41834162937755,
+    "ttft_p50": 1544.5225
+  },
+  "prompt": {
+    "query_instruction_not_sent_to_generator": true,
+    "system_sha256": "d03f8ec3856616cd841900bbcd89544377c5f69f78e58baf42af35f316ed8962",
+    "user_template_sha256": "c82b619b0121576217324cc86c9df2f9d8828f09068a4a4c3c700c2a22a5ec83"
+  },
+  "repeatability": {
+    "abstention_agreement": 1.0,
+    "byte_identical_answers": true,
+    "citation_structure_agreement": 1.0,
+    "count": 10,
+    "query_ids": [
+      "stage12a-010",
+      "stage12a-020",
+      "stage13e-030",
+      "stage13e-040",
+      "stage13e-050",
+      "stage13e-060",
+      "stage13e-070",
+      "stage13e-080",
+      "stage13e-090",
+      "stage13e-100"
+    ],
+    "repeatability_artifact": "dataset/evaluation/results/rag-answer-v2-expanded-repeatability.jsonl"
+  },
+  "retrieval": {
+    "architecture": "canonical llama.cpp embedding -> Supabase vector Top20 -> Qwen3-Reranker-0.6B -> Top5",
+    "candidate_k": 20,
+    "changed": false,
+    "final_k": 5,
+    "reference_hit_at_5": 0.97
+  },
+  "schema_version": "stage14a-rag-answer-summary-v1",
+  "structural": {
+    "abstentions_detected": 0,
+    "answers_attempted": 100,
+    "answers_generated": 100,
+    "answers_with_invalid_citation_ids": 2,
+    "answers_with_valid_citations": 94,
+    "answers_with_zero_citations": 4,
+    "gold_absent_in_top5": 3,
+    "gold_present_in_top5": 97,
+    "technical_failures": 0,
+    "technical_retries": 0
+  }
+}

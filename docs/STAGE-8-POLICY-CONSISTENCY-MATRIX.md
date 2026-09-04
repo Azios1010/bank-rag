@@ -1,0 +1,59 @@
+# Stage 8 synthetic policy consistency matrix
+
+Status: design freeze for the Dataset V2 synthetic corpus.
+
+These are final policy decisions, not legal requirements. All values below are
+internal, synthetic HHB policy values and must be retrieved only from the
+synthetic source records. The public-law `REGULATION` namespace remains
+unchanged.
+
+## Source set
+
+| Source ID | Title | Namespace | Primary scopes |
+| --- | --- | --- | --- |
+| `synthetic-sme-working-capital-v1` | SME Unsecured Working Capital Product Policy | `BANK_PRODUCT` | `CustomerRelationship`, `Credit`, `RiskManagement`, `LegalCompliance` |
+| `synthetic-sme-underwriting-v1` | SME Credit Underwriting Policy | `UNDERWRITING_POLICY` | `Credit`, `RiskManagement`, `LegalCompliance` |
+| `synthetic-credit-approval-v1` | Credit Approval & Exception Policy | `UNDERWRITING_POLICY` | `Credit`, `RiskManagement`, `LegalCompliance`, `BankingOperations` |
+
+All three documents identify `Ngân hàng Thương mại Cổ phần Hồng Hà (HHB)` as a
+fictional internal organization and state `synthetic=true`. No optional
+calculation guide is created: the existing calculation contract already
+defines DSCR, Debt-to-Equity, and Current Ratio semantics.
+
+## Consistency matrix
+
+| Rule | Document owner | Value | Cross-document dependencies |
+| --- | --- | --- | --- |
+| Product customer profile | Product Policy | Registered Vietnamese SME business with transparent ownership, lawful operating activity, and a working-capital need; this policy is not a legal SME classification test. | Underwriting verifies identity, ownership, management, industry, purpose, and evidence. |
+| Minimum operating history | Product Policy | 24 completed months before application. A documented soft exception may accept 18–23 months only with documented rationale and approval under the exception policy. | Underwriting records the start date and verifies it from registration and operating evidence; approval tier escalates an exception. |
+| Minimum annual revenue | Product Policy | VND 10 billion, measured from the latest completed fiscal year and corroborated by trailing-12-month evidence. A documented soft exception may accept VND 8 billion to < VND 10 billion. | Underwriting validates revenue trend and source reconciliation; exception authority follows the approval bands. |
+| Permitted purpose | Product Policy | Inventory, trade receivables, payroll, rent, utilities, and ordinary operating expenses tied to the borrower’s business cycle. | Underwriting tests purpose-to-cash-flow fit; LegalCompliance checks lawful purpose and documentation. |
+| Prohibited product purpose | Product Policy | Capital expenditure, real-estate or securities speculation, crypto-asset trading, owner distributions, repayment of overdue debt, and any purpose the legal/compliance review rejects. | Hard stop; no quantitative exception or approval override. |
+| Excluded industries | Product Policy | Gambling, unlicensed financial intermediation, weapons trafficking, adult-content operations, crypto-asset speculation, and speculative real-estate trading. | Underwriting identifies industry risk; LegalCompliance confirms the internal exclusion; no exception. |
+| Maximum unsecured exposure | Product Policy | VND 5 billion total exposure per borrower under this product, including the proposed facility and existing HHB obligations counted under the approval policy. | Approval Policy tiers cover 0–5 billion; amounts above 5 billion are outside this product. |
+| Maximum tenor | Product Policy | 12 months; renewal is a new review, not an automatic extension. | Underwriting matches tenor to the operating cycle; approval re-review applies on renewal or material change. |
+| Repayment structures | Product Policy | Amortizing term facility with monthly interest and at least quarterly principal, or a revolving line with monthly interest and clean-down to zero for 30 consecutive days within each 12-month period. Bullet repayment is not permitted. | Underwriting includes all scheduled debt service in DSCR; Operations verifies conditions before disbursement. |
+| Collateral-free condition | Product Policy | No collateral is required or taken for this product. Personal guarantees do not convert the facility into a secured exposure and do not relax financial thresholds. | Underwriting assesses repayment capacity without collateral support; Approval cannot substitute collateral for a hard stop. |
+| Required documentation | Product Policy | Registration and authority evidence; ownership/management information; two completed fiscal-year financial packages where available; latest interim or trailing-12-month data; 12-month bank statements; tax/revenue corroboration; debt schedule; purpose budget and supporting invoices/contracts. | Missing or contradictory material evidence is a hold/refer outcome, never an inferred pass. |
+| CIC history | Product Policy | No active Group 3 or higher. No Group 2 in the preceding 12 months for standard approval. A resolved Group 2 within 24 months may be one soft exception if current obligations are clean. | Underwriting obtains and dates CIC evidence; Approval requires Risk concurrence for the exception. |
+| Standard DSCR | Underwriting Policy | DSCR >= 1.30 using cash available for debt service divided by scheduled debt service, including the proposed facility. | Product standard eligibility; Approval standard tiers may approve only when all standard conditions pass. |
+| DSCR exception floor | Underwriting Policy | DSCR >= 1.15 and < 1.30 may be considered as one soft exception; DSCR >= 1.30 is standard and DSCR < 1.15 is a hard decline. | Approval Policy permits exception escalation but cannot override the 1.15 floor. |
+| Standard Debt-to-Equity | Underwriting Policy | Interest-bearing debt / shareholders’ equity <= 3.00x. | Existing and proposed interest-bearing debt are included; approval uses the same total exposure basis. |
+| Debt-to-Equity exception ceiling | Underwriting Policy | Debt-to-Equity > 3.00x and <= 4.00x may be considered as one soft exception; <= 3.00x is standard and > 4.00x is a hard decline. | Risk documents the cause and mitigant; Approval cannot override the ceiling. |
+| Standard liquidity | Underwriting Policy | Current Ratio >= 1.00x. | Current assets and current liabilities must use the same reporting period and currency. |
+| Liquidity exception floor | Underwriting Policy | Current Ratio >= 0.80x and < 1.00x may be considered as one soft exception with a documented working-capital cycle explanation; >= 1.00x is standard and < 0.80x is a hard decline. | Approval treats it as a soft exception and requires Risk concurrence. |
+| Revenue trend | Underwriting Policy | Standard: latest comparable-period revenue decline is <= 10%. A decline > 10% and <= 20% is one soft exception when causes and recovery evidence are documented. A decline > 20% is a hard decline unless a new review establishes a different product fit. | Product requires a cash-flow-linked purpose; Approval records the trend exception. |
+| Profitability and cash flow | Underwriting Policy | Latest available period must show positive normalized EBITDA and a supportable cash-flow bridge. A one-time net loss may be considered only with documented normalization; unsupported or recurring negative cash flow is a hard decline. | DSCR calculations must preserve numerator/denominator evidence; no synthetic values are inferred from missing statements. |
+| Internal risk grades | Underwriting Policy | A: all standard metrics comfortably pass and clean CIC; B: all standard metrics pass at the stated minimums; C: exactly one soft exception and otherwise pass; C-EXCEPTION-2: exactly two soft exceptions; D: below an exception floor or material unsupported weakness; E: fraud, identity, prohibited-purpose, or severe integrity/compliance concern. | A/B standard route; C is the one-exception route; C-EXCEPTION-2 is the restricted Tier 4 two-exception route; D/E decline. Approval may not relabel a grade or override a hard stop. |
+| Management and industry assessment | Underwriting Policy | Assess management experience, ownership continuity, customer/supplier concentration, industry outlook, and dependence on one counterparty. A material unmitigated weakness prevents standard approval and may produce Grade C or D. | Product checks target profile and exclusions; Risk supplies concentration rationale; Approval records unresolved concerns. |
+| Exposure calculation | Approval Policy | Total exposure = proposed facility + existing HHB funded and committed credit exposures + guarantees/contingent obligations included by HHB policy. | Product cap and approval tier use this amount, not only the new draw. |
+| Tier 1 authority | Approval Policy | Credit Officer: total exposure >0 and <= VND 1 billion, Grade A/B, all standard conditions, no exception. | Maker/checker separation required; cannot approve Grade C or any exception. |
+| Tier 2 authority | Approval Policy | Branch Credit Committee: total exposure > VND 1–3 billion, Grade A/B, all standard conditions, no exception. | Requires independent Risk check; cannot approve an exception under this product. |
+| Tier 3 authority | Approval Policy | Head Office Credit Committee: total exposure > VND 3–5 billion for standard Grade A/B; may approve a single-exception Grade C case with total exposure <= VND 3 billion. | Requires underwriting, Risk, LegalCompliance, and recorded rationale. |
+| Tier 4 authority | Approval Policy | Credit Committee/UBTD: a single-exception Grade C case with total exposure > VND 3 billion and <= VND 5 billion, or a Grade C-EXCEPTION-2 case only when every hard stop is absent, exactly two soft exceptions apply, total exposure is > VND 3 billion and <= VND 5 billion, Risk and LegalCompliance concur, and the full rationale and mitigants are recorded. | Cannot approve hard stops, amounts above VND 5 billion, or missing evidence. |
+| Exception count | Approval Policy | Grade C has exactly one soft exception. Grade C-EXCEPTION-2 has exactly two and is eligible only for Tier 4; it is not eligible for Tier 1, Tier 2, or Tier 3. More than two soft exceptions are not permitted. | The underwriting report enumerates each deviated rule and evidence; no exception may be hidden in a grade override, and no grade or tier may override a hard stop. |
+| Non-overridable conditions | Approval Policy | Missing KYC/authority evidence, fraud or intentional misstatement, excluded industry/purpose, active CIC Group 3+, DSCR < 1.15, Debt-to-Equity > 4.00x, Current Ratio < 0.80x, operating history <18 months, or revenue <VND 8 billion. | Hard decline across all three documents; no grade, approval tier, or exception committee may waive these conditions. |
+| Maker/checker separation | Approval Policy | RM/business unit prepares the request; Credit Underwriting checks analysis; Risk independently challenges material risk; the approver is separate from the maker. | Product documentation and underwriting rationale must be complete before approval. |
+| Approval validity | Approval Policy | Standard approval expires after 60 calendar days if undisbursed. Exception approval expires after 30 calendar days. | Any expired or materially changed request requires re-approval. |
+| Re-approval triggers | Approval Policy | Requested amount or total exposure rises by >10%; tenor or purpose changes; ownership/control changes; new overdue/CIC adverse event; DSCR falls by >10%; material financial restatement; or approval expiry. | Product renewal/review and underwriting monitoring feed the trigger decision. |
+| Synthetic/legal boundary | All documents | Values are fictional HHB internal policy, `synthetic=true`, and are not Vietnamese law or universal banking requirements. | Namespace must never be `REGULATION`; every normalized/chunked record retains synthetic source identity and namespace metadata in the synthetic manifest. |

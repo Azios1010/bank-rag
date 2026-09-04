@@ -7,6 +7,9 @@ from sqlalchemy import engine_from_config, pool
 
 from app.config import get_settings
 from app.db.models import Base
+# Import the isolated V2 models so Alembic autogenerate sees rag_v2 without
+# changing imports used by the existing public-schema runtime.
+from app.db import supabase_models as _supabase_models  # noqa: F401
 
 
 config = context.config
@@ -14,8 +17,10 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# Alembic's ConfigParser value needs escaped percent signs; offline mode uses raw URL.
-database_url = get_settings().database_url
+# Alembic is the trusted migration/admin path. Prefer the backend-only Supabase
+# connection when configured; fall back to DATABASE_URL for the legacy local path.
+# The request/runtime session remains on DATABASE_URL until an explicit cutover.
+database_url = get_settings().admin_database_url
 config.set_main_option("sqlalchemy.url", database_url.replace("%", "%%"))
 target_metadata = Base.metadata
 

@@ -7,7 +7,7 @@ class EncoderProtocol(Protocol):
 
 
 class QwenEvaluationEmbeddingAdapter:
-    """Evaluation embedding adapter for Qwen3-Embedding-0.6B."""
+    """Legacy R01 SentenceTransformer adapter; not valid for Corpus V2."""
     
     MODEL_NAME = "Qwen/Qwen3-Embedding-0.6B"
     REVISION = "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3"

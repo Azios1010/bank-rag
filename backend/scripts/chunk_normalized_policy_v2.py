@@ -54,7 +54,10 @@ def main():
         "total_input_provisions": len(provisions),
         "total_emitted_chunks": len(chunker.chunks),
         "total_anomalies": len(chunker.anomalies),
-        "anomalies_by_type": anomalies_by_type
+        "anomalies_by_type": anomalies_by_type,
+        "context_mode": "metadata_only",
+        "hard_limit": 4800,
+        "max_emitted_characters": max((len(c["content"]) for c in chunker.chunks), default=0)
     }
     
     with open(report_path, "w", encoding="utf-8") as f:

@@ -1,0 +1,586 @@
+{
+  "constraints": {
+    "benchmark_quality_metrics_only": true,
+    "document_embeddings_regenerated": false,
+    "gold_modified": false,
+    "local_files_deleted": false,
+    "model_downloaded": false,
+    "supabase_corpus_mutated": false
+  },
+  "corpus": {
+    "chunk_count": 1610,
+    "corpus_jsonl_sha256": "828e31d6a9d3961badb3be96bbf064819cec4c1338c1853f9144b5b373247400",
+    "corpus_v2_hash": "1ab9185d4123a74ddc369d5231be4245ecf0b763320d8d1b0dcafe2fcdcdaa02",
+    "manifest_hash": "796a3000864b8ffe98ff681169577def16bf2717f40d496ccba3b1f85a407a6f",
+    "manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "name": "policy-corpus-v2",
+    "remote_state": {
+      "distinct_canonical_chunk_id": 1610,
+      "policy_chunks": 1610,
+      "policy_documents": 10,
+      "remote_verification": "PASS",
+      "scope_rows": 125,
+      "vectors": 1610
+    },
+    "scoped": 37,
+    "shared": 1573,
+    "version": "V2"
+  },
+  "embedding": {
+    "artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+    "backend": "Vulkan",
+    "dimension": 1024,
+    "dtype": "float32",
+    "format": "GGUF F16",
+    "manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863",
+    "model": "Qwen3-Embedding-0.6B",
+    "normalization": "L2 unit",
+    "pooling": "last",
+    "runtime": "llama.cpp"
+  },
+  "generated_at": "2026-09-03T07:00:17.107633+00:00",
+  "gold": {
+    "path": "dataset/evaluation/retrieval-v2-gold-pilot.jsonl",
+    "record_count": 25,
+    "sha256": "c645869f205e0101cb604cdcf8712820bf0e09aeb85802b590bc695fa8ac424a",
+    "statuses": [
+      "REVIEWED"
+    ]
+  },
+  "query": {
+    "backend": "llama.cpp",
+    "endpoint": "http://127.0.0.1:8081/v1/embeddings",
+    "fallback_backend": null,
+    "format": "Instruct: Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.\nQuery: {query}",
+    "instruction": "Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.",
+    "sentence_transformer_used": false,
+    "utf8": true
+  },
+  "repeatability": {
+    "max_score_drift": 0.0,
+    "mean_max_score_drift": 0.0,
+    "metrics_equal": true,
+    "ordered_top5_agreement": 1.0,
+    "per_query": [
+      {
+        "evaluation_id": "stage12a-001",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-002",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-003",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-004",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-005",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-006",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-007",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-008",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-009",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-010",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-011",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-012",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-013",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-014",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-015",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-016",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-017",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-018",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-019",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-020",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-021",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-022",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-023",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-024",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      },
+      {
+        "evaluation_id": "stage12a-025",
+        "max_score_drift": 0.0,
+        "ordered_top5_equal": true,
+        "rank_differences": {},
+        "top1_equal": true,
+        "top5_set_overlap": 1.0
+      }
+    ],
+    "queries_with_rank_differences": [],
+    "rank_difference_count": 0,
+    "top1_agreement": 1.0,
+    "top5_set_agreement": 1.0,
+    "top5_set_overlap": {
+      "max": 1.0,
+      "mean": 1.0,
+      "min": 1.0
+    }
+  },
+  "retrieval": {
+    "backend": "Supabase",
+    "distance": "cosine",
+    "hybrid_search_used": false,
+    "k_values": [
+      1,
+      3,
+      5
+    ],
+    "legacy_tables_used": false,
+    "lexical_search_used": false,
+    "query_expansion_used": false,
+    "reranker_used": false,
+    "rpc": "public.match_policy_chunks",
+    "supported_scopes": [
+      "credit",
+      "risk_management",
+      "legal_compliance",
+      "customer_relationship",
+      "collateral_appraisal"
+    ],
+    "tie_ordering": "cosine distance ASC, canonical_chunk_id ASC",
+    "v2_only": true
+  },
+  "run_1": {
+    "by_scope": {
+      "collateral_appraisal": {
+        "hit@1": 0.75,
+        "hit@3": 0.75,
+        "hit@5": 0.75,
+        "mrr@5": 0.75,
+        "ndcg@5": 0.75,
+        "query_count": 4,
+        "recall@5": 0.75
+      },
+      "credit": {
+        "hit@1": 0.7142857142857143,
+        "hit@3": 0.7142857142857143,
+        "hit@5": 0.8571428571428571,
+        "mrr@5": 0.75,
+        "ndcg@5": 0.7643424781745115,
+        "query_count": 7,
+        "recall@5": 0.8571428571428571
+      },
+      "customer_relationship": {
+        "hit@1": 0.75,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.875,
+        "ndcg@5": 0.9077324383928644,
+        "query_count": 4,
+        "recall@5": 1.0
+      },
+      "legal_compliance": {
+        "hit@1": 0.8,
+        "hit@3": 0.8,
+        "hit@5": 0.8,
+        "mrr@5": 0.8,
+        "ndcg@5": 0.8,
+        "query_count": 5,
+        "recall@5": 0.8
+      },
+      "risk_management": {
+        "hit@1": 0.4,
+        "hit@3": 0.8,
+        "hit@5": 0.8,
+        "mrr@5": 0.6,
+        "ndcg@5": 0.652371901428583,
+        "query_count": 5,
+        "recall@5": 0.8
+      }
+    },
+    "by_source_type": {
+      "real_shared": {
+        "hit@1": 0.6842105263157895,
+        "hit@3": 0.7894736842105263,
+        "hit@5": 0.8421052631578947,
+        "mrr@5": 0.75,
+        "ndcg@5": 0.7690661502297104,
+        "query_count": 19,
+        "recall@5": 0.8421052631578947
+      },
+      "synthetic_scoped": {
+        "hit@1": 0.6666666666666666,
+        "hit@3": 0.8333333333333334,
+        "hit@5": 0.8333333333333334,
+        "mrr@5": 0.75,
+        "ndcg@5": 0.7718216255952429,
+        "query_count": 6,
+        "recall@5": 0.8333333333333334
+      }
+    },
+    "gold_rank_greater_than_one": [
+      "stage12a-003",
+      "stage12a-004",
+      "stage12a-010",
+      "stage12a-012",
+      "stage12a-018"
+    ],
+    "latency": {
+      "embedding": {
+        "p50_ms": 70.80820000010135,
+        "p95_ms": 96.77598000052964
+      },
+      "retrieval": {
+        "p50_ms": 257.4310999989393,
+        "p95_ms": 434.16670000042353
+      },
+      "total": {
+        "p50_ms": 328.45950000046287,
+        "p95_ms": 498.0311199989955
+      }
+    },
+    "metrics": {
+      "hit@1": 0.68,
+      "hit@3": 0.8,
+      "hit@5": 0.84,
+      "mrr@1": 0.68,
+      "mrr@3": 0.74,
+      "mrr@5": 0.75,
+      "ndcg@1": 0.68,
+      "ndcg@3": 0.7525004019945024,
+      "ndcg@5": 0.7697274643174381,
+      "recall@1": 0.66,
+      "recall@3": 0.8,
+      "recall@5": 0.84
+    },
+    "miss_analysis": [
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-007",
+        "gold_canonical_chunk_ids": [
+          "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "511ec3a07bfc2c5a2839d27bb5c71540ba88ff8418dc81717b1fc14939337525",
+          "cacf65f29fb78465914db68e7327d40eb2ef8d8006226785589836130f4bba3d",
+          "bb54d68d09ea0a0da64db105c8507ad5d12b10aced13ecda0551ef9ffa157053",
+          "fdda9f09341a7d3fa905eaf8f7c08e84ebf42e1c3130919836f312e6bb9d14aa",
+          "6961ba23a2763b4793d9e10c517fb1e7c8ec2d6c52552f65c3bd954ec0c34f02"
+        ],
+        "scope": "credit"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-008",
+        "gold_canonical_chunk_ids": [
+          "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "a9c33ebf744710ed4092e5a860a342d84f83629075bc3d818570d1cd40db16c8",
+          "2c9d41c83adf98dcd0152091e8edb779629a37d77128752313edd11ad7f8ee94",
+          "21e6d15ab5cbaf1c89d289ded68f69104ef6503be1c6e049655d491caaec89e3",
+          "22480e7c05fb71740f54bc2f5eb452236970d1c9298da65bcf07b04413c18a0c",
+          "d0402bc7a6068e9f05e390b553fb6233451210c17e7c002a38bd65384f3e6bd4"
+        ],
+        "scope": "risk_management"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-013",
+        "gold_canonical_chunk_ids": [
+          "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "0ed843ba98e3640831d9119cc533d02dc3b8b7739c7c8f35e6ee6687ff004ab0",
+          "52ac78d1ddd16ee666b8150a6319e605174b07e24c08e3235adefc866b437876",
+          "db1b0f0de46424740a7df3444907f9be13ee9caf4ff3af1be6782aaeb4432821",
+          "7852265aaca03593c3c4e36fd2710ec5c2b0b8253e235775d5705c4863c04713",
+          "d7db66d53d2091983a7dea43446b27fb237d761c5a3377a051115eba38946753"
+        ],
+        "scope": "legal_compliance"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-024",
+        "gold_canonical_chunk_ids": [
+          "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+          "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+          "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+          "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+          "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb"
+        ],
+        "scope": "collateral_appraisal"
+      }
+    ],
+    "query_count": 25
+  },
+  "run_2": {
+    "by_scope": {
+      "collateral_appraisal": {
+        "hit@1": 0.75,
+        "hit@3": 0.75,
+        "hit@5": 0.75,
+        "mrr@5": 0.75,
+        "ndcg@5": 0.75,
+        "query_count": 4,
+        "recall@5": 0.75
+      },
+      "credit": {
+        "hit@1": 0.7142857142857143,
+        "hit@3": 0.7142857142857143,
+        "hit@5": 0.8571428571428571,
+        "mrr@5": 0.75,
+        "ndcg@5": 0.7643424781745115,
+        "query_count": 7,
+        "recall@5": 0.8571428571428571
+      },
+      "customer_relationship": {
+        "hit@1": 0.75,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "mrr@5": 0.875,
+        "ndcg@5": 0.9077324383928644,
+        "query_count": 4,
+        "recall@5": 1.0
+      },
+      "legal_compliance": {
+        "hit@1": 0.8,
+        "hit@3": 0.8,
+        "hit@5": 0.8,
+        "mrr@5": 0.8,
+        "ndcg@5": 0.8,
+        "query_count": 5,
+        "recall@5": 0.8
+      },
+      "risk_management": {
+        "hit@1": 0.4,
+        "hit@3": 0.8,
+        "hit@5": 0.8,
+        "mrr@5": 0.6,
+        "ndcg@5": 0.652371901428583,
+        "query_count": 5,
+        "recall@5": 0.8
+      }
+    },
+    "by_source_type": {
+      "real_shared": {
+        "hit@1": 0.6842105263157895,
+        "hit@3": 0.7894736842105263,
+        "hit@5": 0.8421052631578947,
+        "mrr@5": 0.75,
+        "ndcg@5": 0.7690661502297104,
+        "query_count": 19,
+        "recall@5": 0.8421052631578947
+      },
+      "synthetic_scoped": {
+        "hit@1": 0.6666666666666666,
+        "hit@3": 0.8333333333333334,
+        "hit@5": 0.8333333333333334,
+        "mrr@5": 0.75,
+        "ndcg@5": 0.7718216255952429,
+        "query_count": 6,
+        "recall@5": 0.8333333333333334
+      }
+    },
+    "latency": {
+      "embedding": {
+        "p50_ms": 75.04189999963273,
+        "p95_ms": 97.75045999995199
+      },
+      "retrieval": {
+        "p50_ms": 237.36250000001746,
+        "p95_ms": 329.0890799999032
+      },
+      "total": {
+        "p50_ms": 312.6916999990499,
+        "p95_ms": 401.09327999998635
+      }
+    },
+    "metrics": {
+      "hit@1": 0.68,
+      "hit@3": 0.8,
+      "hit@5": 0.84,
+      "mrr@1": 0.68,
+      "mrr@3": 0.74,
+      "mrr@5": 0.75,
+      "ndcg@1": 0.68,
+      "ndcg@3": 0.7525004019945024,
+      "ndcg@5": 0.7697274643174381,
+      "recall@1": 0.66,
+      "recall@3": 0.8,
+      "recall@5": 0.84
+    },
+    "query_count": 25
+  },
+  "server": {
+    "backend": "Vulkan",
+    "batch": null,
+    "context_size": 3072,
+    "gpu": "NVIDIA GeForce RTX 2050",
+    "llama_cpp_build": "0.2.0-dev (build 10603, commit c060ca974; Clang 20.1.8, Windows x86_64)",
+    "model_path_basename": "Qwen3-Embedding-0.6B-f16.gguf",
+    "np": 1,
+    "parallel_slots": 1,
+    "pooling": "last",
+    "requests": "sequential",
+    "threads": null,
+    "threads_batch": null,
+    "ubatch": null
+  },
+  "stage": "12B — Canonical Vector-Only Baseline",
+  "status": "PILOT / EXPLORATORY / DESCRIPTIVE"
+}

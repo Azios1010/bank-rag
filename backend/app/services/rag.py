@@ -1,3 +1,11 @@
+"""Legacy R01 application RAG services.
+
+These services intentionally remain available for the existing application
+runtime.  They use the legacy public policy tables and are not part of the
+canonical Corpus V2 evaluation path; V2 callers must use
+``CanonicalV2Retriever``.
+"""
+
 from __future__ import annotations
 
 import hashlib
@@ -169,7 +177,7 @@ class PolicyIngestionResult:
 
 
 class AgentPolicyRetriever:
-    """Retriever permanently bound to one specialist knowledge-base scope."""
+    """Legacy retriever bound to one specialist knowledge-base scope."""
 
     def __init__(
         self,

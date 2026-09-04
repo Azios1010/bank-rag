@@ -1,0 +1,615 @@
+{
+  "constraints": {
+    "corpus_modified": false,
+    "document_embeddings_regenerated": false,
+    "gold_modified": false,
+    "hnsw_ef_search_modified": false,
+    "indexscan_settings_modified": false,
+    "local_files_deleted": false,
+    "model_downloaded": false,
+    "planner_settings_modified": false,
+    "supabase_corpus_mutated": false,
+    "top50_scored": false
+  },
+  "corpus": {
+    "chunk_count": 1610,
+    "corpus_jsonl_sha256": "828e31d6a9d3961badb3be96bbf064819cec4c1338c1853f9144b5b373247400",
+    "corpus_v2_hash": "1ab9185d4123a74ddc369d5231be4245ecf0b763320d8d1b0dcafe2fcdcdaa02",
+    "manifest_hash": "796a3000864b8ffe98ff681169577def16bf2717f40d496ccba3b1f85a407a6f",
+    "manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "name": "policy-corpus-v2",
+    "version": "V2"
+  },
+  "decision": "HIGH",
+  "embedding": {
+    "artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+    "backend": "Vulkan",
+    "dimension": 1024,
+    "manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863",
+    "model": "Qwen3-Embedding-0.6B",
+    "normalization": "L2 unit",
+    "pooling": "last",
+    "runtime": "llama.cpp"
+  },
+  "generated_at": "2026-09-03T09:37:25.226030+00:00",
+  "gold": {
+    "path": "dataset/evaluation/retrieval-v2-gold-pilot.jsonl",
+    "record_count": 25,
+    "sha256": "c645869f205e0101cb604cdcf8712820bf0e09aeb85802b590bc695fa8ac424a",
+    "statuses": [
+      "REVIEWED"
+    ]
+  },
+  "perfect_top20_reranker_ceiling": {
+    "candidate_hit@20": 0.96,
+    "candidate_recall@20": 0.96,
+    "frozen_hit@5": 0.84,
+    "maximum_additional_recoverable_queries": 3,
+    "stage12a_004_gold_ids": [
+      "a7672f0d87118cc75368aeb7e22d6536d800ac27585794bda397a81f6fa7709c",
+      "90d77090ea939eea85738a466c25ef4d6081a71c1c58ccab227d4fe388217d78"
+    ]
+  },
+  "query": {
+    "backend": "llama.cpp",
+    "endpoint": "http://127.0.0.1:8081/v1/embeddings",
+    "fallback_backend": null,
+    "format": "Instruct: Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.\nQuery: {query}",
+    "instruction": "Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.",
+    "sentence_transformer_used": false
+  },
+  "remote_state": {
+    "chunks": 1610,
+    "corpus_manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "corpus_name": "policy-corpus-v2",
+    "corpus_version": "policy-corpus-v2-freeze-1",
+    "dimension_failures": 0,
+    "distinct_ids": 1610,
+    "documents": 10,
+    "embedding_dimension": 1024,
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "embedding_similarity": "cosine",
+    "embedding_unit_normalized": true,
+    "enable_indexscan": "on",
+    "fts_rpc_used": false,
+    "hnsw_ef_search": "40",
+    "migration_head": "20260903_0007",
+    "null_search_documents": 0,
+    "policy_chunk_indexes": [
+      "ix_rag_v2_policy_chunks_document_id",
+      "ix_rag_v2_policy_chunks_embedding_hnsw",
+      "ix_rag_v2_policy_chunks_search_document_gin",
+      "pk_rag_v2_policy_chunks",
+      "uq_rag_v2_policy_chunks_canonical_chunk_id"
+    ],
+    "scope_rows": 125,
+    "scoped": 37,
+    "shared": 1573,
+    "vector_rpc_used": "public.match_policy_chunks",
+    "vectors": 1610
+  },
+  "repeatability": {
+    "exact_gold_rank_agreement": 1.0,
+    "max_score_drift": 0.0006293312828409281,
+    "metrics_equal": true,
+    "ordered_top10_agreement": 1.0,
+    "ordered_top20_agreement": 1.0,
+    "ordered_top5_agreement": 1.0,
+    "per_query": [
+      {
+        "evaluation_id": "stage12a-001",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0006293312828409281,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-002",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-003",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-004",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-005",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-006",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-007",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-008",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-009",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-010",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-011",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-012",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-013",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-014",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-015",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-016",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-017",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-018",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-019",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-020",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-021",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-022",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-023",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-024",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      },
+      {
+        "evaluation_id": "stage12a-025",
+        "gold_ranks_equal": true,
+        "max_score_drift": 0.0,
+        "ordered_top10_equal": true,
+        "ordered_top20_equal": true,
+        "ordered_top5_equal": true
+      }
+    ],
+    "queries_with_rank_differences": []
+  },
+  "retrieval": {
+    "backend": "Supabase",
+    "candidate_depth": 20,
+    "coverage_k": [
+      5,
+      10,
+      20
+    ],
+    "distance": "cosine",
+    "fts_used": false,
+    "hybrid_used": false,
+    "legacy_tables_used": false,
+    "reranker_used": false,
+    "rpc": "public.match_policy_chunks",
+    "scope_routing": "SHARED or explicitly authorized SCOPED",
+    "session_ann_tuning": false,
+    "tie_ordering": "cosine distance ASC, canonical_chunk_id ASC",
+    "v2_only": true
+  },
+  "run_1": {
+    "coverage": {
+      "hit@10": 0.96,
+      "hit@20": 0.96,
+      "hit@5": 0.84,
+      "recall@10": 0.96,
+      "recall@20": 0.96,
+      "recall@5": 0.84
+    },
+    "frozen_miss_inspection": [
+      {
+        "evaluation_id": "stage12a-007",
+        "failure_type": "ranking failure",
+        "first_gold_rank": 10,
+        "gold_canonical_chunk_ids": [
+          "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d"
+        ],
+        "gold_ranks": {
+          "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d": 10
+        },
+        "note": "Candidate trace inspection only; approved gold was not changed.",
+        "rerankability": "A — HIGHLY RERANKABLE",
+        "same_document_candidate_count": 2,
+        "same_document_nearby_provisions": [
+          {
+            "article": "APR-MAKER-CHECKER",
+            "canonical_chunk_id": "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d",
+            "rank": 10
+          },
+          {
+            "article": "APR-EXPOSURE",
+            "canonical_chunk_id": "1ad078503e952d4c010471185961e8f00a5580e6ecb80b7b46efff824a9a9f09",
+            "rank": 15
+          }
+        ],
+        "scope": "credit",
+        "top1": {
+          "article": "UW-STATUS",
+          "canonical_chunk_id": "511ec3a07bfc2c5a2839d27bb5c71540ba88ff8418dc81717b1fc14939337525",
+          "document_source_id": "synthetic-sme-underwriting-v1",
+          "document_title": "SME Credit Underwriting Policy",
+          "visibility": "SCOPED"
+        }
+      },
+      {
+        "evaluation_id": "stage12a-008",
+        "failure_type": "ranking failure",
+        "first_gold_rank": 8,
+        "gold_canonical_chunk_ids": [
+          "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17"
+        ],
+        "gold_ranks": {
+          "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17": 8
+        },
+        "note": "Candidate trace inspection only; approved gold was not changed.",
+        "rerankability": "A — HIGHLY RERANKABLE",
+        "same_document_candidate_count": 2,
+        "same_document_nearby_provisions": [
+          {
+            "article": "14",
+            "canonical_chunk_id": "22480e7c05fb71740f54bc2f5eb452236970d1c9298da65bcf07b04413c18a0c",
+            "rank": 4
+          },
+          {
+            "article": "4",
+            "canonical_chunk_id": "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17",
+            "rank": 8
+          }
+        ],
+        "scope": "risk_management",
+        "top1": {
+          "article": "9",
+          "canonical_chunk_id": "a9c33ebf744710ed4092e5a860a342d84f83629075bc3d818570d1cd40db16c8",
+          "document_source_id": "v2-07-15-2023-tt-nhnn",
+          "document_title": "Quy định về hoạt động thông tin tín dụng của Ngân hàng Nhà nước Việt Nam",
+          "visibility": "SHARED"
+        }
+      },
+      {
+        "evaluation_id": "stage12a-013",
+        "failure_type": "ranking failure",
+        "first_gold_rank": 7,
+        "gold_canonical_chunk_ids": [
+          "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf"
+        ],
+        "gold_ranks": {
+          "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf": 7
+        },
+        "note": "Candidate trace inspection only; approved gold was not changed.",
+        "rerankability": "A — HIGHLY RERANKABLE",
+        "same_document_candidate_count": 7,
+        "same_document_nearby_provisions": [
+          {
+            "article": "32a",
+            "canonical_chunk_id": "7852265aaca03593c3c4e36fd2710ec5c2b0b8253e235775d5705c4863c04713",
+            "rank": 4
+          },
+          {
+            "article": "22",
+            "canonical_chunk_id": "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf",
+            "rank": 7
+          },
+          {
+            "article": "22",
+            "canonical_chunk_id": "024b0a315d4dbacc5f03e88c1c4dc8057946054a08704e6537b611a2f689d7fa",
+            "rank": 12
+          },
+          {
+            "article": "22",
+            "canonical_chunk_id": "2b6b8375ce89e5db27ae8568bba439708bdb395f22aebf3e3214f8cc51319725",
+            "rank": 13
+          },
+          {
+            "article": "22",
+            "canonical_chunk_id": "432bc0adf6d0f8dc04a271c84d7c29626ec9fd8acb84e911f0229c030a66e32f",
+            "rank": 14
+          },
+          {
+            "article": "32b",
+            "canonical_chunk_id": "c14fd7239118394ab1b5f722f115856bc9cba539e17ac6d6a94a953f99b00173",
+            "rank": 17
+          },
+          {
+            "article": "17",
+            "canonical_chunk_id": "239da504404561b4f3127a6ae5ae8b69a3420ea22dd0182f2d69776c455ab5a7",
+            "rank": 18
+          }
+        ],
+        "scope": "legal_compliance",
+        "top1": {
+          "article": "101",
+          "canonical_chunk_id": "0ed843ba98e3640831d9119cc533d02dc3b8b7739c7c8f35e6ee6687ff004ab0",
+          "document_source_id": "v2-02-100-vbhn-vpqh",
+          "document_title": "Luật Các tổ chức tín dụng",
+          "visibility": "SHARED"
+        }
+      },
+      {
+        "evaluation_id": "stage12a-024",
+        "failure_type": "candidate-generation failure",
+        "first_gold_rank": ">20",
+        "gold_canonical_chunk_ids": [
+          "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9"
+        ],
+        "gold_ranks": {
+          "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9": ">20"
+        },
+        "note": "Candidate trace inspection only; approved gold was not changed.",
+        "rerankability": "D — NOT RECOVERABLE BY A TOP-20 RERANKER",
+        "same_document_candidate_count": 20,
+        "same_document_nearby_provisions": [
+          {
+            "article": "37",
+            "canonical_chunk_id": "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+            "rank": 1
+          },
+          {
+            "article": "37",
+            "canonical_chunk_id": "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+            "rank": 2
+          },
+          {
+            "article": "45",
+            "canonical_chunk_id": "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+            "rank": 3
+          },
+          {
+            "article": "27",
+            "canonical_chunk_id": "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+            "rank": 4
+          },
+          {
+            "article": "37",
+            "canonical_chunk_id": "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb",
+            "rank": 5
+          },
+          {
+            "article": "44",
+            "canonical_chunk_id": "5ee7554527eda08eb66adcc94025cc85f90571f5051b84af57f044e720bd1d55",
+            "rank": 6
+          },
+          {
+            "article": "36",
+            "canonical_chunk_id": "90237b2a218ed0cf5da81e3a606277e6f3e69d7c3a4a4e7d4227845bde1771df",
+            "rank": 7
+          },
+          {
+            "article": "45",
+            "canonical_chunk_id": "58dd325b5c737a1219915639205d7a23a48280027e57cfc37842af65e1ecca37",
+            "rank": 8
+          },
+          {
+            "article": "25",
+            "canonical_chunk_id": "ca0848c2431fa85b2bad4c0b26238d30c671cbad8fd9706d1ebdd5034e809064",
+            "rank": 9
+          },
+          {
+            "article": "37",
+            "canonical_chunk_id": "8558d2527aa3119090af7f38dbd4f814e7d67747e1250ce1e87ce5ef08293ad4",
+            "rank": 10
+          },
+          {
+            "article": "36",
+            "canonical_chunk_id": "f1b93da1a22fe00e6497ce431e9c3f5dd8025b70a8621ca627e8546988a450cf",
+            "rank": 11
+          },
+          {
+            "article": "25",
+            "canonical_chunk_id": "128dd9eda66a262d5ace2d760b476e6ee1188a62c53c2b7375cc29acb42712df",
+            "rank": 12
+          },
+          {
+            "article": "25",
+            "canonical_chunk_id": "958e9abfee9fee18e3de8c3d1c9906a548bb782d300e4e3d766183802bd92651",
+            "rank": 13
+          },
+          {
+            "article": "25",
+            "canonical_chunk_id": "0f839b671bb0b78ffe701d25c77e96764f32854b75c9a46b4fba194f0aab77b8",
+            "rank": 14
+          },
+          {
+            "article": "26",
+            "canonical_chunk_id": "25b4861d3f0a33c794f19ba8e6209901ed538418b896711fb7bceac94d2e0d6e",
+            "rank": 15
+          },
+          {
+            "article": "26",
+            "canonical_chunk_id": "0eed41e86133ec3e9d4a4978fd26b77bf852038c9d3f037bc25a6b92da6eff9c",
+            "rank": 16
+          },
+          {
+            "article": "55",
+            "canonical_chunk_id": "1de62adc2578863c929c3ca2c556a971c9aa2b5d352ef422c877360687c68652",
+            "rank": 17
+          },
+          {
+            "article": "37",
+            "canonical_chunk_id": "c046d41e13b55478c9d7586217010bca03cdecca4ecf6370486ae4e7474c0d31",
+            "rank": 18
+          },
+          {
+            "article": "37",
+            "canonical_chunk_id": "5cf9650aa1262413294591a7fa1e21e2039bd216ad5bb73e753082d91f2f198c",
+            "rank": 19
+          },
+          {
+            "article": "26",
+            "canonical_chunk_id": "8d302a77147d973869986a3b46a476773a78de0a5f610195c2614ef7daca0915",
+            "rank": 20
+          }
+        ],
+        "scope": "collateral_appraisal",
+        "top1": {
+          "article": "37",
+          "canonical_chunk_id": "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+          "document_source_id": "v2-05-2161-vbhn-btp",
+          "document_title": "Về đăng ký biện pháp bảo đảm",
+          "visibility": "SHARED"
+        }
+      }
+    ],
+    "latency": {
+      "embedding_p50_ms": 65.69120000131079,
+      "embedding_p95_ms": 95.55393999980879,
+      "retrieval_p50_ms": 270.72360000238405,
+      "retrieval_p95_ms": 351.85291999951,
+      "total_p50_ms": 339.30400000099326,
+      "total_p95_ms": 406.41105999893625
+    },
+    "query_count": 25
+  },
+  "run_2": {
+    "coverage": {
+      "hit@10": 0.96,
+      "hit@20": 0.96,
+      "hit@5": 0.84,
+      "recall@10": 0.96,
+      "recall@20": 0.96,
+      "recall@5": 0.84
+    },
+    "latency": {
+      "embedding_p50_ms": 69.51870000193594,
+      "embedding_p95_ms": 90.57337999984155,
+      "retrieval_p50_ms": 281.65209999860963,
+      "retrieval_p95_ms": 393.59985999835766,
+      "total_p50_ms": 331.10780000060913,
+      "total_p95_ms": 469.6525800020026
+    },
+    "query_count": 25
+  },
+  "stage": "13B0-R1 — Frozen Top-20 Candidate Recall Audit",
+  "status": "PILOT / FEASIBILITY DIAGNOSTIC ONLY",
+  "trace_count": 25
+}
