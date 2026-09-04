@@ -1,0 +1,51 @@
+{
+  "manifest_version": "synthetic-policy-v1",
+  "normalization_rule": "Unicode NFC; remove U+FEFF BOM; convert CRLF and CR to LF; do not fold, trim, or otherwise alter whitespace.",
+  "records": [
+    {
+      "source_id": "synthetic-sme-working-capital-v1",
+      "version_id": "synthetic-sme-working-capital-v1.2026-09-01",
+      "title": "SME Unsecured Working Capital Product Policy",
+      "namespace": "BANK_PRODUCT",
+      "synthetic": true,
+      "issuer": "Ngân hàng Thương mại Cổ phần Hồng Hà (HHB), fictional internal organization",
+      "organization_label": "Ngân hàng Thương mại Cổ phần Hồng Hà (HHB)",
+      "effective_date": "2026-09-01",
+      "document_version": "1.0",
+      "agent_scopes": ["CustomerRelationship", "Credit", "RiskManagement", "LegalCompliance"],
+      "content_hash": "a0bb47380f02754593b9b125bafa9ff8f1559c49d0fe2d0e03d57a0d34d85028",
+      "path": "dataset/synthetic/policies/v1/SME-UNSECURED-WORKING-CAPITAL-PRODUCT-POLICY.md",
+      "format": "markdown"
+    },
+    {
+      "source_id": "synthetic-sme-underwriting-v1",
+      "version_id": "synthetic-sme-underwriting-v1.2026-09-01",
+      "title": "SME Credit Underwriting Policy",
+      "namespace": "UNDERWRITING_POLICY",
+      "synthetic": true,
+      "issuer": "Ngân hàng Thương mại Cổ phần Hồng Hà (HHB), fictional internal organization",
+      "organization_label": "Ngân hàng Thương mại Cổ phần Hồng Hà (HHB)",
+      "effective_date": "2026-09-01",
+      "document_version": "1.0",
+      "agent_scopes": ["Credit", "RiskManagement", "LegalCompliance"],
+      "content_hash": "2fb9b5cb14c75b4cfa13ff26a3c8ff08ff0518d66901f389aabbf59fa312df32",
+      "path": "dataset/synthetic/policies/v1/SME-CREDIT-UNDERWRITING-POLICY.md",
+      "format": "markdown"
+    },
+    {
+      "source_id": "synthetic-credit-approval-v1",
+      "version_id": "synthetic-credit-approval-v1.2026-09-01",
+      "title": "Credit Approval & Exception Policy",
+      "namespace": "UNDERWRITING_POLICY",
+      "synthetic": true,
+      "issuer": "Ngân hàng Thương mại Cổ phần Hồng Hà (HHB), fictional internal organization",
+      "organization_label": "Ngân hàng Thương mại Cổ phần Hồng Hà (HHB)",
+      "effective_date": "2026-09-01",
+      "document_version": "1.0",
+      "agent_scopes": ["Credit", "RiskManagement", "LegalCompliance", "BankingOperations"],
+      "content_hash": "eb7e5ccc597414989b4236c6f29d7bc5e3ed1e1850d28634e614a6aa6c93e146",
+      "path": "dataset/synthetic/policies/v1/CREDIT-APPROVAL-AND-EXCEPTION-POLICY.md",
+      "format": "markdown"
+    }
+  ]
+}

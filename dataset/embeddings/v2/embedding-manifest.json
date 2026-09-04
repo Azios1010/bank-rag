@@ -1,0 +1,129 @@
+{
+  "artifact_byte_size": 6932574,
+  "artifact_sha256": "sha256:3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+  "backend": "llama.cpp",
+  "batch_size": 1,
+  "chunk_content_hash_digest": "sha256:d734c9f9b1294ceeae0731f7d723b1570d87217dbc00f7a0744b4845f027a4da",
+  "chunk_count": 1610,
+  "content_input_hash_digest": "sha256:c41c9f68894b00c2f7d7599efbc485da6bc53369bd9ec6813729f0b20b95b016",
+  "context_length": 3072,
+  "corpus_manifest_hash": "sha256:796a3000864b8ffe98ff681169577def16bf2717f40d496ccba3b1f85a407a6f",
+  "corpus_v2_hash": "sha256:1ab9185d4123a74ddc369d5231be4245ecf0b763320d8d1b0dcafe2fcdcdaa02",
+  "device_backend": "Vulkan",
+  "embedding_dimension": 1024,
+  "endpoint": "http://127.0.0.1:8081/v1/embeddings",
+  "frozen_corpus_sha256": "sha256:828e31d6a9d3961badb3be96bbf064819cec4c1338c1853f9144b5b373247400",
+  "generated_at": "2026-08-31T10:09:46.245071+00:00",
+  "gpu": "NVIDIA GeForce RTX 2050",
+  "index_tier": "canonical",
+  "input": {
+    "chunk_count": 1610,
+    "manifest_hash": "sha256:796a3000864b8ffe98ff681169577def16bf2717f40d496ccba3b1f85a407a6f"
+  },
+  "input_artifact_hash": "sha256:828e31d6a9d3961badb3be96bbf064819cec4c1338c1853f9144b5b373247400",
+  "input_template": "Document: {title}\nSection: {heading_path}\nText:\n{content}",
+  "input_template_version": "policy-title-heading-content-v1",
+  "manifest_version": "2.0.0",
+  "max_sequence_length": 3072,
+  "model_family": "Qwen/Qwen3-Embedding-0.6B",
+  "model_format": "GGUF",
+  "model_id": "Qwen3-Embedding-0.6B",
+  "normalization": "L2",
+  "normalize_embeddings": true,
+  "output": {
+    "bytes": 6932574,
+    "filename": "embeddings.parquet",
+    "rows": 1610,
+    "sha256": "sha256:3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c"
+  },
+  "performance": {
+    "elapsed_seconds": 126.11993350000193,
+    "vectors_per_second": 12.765626775405613
+  },
+  "pooling": null,
+  "pooling_status": "not_reported_by_server_metadata",
+  "quantization": "F16",
+  "requested_revision": null,
+  "resolved_revision": null,
+  "revision_status": "not_reported_by_server",
+  "runtime": {
+    "acceleration": "Vulkan",
+    "backend": "llama.cpp",
+    "gpu": "NVIDIA GeForce RTX 2050"
+  },
+  "server": {
+    "backend": "llama.cpp",
+    "endpoint": "http://127.0.0.1:8081/v1/embeddings",
+    "model_metadata": {
+      "data": [
+        {
+          "aliases": [
+            "D:\\llm-models\\Qwen3-Embedding-0.6B-f16.gguf"
+          ],
+          "created": 1788170860,
+          "id": "D:\\llm-models\\Qwen3-Embedding-0.6B-f16.gguf",
+          "meta": {
+            "ftype": "F16",
+            "n_ctx": 3072,
+            "n_ctx_train": 32768,
+            "n_embd": 1024,
+            "n_params": 595776512,
+            "n_vocab": 151669,
+            "size": 1191684096,
+            "vocab_type": true
+          },
+          "object": "model",
+          "owned_by": "llamacpp",
+          "tags": []
+        }
+      ],
+      "models": [
+        {
+          "capabilities": [
+            "completion"
+          ],
+          "description": "",
+          "details": {
+            "families": [
+              ""
+            ],
+            "family": "",
+            "format": "gguf",
+            "parameter_size": "",
+            "parent_model": "",
+            "quantization_level": ""
+          },
+          "digest": "",
+          "model": "D:\\llm-models\\Qwen3-Embedding-0.6B-f16.gguf",
+          "modified_at": "",
+          "name": "D:\\llm-models\\Qwen3-Embedding-0.6B-f16.gguf",
+          "parameters": "",
+          "size": "",
+          "tags": [
+            ""
+          ],
+          "type": "model"
+        }
+      ],
+      "object": "list"
+    }
+  },
+  "similarity": "cosine",
+  "validation": {
+    "all_finite": true,
+    "dimensions": 1024,
+    "expected_row_count": 1610,
+    "id_order": "frozen policy-corpus-v2.jsonl order",
+    "nonzero_vectors": 1610,
+    "norm": {
+      "max": 1.0000000575033323,
+      "mean": 0.999999999803266,
+      "min": 0.9999999448164519,
+      "p50": 0.9999999985552704,
+      "p95": 1.000000046494679
+    },
+    "norm_percentile_convention": "linear interpolation at (n - 1) * p",
+    "row_count": 1610,
+    "unit_norm_tolerance": 0.0001
+  }
+}

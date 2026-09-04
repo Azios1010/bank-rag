@@ -1,0 +1,216 @@
+{
+  "stage": "13C1",
+  "status": "completed",
+  "created_at": "2026-09-04T07:41:29.406320+00:00",
+  "classification": "B — VECTOR DEPTH ONLY",
+  "decision_reason": "The exact vector depth diagnostic supplies the missing gold, while the fixed OR-FTS10 arm does not.",
+  "identity": {
+    "gold_path": "dataset/evaluation/retrieval-v2-gold-pilot.jsonl",
+    "gold_sha256": "c645869f205e0101cb604cdcf8712820bf0e09aeb85802b590bc695fa8ac424a",
+    "corpus_name": "policy-corpus-v2",
+    "corpus_version": "V2",
+    "corpus_chunk_count": 1610,
+    "corpus_unique_id_count": 1610,
+    "corpus_manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "embedding_dimension": 1024,
+    "embedding_artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+    "embedding_manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863"
+  },
+  "configuration": {
+    "vector_top20": {
+      "source": "public.match_policy_chunks",
+      "depth": 20
+    },
+    "vector_top50": {
+      "source": "offline_exact_cosine_oracle",
+      "depth": 50,
+      "hnsw_requested": false
+    },
+    "lexical_or_top10": {
+      "source": "public.match_policy_chunks_fts_or",
+      "depth": 10,
+      "text_config": "simple",
+      "indexed_fields": [
+        "title",
+        "heading_path",
+        "content"
+      ],
+      "query": "deterministic NFC + casefold tokens joined by |",
+      "ranking": "ts_rank_cd DESC, canonical_chunk_id ASC"
+    },
+    "union": {
+      "vector_depth": 20,
+      "lexical_depth": 10,
+      "score_fusion": false,
+      "reranker": false
+    }
+  },
+  "comparison": {
+    "vector_top20": {
+      "hit": 0.96,
+      "recall": 0.96,
+      "hit_at_20": 0.96,
+      "recall_at_20": 0.96,
+      "mean_candidate_count": 20.0
+    },
+    "vector_top50_exact_diagnostic": {
+      "hit": 1.0,
+      "recall": 1.0,
+      "hit_at_20": 0.96,
+      "recall_at_20": 0.96,
+      "hit_at_50": 1.0,
+      "recall_at_50": 1.0,
+      "mean_candidate_count": 50.0
+    },
+    "lexical_or_top10": {
+      "hit": 0.04,
+      "recall": 0.04,
+      "hit_at_10": 0.04,
+      "recall_at_10": 0.04,
+      "mean_candidate_count": 10.0
+    },
+    "vector20_plus_lexical10_union": {
+      "hit": 0.96,
+      "recall": 0.96,
+      "hit_at_union": 0.96,
+      "recall_at_union": 0.96,
+      "mean_candidate_count": 29.64,
+      "min_candidate_count": 24,
+      "max_candidate_count": 30
+    }
+  },
+  "lexical": {
+    "queries_with_any_results": 25,
+    "queries_with_at_least_10": 25,
+    "hit_at_5": 0.04,
+    "hit_at_10": 0.04,
+    "recall_at_5": 0.04,
+    "recall_at_10": 0.04
+  },
+  "stage12a_024": {
+    "evaluation_id": "stage12a-024",
+    "gold_canonical_chunk_id": "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9",
+    "exact_vector_rank": 49,
+    "vector20_present": false,
+    "vector50_present": true,
+    "lexical_rank": ">10",
+    "union_present": false,
+    "lexical_top10": [
+      {
+        "rank": 1,
+        "canonical_chunk_id": "f15612fd2f1e9f28fe1b10432fdabbbb65f32974a129bd2b9953d4c7e36491b6",
+        "article": "29"
+      },
+      {
+        "rank": 2,
+        "canonical_chunk_id": "666e287e65fa8f7051a3b1224ea9ba695021ecff517f7825057a7996c75e3019",
+        "article": "30"
+      },
+      {
+        "rank": 3,
+        "canonical_chunk_id": "f8ad55e34e200b83cfe0d0bb135996d7a86ce99c7e3d3c156367d84f8707df59",
+        "article": "32"
+      },
+      {
+        "rank": 4,
+        "canonical_chunk_id": "664c04976fd1d6306900a823a0f628b1cba4ccc39338f36aa4d8f95f5e45b2f3",
+        "article": "32"
+      },
+      {
+        "rank": 5,
+        "canonical_chunk_id": "4ebfee854af6b38c91b9b0423e1d2d75bb5b2d25a5d90e2ec87e9ca8f0846adf",
+        "article": "32"
+      },
+      {
+        "rank": 6,
+        "canonical_chunk_id": "5c080a7d3838df7ce3c426d99729abf4ca15051d1c05d968d9a2d12e9bc3bf5e",
+        "article": "32"
+      },
+      {
+        "rank": 7,
+        "canonical_chunk_id": "7df9ec9448ca6234c31f1bbf92fbd7791d360a529a2b52cf8f1b2fccc7bd771b",
+        "article": "32"
+      },
+      {
+        "rank": 8,
+        "canonical_chunk_id": "87c4c0b0342df3f060550a0a7429802e15d408c220520fcf3ad9f28002324854",
+        "article": "31"
+      },
+      {
+        "rank": 9,
+        "canonical_chunk_id": "30ccfcfee2ff35d3344fc1e387b075d13f265554cdf6e2c4d7bd8786573ae4cb",
+        "article": "32"
+      },
+      {
+        "rank": 10,
+        "canonical_chunk_id": "51db9fc8f7ac20b45fd04d7a1a431c51bb4c875f716eaea87e11c67e967c694b",
+        "article": "32"
+      }
+    ]
+  },
+  "latency_ms": {
+    "vector_top20_p50": 274.59729999827687,
+    "vector_top20_p95": 390.5554200020561,
+    "lexical_top10_p50": 513.6789999996836,
+    "lexical_top10_p95": 584.7759800002677,
+    "union_p50": 0.00960000033956021,
+    "union_p95": 0.013160001253709197
+  },
+  "remote_canonical_state": {
+    "documents": 10,
+    "chunks": 1610,
+    "distinct_ids": 1610,
+    "vectors": 1610,
+    "shared": 1573,
+    "scoped": 37,
+    "scope_rows": 125,
+    "dimension_failures": 0,
+    "null_search_documents": 0,
+    "corpus_name": "policy-corpus-v2",
+    "corpus_version": "policy-corpus-v2-freeze-1",
+    "corpus_manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "embedding_dimension": 1024,
+    "embedding_similarity": "cosine",
+    "embedding_unit_normalized": true,
+    "migration_head": "20260903_0008",
+    "hnsw_ef_search": "40",
+    "enable_indexscan": "on",
+    "policy_chunk_indexes": [
+      "ix_rag_v2_policy_chunks_document_id",
+      "ix_rag_v2_policy_chunks_embedding_hnsw",
+      "ix_rag_v2_policy_chunks_search_document_gin",
+      "pk_rag_v2_policy_chunks",
+      "uq_rag_v2_policy_chunks_canonical_chunk_id"
+    ],
+    "vector_rpc_used": "public.match_policy_chunks",
+    "fts_rpc_used": false
+  },
+  "fts_or_security": {
+    "exists": true,
+    "anon_execute": false,
+    "authenticated_execute": false,
+    "service_execute": true
+  },
+  "real_scope_isolation_probe": {
+    "probe_chunk_id": "0dfa22f72acb616456e7431b1362a7f80de847ec3f3c53630c887d7876521b71",
+    "authorized_scope": "credit",
+    "authorized_present": true,
+    "unauthorized_scope": "collateral_appraisal",
+    "unauthorized_present": false
+  },
+  "guardrails": {
+    "gold_modified": false,
+    "corpus_modified": false,
+    "embeddings_modified": false,
+    "reranker_used": false,
+    "hnsw_top50_requested": false,
+    "hnsw_settings_modified": false,
+    "plainto_tsquery_full_question_used": false,
+    "query_expansion": false,
+    "query_rewrite": false,
+    "score_fusion": false,
+    "v2_only": true
+  }
+}

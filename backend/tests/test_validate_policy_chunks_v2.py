@@ -56,9 +56,11 @@ VALID_PROV = [
 VALID_CHUNKS = [
     {
         "canonical_chunk_id": "2bc351110a178eefd20d77bbd762f0fcfcba8ba67e6c4bf2f5b89ebc132bb823", # Precomputed for this
-        "chunker_version": "bank-rag-v2-chunker-1.0.0",
+        "chunker_version": "bank-rag-v2-chunker-2.0.0",
         "source_id": "s1", "version_id": "v1", "chapter": "1", "section": None,
         "article": "1", "clause": "1", "point": None, "heading_path": ["1"],
+        "hierarchy_instance": "article=1|clause=1|point=-|occurrence=1",
+        "hierarchy_classification": "NORMAL", "context_mode": "metadata_only",
         "content": "C1\nC2", "page_start": 1, "page_end": 1,
         "provenance": [
             {"input_ordinal": 1, "content_hash": "h1"},
@@ -71,11 +73,14 @@ VALID_CHUNKS = [
 ]
 
 VALID_REPORT = {
-    "chunker_version": "bank-rag-v2-chunker-1.0.0",
+    "chunker_version": "bank-rag-v2-chunker-2.0.0",
     "total_input_provisions": 2,
     "total_emitted_chunks": 1,
     "total_anomalies": 0,
-    "anomalies_by_type": {}
+    "anomalies_by_type": {},
+    "context_mode": "metadata_only",
+    "hard_limit": 4800,
+    "max_emitted_characters": 5
 }
 
 VALID_QC = []
@@ -130,7 +135,7 @@ def test_validator_fails_missing_qc_duplicate_content(temp_dataset):
     errors = validate_dataset(chunks_dir, norm_path, schema_dir)
     assert errors > 0
 
-def test_validator_fails_partial_parent_material(temp_dataset):
+def test_validator_fails_fragment_with_multiple_source_records(temp_dataset):
     chunks_dir, norm_path, schema_dir = temp_dataset
     setup_valid_dataset(chunks_dir, norm_path)
     from app.services.policy_chunking_v2 import PolicyChunkerV2
@@ -140,8 +145,8 @@ def test_validator_fails_partial_parent_material(temp_dataset):
     c1 = dict(VALID_CHUNKS[0])
     c1["is_fragment"] = True
     c1["fragment_index"] = 1
-    # Purposely omit ordinal 1 from provenance (partial parent material)
-    c1["provenance"] = [{"input_ordinal": 2, "content_hash": "h2"}]
+    # Fragments cannot carry copied parent provenance.
+    c1["provenance"] = [{"input_ordinal": 1, "content_hash": "h1"}, {"input_ordinal": 2, "content_hash": "h2"}]
     c1["canonical_chunk_id"] = chunker.get_deterministic_id(c1)
     
     write_jsonl(chunks_dir / "policy-legal-chunks.jsonl", [c1])
@@ -150,9 +155,7 @@ def test_validator_fails_partial_parent_material(temp_dataset):
     assert errors > 0
 
 def test_validator_pass_full_real_dataset():
-    # Validates that the actual dataset passes without errors,
-    # ensuring it correctly identifies the 13 exact duplicate-content groups / 29 chunks
-    # and the 142 fragments (including the 93 point fragments).
+    # Validates the regenerated dataset and its strict-limit guarantees.
     root_dir = Path(__file__).resolve().parent.parent.parent
     schema_dir = root_dir / "dataset" / "schemas"
     chunks_dir = root_dir / "dataset" / "chunks" / "v2"
@@ -160,4 +163,3 @@ def test_validator_pass_full_real_dataset():
     
     errors = validate_dataset(chunks_dir, norm_path, schema_dir)
     assert errors == 0
-

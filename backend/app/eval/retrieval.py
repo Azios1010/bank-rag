@@ -15,7 +15,7 @@ from app.eval.metrics import (
     percentile,
     recall_at_k,
 )
-from app.eval.retrievers import CanonicalVectorEvaluationRetriever
+from app.eval.legacy_retrievers import LegacyPolicyEmbeddingRetriever
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -26,7 +26,10 @@ def main():
     parser = argparse.ArgumentParser(description="Retrieval Evaluation Harness")
     subparsers = parser.add_subparsers(dest="command", required=True)
     
-    baseline_parser = subparsers.add_parser("vector-baseline")
+    baseline_parser = subparsers.add_parser(
+        "vector-baseline",
+        help="legacy R01 baseline; not the canonical Corpus V2 runtime",
+    )
     baseline_parser.add_argument("--database-url", required=True)
     baseline_parser.add_argument("--gold-path", required=True, type=Path)
     baseline_parser.add_argument("--sources-path", required=True, type=Path)
@@ -89,6 +92,8 @@ def get_file_sha256(filepath: Path) -> str:
 
 
 def run_vector_baseline(args):
+    """Run the historical R01 baseline; Stage 11D V2 uses CanonicalV2Retriever."""
+
     # 1. Check gold file first before anything else
     if not args.gold_path.exists():
         print(f"Gold retrieval dataset is missing:\n{args.gold_path}\n\nA reviewed gold retrieval set is required before the vector baseline can run.", file=sys.stderr)
@@ -122,7 +127,10 @@ def run_vector_baseline(args):
 
         # 4. Load heavy model only after validation passes
         adapter = QwenEvaluationEmbeddingAdapter.create_real()
-        retriever = CanonicalVectorEvaluationRetriever(db, adapter)
+        # This historical R02 command remains tied to the legacy public
+        # schema.  Canonical Corpus V2 callers must use CanonicalV2Retriever,
+        # which routes llama.cpp vectors through the Supabase RPC.
+        retriever = LegacyPolicyEmbeddingRetriever(db, adapter)
         
         # Warm-up query
         retriever.retrieve(RetrievalRequest(evaluation_id="warmup", query="test warmup query", agent_scope="CustomerRelationship"), k=1)

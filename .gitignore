@@ -18,3 +18,5 @@ tmp/
 evaluation-results/
 
 .pytest-tmp/
+.pytest-stage*/
+*.log

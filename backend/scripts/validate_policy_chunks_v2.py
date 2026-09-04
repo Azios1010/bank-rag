@@ -23,18 +23,11 @@ def validate_dataset(chunks_dir, norm_path, schema_dir):
             if line.strip():
                 provisions.append(json.loads(line))
                 
-    # Build lineage maps
-    article_lineages = defaultdict(list)
-    clause_lineages = defaultdict(list)
-    point_lineages = defaultdict(list)
+    # Build a source-provision map for exact chunk provenance validation.
+    provision_ordinals = set()
     for i, p in enumerate(provisions):
         src, ver, chap, sec, art, cl, pt = p.get('source_id'), p.get('version_id'), p.get('chapter'), p.get('section'), p.get('article'), p.get('clause'), p.get('point')
-        akey = (src, ver, chap, sec, art)
-        article_lineages[akey].append(i + 1)
-        if cl is not None or pt is not None:
-            clause_lineages[(src, ver, chap, sec, art, cl)].append(i + 1)
-        if pt is not None:
-            point_lineages[(src, ver, chap, sec, art, cl, pt)].append(i + 1)
+        provision_ordinals.add(i + 1)
 
     print("Validating chunks...")
     chunks_path = chunks_dir / "policy-legal-chunks.jsonl"
@@ -43,6 +36,7 @@ def validate_dataset(chunks_dir, norm_path, schema_dir):
     chunker = PolicyChunkerV2()
     
     content_groups = defaultdict(list)
+    covered_ordinals = set()
 
     with open(chunks_path, "r", encoding="utf-8") as f:
         for i, line in enumerate(f):
@@ -50,6 +44,8 @@ def validate_dataset(chunks_dir, norm_path, schema_dir):
                 data = json.loads(line)
                 validate(instance=data, schema=chunk_schema)
                 chunks.append(data)
+                if len(data["content"]) > 4800 or data.get("is_long_unsplittable"):
+                    raise ValueError("Chunk exceeds the strict 4800-character limit or is marked unsplittable")
                 
                 # 1. duplicate canonical IDs
                 cid = data["canonical_chunk_id"]
@@ -65,6 +61,7 @@ def validate_dataset(chunks_dir, norm_path, schema_dir):
                     ref_prov = provisions[ord_idx]
                     if ref_prov["content_hash"] != prov["content_hash"]:
                         raise ValueError(f"Content hash mismatch for ordinal {prov['input_ordinal']}: expected {ref_prov['content_hash']}, got {prov['content_hash']}")
+                    covered_ordinals.add(prov["input_ordinal"])
                         
                 # 3. recomputed canonical ID mismatch
                 expected_id = chunker.get_deterministic_id(data)
@@ -73,43 +70,14 @@ def validate_dataset(chunks_dir, norm_path, schema_dir):
                 
                 content_groups[(data.get("source_id"), data.get("version_id"), data.get("content"))].append(data)
 
-                # Explicit check for fragment lineage vs coverage
+                # Fragment context is metadata only, so provenance identifies the
+                # exact provision being split rather than copied parent material.
                 if data.get("is_fragment"):
                     if data.get("fragment_index", 0) <= 0:
                         raise ValueError("fragment_index must be > 0 when is_fragment is true")
                         
-                    # 6. malformed fragment parent-lineage semantics, including partial parent material
-                    src, ver, chap, sec, art, cl, pt = data.get('source_id'), data.get('version_id'), data.get('chapter'), data.get('section'), data.get('article'), data.get('clause'), data.get('point')
-                    expected_lineage_ords = set()
-                    akey = (src, ver, chap, sec, art)
-                    ckey = (src, ver, chap, sec, art, cl)
-                    pkey = (src, ver, chap, sec, art, cl, pt)
-                    
-                    if pt is not None:
-                        for ord_idx in article_lineages[akey]:
-                            p = provisions[ord_idx - 1]
-                            if p.get('clause') is None and p.get('point') is None:
-                                expected_lineage_ords.add(ord_idx)
-                        for ord_idx in clause_lineages[ckey]:
-                            p = provisions[ord_idx - 1]
-                            if p.get('point') is None:
-                                expected_lineage_ords.add(ord_idx)
-                        for ord_idx in point_lineages[pkey]:
-                            expected_lineage_ords.add(ord_idx)
-                    elif cl is not None:
-                        for ord_idx in article_lineages[akey]:
-                            p = provisions[ord_idx - 1]
-                            if p.get('clause') is None and p.get('point') is None:
-                                expected_lineage_ords.add(ord_idx)
-                        for ord_idx in clause_lineages[ckey]:
-                            expected_lineage_ords.add(ord_idx)
-                    else:
-                        for ord_idx in article_lineages[akey]:
-                            expected_lineage_ords.add(ord_idx)
-                            
-                    actual_ords = set(p['input_ordinal'] for p in data['provenance'])
-                    if actual_ords != expected_lineage_ords:
-                        raise ValueError(f"Malformed fragment parent-lineage. Expected ordinals {sorted(list(expected_lineage_ords))}, got {sorted(list(actual_ords))}")
+                    if len(data["provenance"]) != 1:
+                        raise ValueError("Fragment provenance must identify exactly one source provision")
                         
                 else:
                     if data.get("fragment_index", 0) != 0:
@@ -132,9 +100,13 @@ def validate_dataset(chunks_dir, norm_path, schema_dir):
                 print(f"Error validating anomaly at line {i+1}: {e}")
                 errors += 1
 
-    # 5. exact duplicate-content QC group absence/mismatch
+    if covered_ordinals != provision_ordinals:
+        print(f"Incomplete provision coverage. Missing: {sorted(provision_ordinals - covered_ordinals)}")
+        errors += 1
+
+    # Exact duplicate legal-text QC group absence/mismatch.
     exact_dup_groups_expected = {k: v for k, v in content_groups.items() if len(v) > 1}
-    exact_dup_anomalies = [a for a in anomalies if a.get("anomaly_type") == "EXACT_DUPLICATE_CONTENT"]
+    exact_dup_anomalies = [a for a in anomalies if a.get("anomaly_type") == "EXACT_DUPLICATE_LEGAL_TEXT"]
     
     # check if every group in exact_dup_groups_expected has a matching anomaly
     for k, chunks_list in exact_dup_groups_expected.items():
@@ -145,7 +117,7 @@ def validate_dataset(chunks_dir, norm_path, schema_dir):
                 matched = True
                 break
         if not matched:
-            print(f"Missing EXACT_DUPLICATE_CONTENT anomaly for chunk IDs: {expected_ids}")
+            print(f"Missing EXACT_DUPLICATE_LEGAL_TEXT anomaly for chunk IDs: {expected_ids}")
             errors += 1
             
     # check if every EXACT_DUPLICATE_CONTENT anomaly is valid

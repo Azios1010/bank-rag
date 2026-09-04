@@ -1,103 +1,57 @@
-import time
+"""Canonical Corpus V2 evaluation retrievers.
 
-from app.db.models import AgentKnowledgeBase, PolicyDocument, PolicyEmbedding
+Historical R01 retrieval helpers live in ``legacy_retrievers.py`` so importing
+this module cannot load legacy table models or query-routing code.
+"""
+
 from app.eval.contracts import (
     RankedRetrievalResult,
     RetrievalExecution,
     RetrievalRequest,
 )
-from app.services.rag import AGENT_KNOWLEDGE_KEYS
-from sqlalchemy import select
-from sqlalchemy.orm import Session
+from app.services.supabase_v2_retriever import CanonicalV2Retriever
 
 
-class CanonicalVectorEvaluationRetriever:
-    """Evaluation-only vector retriever for R01 canonical dataset."""
+class CanonicalV2EvaluationRetriever:
+    """Evaluation adapter over the canonical llama.cpp/Supabase retriever.
 
-    def __init__(self, db: Session, embedding_adapter):
-        self._db = db
-        self._embedding_adapter = embedding_adapter
+    The returned ``RetrievalExecution`` preserves the existing evaluation
+    contract while citation identity remains in each result's metadata.
+    Ranking and scope filtering stay exclusively inside the Supabase RPC.
+    """
+
+    def __init__(self, retriever: CanonicalV2Retriever | None = None) -> None:
+        self._retriever = retriever or CanonicalV2Retriever()
 
     def retrieve(self, request: RetrievalRequest, k: int = 5) -> RetrievalExecution:
-        start_embed = time.perf_counter()
-        query_embeddings = self._embedding_adapter.embed_queries([request.query])
-        query_vector = query_embeddings[0]
-        end_embed = time.perf_counter()
-
-        start_retrieve = time.perf_counter()
-        
-        agent_key = request.agent_scope
-        # Convert agent ID enum to string if needed, or use directly
-        if hasattr(agent_key, "value"):
-            agent_key = agent_key.value
-            
-        # Or look up in AGENT_KNOWLEDGE_KEYS if passed AgentID enum
-        from app.schemas import AgentID
-        try:
-            enum_val = AgentID(agent_key)
-            mapped_key = AGENT_KNOWLEDGE_KEYS.get(enum_val, agent_key)
-        except ValueError:
-            mapped_key = agent_key
-
-        distance = PolicyEmbedding.embedding.cosine_distance(query_vector)
-        
-        statement = (
-            select(
-                PolicyEmbedding.canonical_chunk_id,
-                distance.label("distance")
-            )
-            .join(
-                AgentKnowledgeBase,
-                PolicyEmbedding.knowledge_base_id == AgentKnowledgeBase.id,
-            )
-            .join(
-                PolicyDocument,
-                PolicyEmbedding.policy_document_id == PolicyDocument.id,
-            )
-            .where(
-                AgentKnowledgeBase.agent_key == mapped_key,
-                PolicyDocument.active.is_(False),
-                PolicyEmbedding.canonical_chunk_id.is_not(None),
-                PolicyDocument.canonical_source_id.is_not(None),
-                PolicyDocument.canonical_version_id.is_not(None)
-            )
-            .order_by(distance, PolicyEmbedding.canonical_chunk_id)
-            .limit(k * 4)  # Get extra for deduplication
+        results, timing = self._retriever.retrieve_with_timing(
+            request.query, request.agent_scope, k=k
         )
-        
-        rows = self._db.execute(statement).all()
-        
-        seen = set()
-        results = []
-        rank = 1
-        for row in rows:
-            chunk_id = row.canonical_chunk_id
-            if chunk_id in seen:
-                continue
-            seen.add(chunk_id)
-            
-            raw_distance = float(row.distance)
-            similarity = max(0.0, min(1.0, 1.0 - raw_distance))
-            
-            results.append(
-                RankedRetrievalResult(
-                    canonical_chunk_id=chunk_id,
-                    rank=rank,
-                    score=similarity,
-                    score_semantics="cosine_similarity",
-                    retrieval_source="vector",
-                    metadata={}
-                )
+        ranked = [
+            RankedRetrievalResult(
+                canonical_chunk_id=result.canonical_chunk_id,
+                rank=rank,
+                score=result.similarity,
+                score_semantics="cosine_similarity",
+                retrieval_source="supabase_rpc",
+                metadata={
+                    "content": result.content,
+                    "document_source_id": result.document_source_id,
+                    "document_version_id": result.document_version_id,
+                    "document_title": result.document_title,
+                    "heading_path": result.heading_path,
+                    "locator": result.locator,
+                    "namespace": result.namespace,
+                    "visibility": result.visibility,
+                    "metadata": result.metadata,
+                    "source_type": result.source_type,
+                },
             )
-            rank += 1
-            if len(results) >= k:
-                break
-                
-        end_retrieve = time.perf_counter()
-        
+            for rank, result in enumerate(results, start=1)
+        ]
         return RetrievalExecution(
-            results=results,
-            embedding_latency_ms=(end_embed - start_embed) * 1000,
-            retrieval_latency_ms=(end_retrieve - start_retrieve) * 1000,
-            total_latency_ms=(end_retrieve - start_embed) * 1000
+            results=ranked,
+            embedding_latency_ms=timing.embedding_ms,
+            retrieval_latency_ms=timing.retrieval_ms,
+            total_latency_ms=timing.embedding_ms + timing.retrieval_ms,
         )

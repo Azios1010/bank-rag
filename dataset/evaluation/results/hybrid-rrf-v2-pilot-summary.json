@@ -1,0 +1,1625 @@
+{
+  "arms": {
+    "hybrid_rrf": {
+      "run_1": {
+        "by_scope": {
+          "collateral_appraisal": {
+            "hit@1": 0.75,
+            "hit@3": 0.75,
+            "hit@5": 0.75,
+            "mrr@5": 0.75,
+            "ndcg@5": 0.75,
+            "query_count": 4,
+            "recall@5": 0.75
+          },
+          "credit": {
+            "hit@1": 0.7142857142857143,
+            "hit@3": 0.7142857142857143,
+            "hit@5": 0.8571428571428571,
+            "mrr@5": 0.75,
+            "ndcg@5": 0.7643424781745115,
+            "query_count": 7,
+            "recall@5": 0.8571428571428571
+          },
+          "customer_relationship": {
+            "hit@1": 0.75,
+            "hit@3": 1.0,
+            "hit@5": 1.0,
+            "mrr@5": 0.875,
+            "ndcg@5": 0.9077324383928644,
+            "query_count": 4,
+            "recall@5": 1.0
+          },
+          "legal_compliance": {
+            "hit@1": 0.8,
+            "hit@3": 0.8,
+            "hit@5": 0.8,
+            "mrr@5": 0.8,
+            "ndcg@5": 0.8,
+            "query_count": 5,
+            "recall@5": 0.8
+          },
+          "risk_management": {
+            "hit@1": 0.4,
+            "hit@3": 0.8,
+            "hit@5": 0.8,
+            "mrr@5": 0.6,
+            "ndcg@5": 0.652371901428583,
+            "query_count": 5,
+            "recall@5": 0.8
+          }
+        },
+        "by_source_type": {
+          "real_shared": {
+            "hit@1": 0.6842105263157895,
+            "hit@3": 0.7894736842105263,
+            "hit@5": 0.8421052631578947,
+            "mrr@5": 0.75,
+            "ndcg@5": 0.7690661502297104,
+            "query_count": 19,
+            "recall@5": 0.8421052631578947
+          },
+          "synthetic_scoped": {
+            "hit@1": 0.6666666666666666,
+            "hit@3": 0.8333333333333334,
+            "hit@5": 0.8333333333333334,
+            "mrr@5": 0.75,
+            "ndcg@5": 0.7718216255952429,
+            "query_count": 6,
+            "recall@5": 0.8333333333333334
+          }
+        },
+        "empty_candidate_queries": 0,
+        "latency": {
+          "embedding": {
+            "p50_ms": 53.26439999771537,
+            "p95_ms": 184.31882000077167
+          },
+          "fts": {
+            "p50_ms": 203.25550000052317,
+            "p95_ms": 238.24850000019066
+          },
+          "fusion": {
+            "p50_ms": 0.15210000128718093,
+            "p95_ms": 0.23012000019662082
+          },
+          "total": {
+            "p50_ms": 532.4044000008143,
+            "p95_ms": 717.8980599994246
+          },
+          "vector": {
+            "p50_ms": 263.39220000227215,
+            "p95_ms": 353.49663999950275
+          }
+        },
+        "metrics": {
+          "hit@1": 0.68,
+          "hit@3": 0.8,
+          "hit@5": 0.84,
+          "mrr@1": 0.68,
+          "mrr@3": 0.74,
+          "mrr@5": 0.75,
+          "ndcg@1": 0.68,
+          "ndcg@3": 0.7525004019945024,
+          "ndcg@5": 0.7697274643174381,
+          "recall@1": 0.66,
+          "recall@3": 0.8,
+          "recall@5": 0.84
+        },
+        "query_count": 25
+      },
+      "run_2": {
+        "by_scope": {
+          "collateral_appraisal": {
+            "hit@1": 0.75,
+            "hit@3": 0.75,
+            "hit@5": 0.75,
+            "mrr@5": 0.75,
+            "ndcg@5": 0.75,
+            "query_count": 4,
+            "recall@5": 0.75
+          },
+          "credit": {
+            "hit@1": 0.7142857142857143,
+            "hit@3": 0.7142857142857143,
+            "hit@5": 0.8571428571428571,
+            "mrr@5": 0.75,
+            "ndcg@5": 0.7643424781745115,
+            "query_count": 7,
+            "recall@5": 0.8571428571428571
+          },
+          "customer_relationship": {
+            "hit@1": 0.75,
+            "hit@3": 1.0,
+            "hit@5": 1.0,
+            "mrr@5": 0.875,
+            "ndcg@5": 0.9077324383928644,
+            "query_count": 4,
+            "recall@5": 1.0
+          },
+          "legal_compliance": {
+            "hit@1": 0.8,
+            "hit@3": 0.8,
+            "hit@5": 0.8,
+            "mrr@5": 0.8,
+            "ndcg@5": 0.8,
+            "query_count": 5,
+            "recall@5": 0.8
+          },
+          "risk_management": {
+            "hit@1": 0.4,
+            "hit@3": 0.8,
+            "hit@5": 0.8,
+            "mrr@5": 0.6,
+            "ndcg@5": 0.652371901428583,
+            "query_count": 5,
+            "recall@5": 0.8
+          }
+        },
+        "by_source_type": {
+          "real_shared": {
+            "hit@1": 0.6842105263157895,
+            "hit@3": 0.7894736842105263,
+            "hit@5": 0.8421052631578947,
+            "mrr@5": 0.75,
+            "ndcg@5": 0.7690661502297104,
+            "query_count": 19,
+            "recall@5": 0.8421052631578947
+          },
+          "synthetic_scoped": {
+            "hit@1": 0.6666666666666666,
+            "hit@3": 0.8333333333333334,
+            "hit@5": 0.8333333333333334,
+            "mrr@5": 0.75,
+            "ndcg@5": 0.7718216255952429,
+            "query_count": 6,
+            "recall@5": 0.8333333333333334
+          }
+        },
+        "empty_candidate_queries": 0,
+        "latency": {
+          "embedding": {
+            "p50_ms": 47.93260000224109,
+            "p95_ms": 180.83865999797123
+          },
+          "fts": {
+            "p50_ms": 199.39289999820176,
+            "p95_ms": 239.87013999867483
+          },
+          "fusion": {
+            "p50_ms": 0.15979999807314016,
+            "p95_ms": 0.21817999877384864
+          },
+          "total": {
+            "p50_ms": 545.5991999988328,
+            "p95_ms": 704.6118599995679
+          },
+          "vector": {
+            "p50_ms": 270.1783999982581,
+            "p95_ms": 347.42865999724006
+          }
+        },
+        "metrics": {
+          "hit@1": 0.68,
+          "hit@3": 0.8,
+          "hit@5": 0.84,
+          "mrr@1": 0.68,
+          "mrr@3": 0.74,
+          "mrr@5": 0.75,
+          "ndcg@1": 0.68,
+          "ndcg@3": 0.7525004019945024,
+          "ndcg@5": 0.7697274643174381,
+          "recall@1": 0.66,
+          "recall@3": 0.8,
+          "recall@5": 0.84
+        },
+        "query_count": 25
+      }
+    },
+    "lexical_only": {
+      "run_1": {
+        "by_scope": {
+          "collateral_appraisal": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 4,
+            "recall@5": 0.0
+          },
+          "credit": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 7,
+            "recall@5": 0.0
+          },
+          "customer_relationship": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 4,
+            "recall@5": 0.0
+          },
+          "legal_compliance": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 5,
+            "recall@5": 0.0
+          },
+          "risk_management": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 5,
+            "recall@5": 0.0
+          }
+        },
+        "by_source_type": {
+          "real_shared": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 19,
+            "recall@5": 0.0
+          },
+          "synthetic_scoped": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 6,
+            "recall@5": 0.0
+          }
+        },
+        "empty_candidate_queries": 25,
+        "latency": {
+          "fts": {
+            "p50_ms": 200.8583999995608,
+            "p95_ms": 233.01266000053147
+          },
+          "total": {
+            "p50_ms": 200.87469999998575,
+            "p95_ms": 233.0277400003979
+          }
+        },
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "mrr@1": 0.0,
+          "mrr@3": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@1": 0.0,
+          "ndcg@3": 0.0,
+          "ndcg@5": 0.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0
+        },
+        "query_count": 25
+      },
+      "run_2": {
+        "by_scope": {
+          "collateral_appraisal": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 4,
+            "recall@5": 0.0
+          },
+          "credit": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 7,
+            "recall@5": 0.0
+          },
+          "customer_relationship": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 4,
+            "recall@5": 0.0
+          },
+          "legal_compliance": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 5,
+            "recall@5": 0.0
+          },
+          "risk_management": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 5,
+            "recall@5": 0.0
+          }
+        },
+        "by_source_type": {
+          "real_shared": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 19,
+            "recall@5": 0.0
+          },
+          "synthetic_scoped": {
+            "hit@1": 0.0,
+            "hit@3": 0.0,
+            "hit@5": 0.0,
+            "mrr@5": 0.0,
+            "ndcg@5": 0.0,
+            "query_count": 6,
+            "recall@5": 0.0
+          }
+        },
+        "empty_candidate_queries": 25,
+        "latency": {
+          "fts": {
+            "p50_ms": 201.79650000136462,
+            "p95_ms": 237.60184000129806
+          },
+          "total": {
+            "p50_ms": 201.8145000001823,
+            "p95_ms": 237.6186200002848
+          }
+        },
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "mrr@1": 0.0,
+          "mrr@3": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@1": 0.0,
+          "ndcg@3": 0.0,
+          "ndcg@5": 0.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0
+        },
+        "query_count": 25
+      }
+    },
+    "vector_only": {
+      "artifact": "dataset\\evaluation\\results\\vector-v2-pilot-summary.json",
+      "by_scope": {
+        "collateral_appraisal": {
+          "hit@1": 0.75,
+          "hit@3": 0.75,
+          "hit@5": 0.75,
+          "mrr@5": 0.75,
+          "ndcg@5": 0.75,
+          "query_count": 4,
+          "recall@5": 0.75
+        },
+        "credit": {
+          "hit@1": 0.7142857142857143,
+          "hit@3": 0.7142857142857143,
+          "hit@5": 0.8571428571428571,
+          "mrr@5": 0.75,
+          "ndcg@5": 0.7643424781745115,
+          "query_count": 7,
+          "recall@5": 0.8571428571428571
+        },
+        "customer_relationship": {
+          "hit@1": 0.75,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "mrr@5": 0.875,
+          "ndcg@5": 0.9077324383928644,
+          "query_count": 4,
+          "recall@5": 1.0
+        },
+        "legal_compliance": {
+          "hit@1": 0.8,
+          "hit@3": 0.8,
+          "hit@5": 0.8,
+          "mrr@5": 0.8,
+          "ndcg@5": 0.8,
+          "query_count": 5,
+          "recall@5": 0.8
+        },
+        "risk_management": {
+          "hit@1": 0.4,
+          "hit@3": 0.8,
+          "hit@5": 0.8,
+          "mrr@5": 0.6,
+          "ndcg@5": 0.652371901428583,
+          "query_count": 5,
+          "recall@5": 0.8
+        }
+      },
+      "by_source_type": {
+        "real_shared": {
+          "hit@1": 0.6842105263157895,
+          "hit@3": 0.7894736842105263,
+          "hit@5": 0.8421052631578947,
+          "mrr@5": 0.75,
+          "ndcg@5": 0.7690661502297104,
+          "query_count": 19,
+          "recall@5": 0.8421052631578947
+        },
+        "synthetic_scoped": {
+          "hit@1": 0.6666666666666666,
+          "hit@3": 0.8333333333333334,
+          "hit@5": 0.8333333333333334,
+          "mrr@5": 0.75,
+          "ndcg@5": 0.7718216255952429,
+          "query_count": 6,
+          "recall@5": 0.8333333333333334
+        }
+      },
+      "latency": {
+        "embedding": {
+          "p50_ms": 70.80820000010135,
+          "p95_ms": 96.77598000052964
+        },
+        "retrieval": {
+          "p50_ms": 257.4310999989393,
+          "p95_ms": 434.16670000042353
+        },
+        "total": {
+          "p50_ms": 328.45950000046287,
+          "p95_ms": 498.0311199989955
+        }
+      },
+      "metrics": {
+        "hit@1": 0.68,
+        "hit@3": 0.8,
+        "hit@5": 0.84,
+        "mrr@1": 0.68,
+        "mrr@3": 0.74,
+        "mrr@5": 0.75,
+        "ndcg@1": 0.68,
+        "ndcg@3": 0.7525004019945024,
+        "ndcg@5": 0.7697274643174381,
+        "recall@1": 0.66,
+        "recall@3": 0.8,
+        "recall@5": 0.84
+      },
+      "query_count": 25
+    }
+  },
+  "classification": "C",
+  "configuration": {
+    "final_ordering": "rrf_score DESC, canonical_chunk_id ASC",
+    "fts_config": "simple",
+    "fts_indexed_fields": [
+      "title",
+      "heading_path",
+      "content"
+    ],
+    "fts_query": "original human query text",
+    "k_values": [
+      1,
+      3,
+      5
+    ],
+    "lexical_candidate_depth": 20,
+    "query_expansion": false,
+    "query_rewrite": false,
+    "raw_score_mixing": false,
+    "reranker": false,
+    "rrf_formula": "1/(60+vector_rank) + 1/(60+lexical_rank)",
+    "rrf_k": 60,
+    "top_k": 5,
+    "vector_candidate_depth": 20
+  },
+  "constraints": {
+    "benchmark_metrics_only": true,
+    "document_embeddings_regenerated": false,
+    "frozen_vector_baseline_overwritten": false,
+    "gold_modified": false,
+    "local_files_deleted": false,
+    "model_downloaded": false,
+    "supabase_corpus_mutated": false
+  },
+  "corpus": {
+    "chunk_count": 1610,
+    "corpus_jsonl_sha256": "828e31d6a9d3961badb3be96bbf064819cec4c1338c1853f9144b5b373247400",
+    "corpus_v2_hash": "1ab9185d4123a74ddc369d5231be4245ecf0b763320d8d1b0dcafe2fcdcdaa02",
+    "manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "name": "policy-corpus-v2",
+    "remote_state": {
+      "chunks": 1610,
+      "corpus_version": {
+        "artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+        "embedding_manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863",
+        "manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+        "name": "policy-corpus-v2",
+        "version": "policy-corpus-v2-freeze-1"
+      },
+      "distinct_canonical_ids": 1610,
+      "documents": 10,
+      "duplicate_ids": 0,
+      "embedding_profile": {
+        "artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+        "dimension": 1024,
+        "manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863",
+        "model_id": "Qwen3-Embedding-0.6B",
+        "similarity": "cosine",
+        "unit_normalized": true
+      },
+      "fts": {
+        "anon_execute": false,
+        "authenticated_execute": false,
+        "index": "ix_rag_v2_policy_chunks_search_document_gin",
+        "indexed_rows": 1610,
+        "rpc": "public.match_policy_chunks_fts",
+        "security_invoker": true,
+        "service_role_execute": true
+      },
+      "orphan_chunks": 0,
+      "orphan_scope_rows": 0,
+      "scope_counts": {
+        "collateral_appraisal": 0,
+        "credit": 37,
+        "customer_relationship": 14,
+        "legal_compliance": 37,
+        "risk_management": 37
+      },
+      "scope_rows": 125,
+      "scoped": 37,
+      "shared": 1573,
+      "vector_failures": 0,
+      "vectors": 1610
+    },
+    "scoped": 37,
+    "shared": 1573,
+    "version": "V2"
+  },
+  "delta_hybrid_vs_vector": {
+    "hit@1": 0.0,
+    "hit@3": 0.0,
+    "hit@5": 0.0,
+    "mrr@1": 0.0,
+    "mrr@3": 0.0,
+    "mrr@5": 0.0,
+    "ndcg@1": 0.0,
+    "ndcg@3": 0.0,
+    "ndcg@5": 0.0,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0
+  },
+  "embedding": {
+    "artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+    "backend": "Vulkan",
+    "dimension": 1024,
+    "dtype": "float32",
+    "format": "GGUF F16",
+    "manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863",
+    "model": "Qwen3-Embedding-0.6B",
+    "normalization": "L2 unit",
+    "pooling": "last",
+    "runtime": "llama.cpp"
+  },
+  "fts_scope_smoke": {
+    "banking_operations_scope_persisted": false,
+    "shared_collateral_appraisal_visible": true,
+    "synthetic_collateral_appraisal_visible": false,
+    "synthetic_credit_visible": true,
+    "synthetic_probe_id": "0dfa22f72acb616456e7431b1362a7f80de847ec3f3c53630c887d7876521b71"
+  },
+  "generated_at": "2026-09-03T08:45:20.968225+00:00",
+  "gold": {
+    "path": "dataset/evaluation/retrieval-v2-gold-pilot.jsonl",
+    "record_count": 25,
+    "sha256": "c645869f205e0101cb604cdcf8712820bf0e09aeb85802b590bc695fa8ac424a",
+    "statuses": [
+      "REVIEWED"
+    ]
+  },
+  "gold_rank_greater_than_one_analysis": [
+    {
+      "comparison": "UNCHANGED",
+      "evaluation_id": "stage12a-003",
+      "hybrid_first_relevant_rank": 4,
+      "hybrid_gold_ranks": {
+        "822ee29f7db162578ce65ef9d6a5865a296e2c8fe42ad978a9a11f591a2534dd": 4
+      },
+      "vector_first_relevant_rank": 4,
+      "vector_gold_ranks": {
+        "822ee29f7db162578ce65ef9d6a5865a296e2c8fe42ad978a9a11f591a2534dd": 4
+      }
+    },
+    {
+      "comparison": "UNCHANGED",
+      "evaluation_id": "stage12a-004",
+      "hybrid_first_relevant_rank": 1,
+      "hybrid_gold_ranks": {
+        "90d77090ea939eea85738a466c25ef4d6081a71c1c58ccab227d4fe388217d78": 1,
+        "a7672f0d87118cc75368aeb7e22d6536d800ac27585794bda397a81f6fa7709c": 3
+      },
+      "vector_first_relevant_rank": 1,
+      "vector_gold_ranks": {
+        "90d77090ea939eea85738a466c25ef4d6081a71c1c58ccab227d4fe388217d78": 1,
+        "a7672f0d87118cc75368aeb7e22d6536d800ac27585794bda397a81f6fa7709c": 3
+      }
+    },
+    {
+      "comparison": "UNCHANGED",
+      "evaluation_id": "stage12a-010",
+      "hybrid_first_relevant_rank": 2,
+      "hybrid_gold_ranks": {
+        "739a78f5c46e72944da3174d45733326d62b466666c1921a00cf20866e39fe46": 2
+      },
+      "vector_first_relevant_rank": 2,
+      "vector_gold_ranks": {
+        "739a78f5c46e72944da3174d45733326d62b466666c1921a00cf20866e39fe46": 2
+      }
+    },
+    {
+      "comparison": "UNCHANGED",
+      "evaluation_id": "stage12a-012",
+      "hybrid_first_relevant_rank": 2,
+      "hybrid_gold_ranks": {
+        "0ed843ba98e3640831d9119cc533d02dc3b8b7739c7c8f35e6ee6687ff004ab0": 2
+      },
+      "vector_first_relevant_rank": 2,
+      "vector_gold_ranks": {
+        "0ed843ba98e3640831d9119cc533d02dc3b8b7739c7c8f35e6ee6687ff004ab0": 2
+      }
+    },
+    {
+      "comparison": "UNCHANGED",
+      "evaluation_id": "stage12a-018",
+      "hybrid_first_relevant_rank": 2,
+      "hybrid_gold_ranks": {
+        "88b8b7604c8547cd837abb04a72156813156d744fae6838db67f53db481ed4c2": 2
+      },
+      "vector_first_relevant_rank": 2,
+      "vector_gold_ranks": {
+        "88b8b7604c8547cd837abb04a72156813156d744fae6838db67f53db481ed4c2": 2
+      }
+    }
+  ],
+  "miss_recovery": [
+    {
+      "evaluation_id": "stage12a-007",
+      "gold_canonical_chunk_ids": [
+        "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d"
+      ],
+      "hybrid_gold_ranks": {
+        "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d": null
+      },
+      "hybrid_hit_at_5": false,
+      "hybrid_recovered": false,
+      "lexical_gold_ranks": {
+        "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d": null
+      },
+      "lexical_hit_at_5": false,
+      "lexical_recovered": false,
+      "vector_gold_ranks": {
+        "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d": null
+      },
+      "vector_hit_at_5": false
+    },
+    {
+      "evaluation_id": "stage12a-008",
+      "gold_canonical_chunk_ids": [
+        "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17"
+      ],
+      "hybrid_gold_ranks": {
+        "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17": null
+      },
+      "hybrid_hit_at_5": false,
+      "hybrid_recovered": false,
+      "lexical_gold_ranks": {
+        "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17": null
+      },
+      "lexical_hit_at_5": false,
+      "lexical_recovered": false,
+      "vector_gold_ranks": {
+        "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17": null
+      },
+      "vector_hit_at_5": false
+    },
+    {
+      "evaluation_id": "stage12a-013",
+      "gold_canonical_chunk_ids": [
+        "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf"
+      ],
+      "hybrid_gold_ranks": {
+        "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf": null
+      },
+      "hybrid_hit_at_5": false,
+      "hybrid_recovered": false,
+      "lexical_gold_ranks": {
+        "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf": null
+      },
+      "lexical_hit_at_5": false,
+      "lexical_recovered": false,
+      "vector_gold_ranks": {
+        "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf": null
+      },
+      "vector_hit_at_5": false
+    },
+    {
+      "evaluation_id": "stage12a-024",
+      "gold_canonical_chunk_ids": [
+        "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9"
+      ],
+      "hybrid_gold_ranks": {
+        "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9": null
+      },
+      "hybrid_hit_at_5": false,
+      "hybrid_recovered": false,
+      "lexical_gold_ranks": {
+        "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9": null
+      },
+      "lexical_hit_at_5": false,
+      "lexical_recovered": false,
+      "vector_gold_ranks": {
+        "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9": null
+      },
+      "vector_hit_at_5": false
+    }
+  ],
+  "misses_at_5": {
+    "hybrid_rrf": [
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-007",
+        "gold_canonical_chunk_ids": [
+          "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "511ec3a07bfc2c5a2839d27bb5c71540ba88ff8418dc81717b1fc14939337525",
+          "cacf65f29fb78465914db68e7327d40eb2ef8d8006226785589836130f4bba3d",
+          "bb54d68d09ea0a0da64db105c8507ad5d12b10aced13ecda0551ef9ffa157053",
+          "fdda9f09341a7d3fa905eaf8f7c08e84ebf42e1c3130919836f312e6bb9d14aa",
+          "6961ba23a2763b4793d9e10c517fb1e7c8ec2d6c52552f65c3bd954ec0c34f02"
+        ],
+        "scope": "credit"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-008",
+        "gold_canonical_chunk_ids": [
+          "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "a9c33ebf744710ed4092e5a860a342d84f83629075bc3d818570d1cd40db16c8",
+          "2c9d41c83adf98dcd0152091e8edb779629a37d77128752313edd11ad7f8ee94",
+          "21e6d15ab5cbaf1c89d289ded68f69104ef6503be1c6e049655d491caaec89e3",
+          "22480e7c05fb71740f54bc2f5eb452236970d1c9298da65bcf07b04413c18a0c",
+          "d0402bc7a6068e9f05e390b553fb6233451210c17e7c002a38bd65384f3e6bd4"
+        ],
+        "scope": "risk_management"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-013",
+        "gold_canonical_chunk_ids": [
+          "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "0ed843ba98e3640831d9119cc533d02dc3b8b7739c7c8f35e6ee6687ff004ab0",
+          "52ac78d1ddd16ee666b8150a6319e605174b07e24c08e3235adefc866b437876",
+          "db1b0f0de46424740a7df3444907f9be13ee9caf4ff3af1be6782aaeb4432821",
+          "7852265aaca03593c3c4e36fd2710ec5c2b0b8253e235775d5705c4863c04713",
+          "d7db66d53d2091983a7dea43446b27fb237d761c5a3377a051115eba38946753"
+        ],
+        "scope": "legal_compliance"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-024",
+        "gold_canonical_chunk_ids": [
+          "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+          "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+          "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+          "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+          "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb"
+        ],
+        "scope": "collateral_appraisal"
+      }
+    ],
+    "lexical_only": [
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-001",
+        "gold_canonical_chunk_ids": [
+          "1dc0f85ea8e685ea755e0402fe100f824606044d7d5aabb711fca1f915774e0d"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "credit"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-002",
+        "gold_canonical_chunk_ids": [
+          "a5be9a3a14423d608198bcb3d4c3fd5da34a1cb5fb9eca29d861357c7364e27b"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "credit"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-003",
+        "gold_canonical_chunk_ids": [
+          "822ee29f7db162578ce65ef9d6a5865a296e2c8fe42ad978a9a11f591a2534dd"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "credit"
+      },
+      {
+        "category": "multi-gold / distributed evidence",
+        "evaluation_id": "stage12a-004",
+        "gold_canonical_chunk_ids": [
+          "a7672f0d87118cc75368aeb7e22d6536d800ac27585794bda397a81f6fa7709c",
+          "90d77090ea939eea85738a466c25ef4d6081a71c1c58ccab227d4fe388217d78"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "credit"
+      },
+      {
+        "category": "synthetic-vs-regulation competition",
+        "evaluation_id": "stage12a-005",
+        "gold_canonical_chunk_ids": [
+          "99d4961f132513d92f2b4a60a10acb0b9caf285e71295765d3c0d25d543a3729"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "credit"
+      },
+      {
+        "category": "synthetic-vs-regulation competition",
+        "evaluation_id": "stage12a-006",
+        "gold_canonical_chunk_ids": [
+          "091aa50fc0b4c61d328f77a7dce21fb53717691ad6aa9a78cb58bca57798c561"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "credit"
+      },
+      {
+        "category": "synthetic-vs-regulation competition",
+        "evaluation_id": "stage12a-007",
+        "gold_canonical_chunk_ids": [
+          "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "credit"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-008",
+        "gold_canonical_chunk_ids": [
+          "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "risk_management"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-009",
+        "gold_canonical_chunk_ids": [
+          "96b45a97c58f4c95cce6bf536e7f6f1cade729706e0688a6bbfbe4c9beea5d4b"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "risk_management"
+      },
+      {
+        "category": "synthetic-vs-regulation competition",
+        "evaluation_id": "stage12a-010",
+        "gold_canonical_chunk_ids": [
+          "739a78f5c46e72944da3174d45733326d62b466666c1921a00cf20866e39fe46"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "risk_management"
+      },
+      {
+        "category": "synthetic-vs-regulation competition",
+        "evaluation_id": "stage12a-011",
+        "gold_canonical_chunk_ids": [
+          "59aa9152d01a6a9f99183f3e79e6d12e3d69a0e03f00bf50b7876554deecacc9"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "risk_management"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-012",
+        "gold_canonical_chunk_ids": [
+          "0ed843ba98e3640831d9119cc533d02dc3b8b7739c7c8f35e6ee6687ff004ab0"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "risk_management"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-013",
+        "gold_canonical_chunk_ids": [
+          "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "legal_compliance"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-014",
+        "gold_canonical_chunk_ids": [
+          "ccaa99a62c925843df5aa0ed67f502fc49d62702647bfc1c7ae996b59e42e9f4"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "legal_compliance"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-015",
+        "gold_canonical_chunk_ids": [
+          "4d91bf38a04fd7fc9f92d4f1de5874318a8224fb085307e3cbb5a14544bd1062"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "legal_compliance"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-016",
+        "gold_canonical_chunk_ids": [
+          "36baf9c87d08c9558fc46cf32dd6d3285e72499f338e23a78ec29efe12306276"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "legal_compliance"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-017",
+        "gold_canonical_chunk_ids": [
+          "488b1eb76a51610f44dc85023694af8b56f55b1c0b1d16279ac4400d43e81567"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "legal_compliance"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-018",
+        "gold_canonical_chunk_ids": [
+          "88b8b7604c8547cd837abb04a72156813156d744fae6838db67f53db481ed4c2"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "customer_relationship"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-019",
+        "gold_canonical_chunk_ids": [
+          "0a1f3fcecf06accf8b3285827f9dc894feac10cfa69a1299d6fe55b68bb27c16"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "customer_relationship"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-020",
+        "gold_canonical_chunk_ids": [
+          "91f496387463579df9fb20ecaeae615386436d672729a3a99d089d0f99ec3b87"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "customer_relationship"
+      },
+      {
+        "category": "synthetic-vs-regulation competition",
+        "evaluation_id": "stage12a-021",
+        "gold_canonical_chunk_ids": [
+          "61dc9e901fd1c303e9b6969e1037bf5a9a3c1009bb4c3e018a0b242e2294d2ce"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "customer_relationship"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-022",
+        "gold_canonical_chunk_ids": [
+          "788f3eb83c7f29cd5fc772964418eb5eac409fb59f737bd9f07177372821dc5d"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "collateral_appraisal"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-023",
+        "gold_canonical_chunk_ids": [
+          "dcfbadec798a2c1f4cbf3c650a7faf31d67e54530cc98c3ac271160b15ea3680"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "collateral_appraisal"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-024",
+        "gold_canonical_chunk_ids": [
+          "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "collateral_appraisal"
+      },
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-025",
+        "gold_canonical_chunk_ids": [
+          "4b887c1080e4d234196fcbc439c9178a75de692c1e987834cda3d8f99fbda456"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [],
+        "scope": "collateral_appraisal"
+      }
+    ],
+    "vector_only": [
+      {
+        "category": "embedding semantic weakness",
+        "evaluation_id": "stage12a-007",
+        "gold_canonical_chunk_ids": [
+          "4d11b36bf8230373ba733f43a1a956ee9831aa237b2368eff29a5384732a121d"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "511ec3a07bfc2c5a2839d27bb5c71540ba88ff8418dc81717b1fc14939337525",
+          "cacf65f29fb78465914db68e7327d40eb2ef8d8006226785589836130f4bba3d",
+          "bb54d68d09ea0a0da64db105c8507ad5d12b10aced13ecda0551ef9ffa157053",
+          "fdda9f09341a7d3fa905eaf8f7c08e84ebf42e1c3130919836f312e6bb9d14aa",
+          "6961ba23a2763b4793d9e10c517fb1e7c8ec2d6c52552f65c3bd954ec0c34f02"
+        ],
+        "scope": "credit"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-008",
+        "gold_canonical_chunk_ids": [
+          "db851918c51c6e95542b44b1cf160bd15ca0b3627daffe3d9053983f9f564c17"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "a9c33ebf744710ed4092e5a860a342d84f83629075bc3d818570d1cd40db16c8",
+          "2c9d41c83adf98dcd0152091e8edb779629a37d77128752313edd11ad7f8ee94",
+          "21e6d15ab5cbaf1c89d289ded68f69104ef6503be1c6e049655d491caaec89e3",
+          "22480e7c05fb71740f54bc2f5eb452236970d1c9298da65bcf07b04413c18a0c",
+          "d0402bc7a6068e9f05e390b553fb6233451210c17e7c002a38bd65384f3e6bd4"
+        ],
+        "scope": "risk_management"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-013",
+        "gold_canonical_chunk_ids": [
+          "7bfd8dde82bb3cdee31ad9ae74672ab415a5ac42ba5cd1062ae205f3dcdb9fbf"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "0ed843ba98e3640831d9119cc533d02dc3b8b7739c7c8f35e6ee6687ff004ab0",
+          "52ac78d1ddd16ee666b8150a6319e605174b07e24c08e3235adefc866b437876",
+          "db1b0f0de46424740a7df3444907f9be13ee9caf4ff3af1be6782aaeb4432821",
+          "7852265aaca03593c3c4e36fd2710ec5c2b0b8253e235775d5705c4863c04713",
+          "d7db66d53d2091983a7dea43446b27fb237d761c5a3377a051115eba38946753"
+        ],
+        "scope": "legal_compliance"
+      },
+      {
+        "category": "same document, wrong article",
+        "evaluation_id": "stage12a-024",
+        "gold_canonical_chunk_ids": [
+          "e08394f8133a9f1038cc4e6f23f9ad7b7c7f4b9f699861a84543336a6fc964c9"
+        ],
+        "note": "Descriptive trace inspection only; approved gold was not changed.",
+        "retrieved_top5": [
+          "c5d4c2e869b5f102d8d73b1bfe2cb146aca30795dda6d2b07011f984eb00ff2e",
+          "786c6f996d459d0cb15fde1e8557b5a760c520bc1c33a3fd6f34dd982b0c22f6",
+          "1d275a9324a3861f63ef02fd3d84e4e9d6bf6cc44231a21d8379f69ae8169aca",
+          "a3d808aa44f60109e597c77871cbe3efca1e9f520623f26846c058510a206bb1",
+          "5167c78b217b469cf2ae304b47460309fad37ebaad20eb21cc199bf99d01ccbb"
+        ],
+        "scope": "collateral_appraisal"
+      }
+    ]
+  },
+  "regressions": [],
+  "repeatability": {
+    "hybrid_rrf": {
+      "max_score_drift": 0.0,
+      "mean_max_score_drift": 0.0,
+      "metrics_equal": true,
+      "ordered_top5_agreement": 1.0,
+      "per_query": [
+        {
+          "evaluation_id": "stage12a-001",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-002",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-003",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-004",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-005",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-006",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-007",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-008",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-009",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-010",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-011",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-012",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-013",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-014",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-015",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-016",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-017",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-018",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-019",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-020",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-021",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-022",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-023",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-024",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-025",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        }
+      ],
+      "queries_with_rank_differences": [],
+      "rank_difference_count": 0,
+      "top1_agreement": 1.0,
+      "top5_set_agreement": 1.0,
+      "top5_set_overlap": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      }
+    },
+    "lexical_only": {
+      "max_score_drift": 0.0,
+      "mean_max_score_drift": 0.0,
+      "metrics_equal": true,
+      "ordered_top5_agreement": 1.0,
+      "per_query": [
+        {
+          "evaluation_id": "stage12a-001",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-002",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-003",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-004",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-005",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-006",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-007",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-008",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-009",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-010",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-011",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-012",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-013",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-014",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-015",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-016",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-017",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-018",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-019",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-020",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-021",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-022",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-023",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-024",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        },
+        {
+          "evaluation_id": "stage12a-025",
+          "max_score_drift": 0.0,
+          "ordered_top5_equal": true,
+          "rank_differences": {},
+          "top1_equal": true,
+          "top5_set_overlap": 1.0
+        }
+      ],
+      "queries_with_rank_differences": [],
+      "rank_difference_count": 0,
+      "top1_agreement": 1.0,
+      "top5_set_agreement": 1.0,
+      "top5_set_overlap": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0
+      }
+    }
+  },
+  "runtime": {
+    "distance": "cosine for vector branch",
+    "endpoint": "http://127.0.0.1:8081/v1/embeddings",
+    "fallback_backend_used": false,
+    "legacy_tables_used": false,
+    "query_embedding_backend": "llama.cpp",
+    "query_format": "Instruct: Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.\nQuery: {query}",
+    "query_instruction": "Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.",
+    "retrieval": "Supabase public.match_policy_chunks plus public.match_policy_chunks_fts",
+    "sentence_transformer_used": false,
+    "sequential_calls": true
+  },
+  "stage": "13A - Measured Hybrid Retrieval: PostgreSQL FTS + Vector + RRF",
+  "status": "PILOT / EXPLORATORY / DESCRIPTIVE"
+}

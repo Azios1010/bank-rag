@@ -1,0 +1,599 @@
+{
+  "arms": {
+    "top10": {
+      "by_provenance": {
+        "real_authoritative": {
+          "hit@5": 0.95,
+          "mrr@5": 0.8875,
+          "ndcg@5": 0.9025662413822116,
+          "query_count": 80,
+          "recall@5": 0.95
+        },
+        "synthetic": {
+          "hit@5": 0.95,
+          "mrr@5": 0.875,
+          "ndcg@5": 0.8946394630357186,
+          "query_count": 20,
+          "recall@5": 0.95
+        }
+      },
+      "by_scope": {
+        "collateral_appraisal": {
+          "hit@1": 0.75,
+          "hit@3": 0.95,
+          "hit@5": 0.95,
+          "mrr@5": 0.8333333333333334,
+          "ndcg@5": 0.8630929753571458,
+          "query_count": 20,
+          "recall@5": 0.95
+        },
+        "credit": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.9959860394574094,
+          "query_count": 20,
+          "recall@5": 1.0
+        },
+        "customer_relationship": {
+          "hit@1": 0.9,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "mrr@5": 0.95,
+          "ndcg@5": 0.9630929753571458,
+          "query_count": 20,
+          "recall@5": 1.0
+        },
+        "legal_compliance": {
+          "hit@1": 0.75,
+          "hit@3": 0.95,
+          "hit@5": 0.95,
+          "mrr@5": 0.8416666666666666,
+          "ndcg@5": 0.8696394630357187,
+          "query_count": 20,
+          "recall@5": 0.95
+        },
+        "risk_management": {
+          "hit@1": 0.75,
+          "hit@3": 0.85,
+          "hit@5": 0.85,
+          "mrr@5": 0.8,
+          "ndcg@5": 0.8130929753571458,
+          "query_count": 20,
+          "recall@5": 0.85
+        }
+      },
+      "candidate_depth": 10,
+      "metrics": {
+        "hit@1": 0.83,
+        "hit@3": 0.95,
+        "hit@5": 0.95,
+        "mrr@1": 0.83,
+        "mrr@3": 0.885,
+        "mrr@5": 0.885,
+        "ndcg@1": 0.83,
+        "ndcg@3": 0.900980885712913,
+        "ndcg@5": 0.900980885712913,
+        "recall@1": 0.825,
+        "recall@3": 0.95,
+        "recall@5": 0.95
+      },
+      "pair_workload_per_run": 1000
+    },
+    "top20": {
+      "by_provenance": {
+        "real_authoritative": {
+          "hit@5": 0.9625,
+          "mrr@5": 0.8847916666666666,
+          "ndcg@5": 0.9035586022878472,
+          "query_count": 80,
+          "recall@5": 0.9625
+        },
+        "synthetic": {
+          "hit@5": 1.0,
+          "mrr@5": 0.925,
+          "ndcg@5": 0.9446394630357187,
+          "query_count": 20,
+          "recall@5": 1.0
+        }
+      },
+      "by_scope": {
+        "collateral_appraisal": {
+          "hit@1": 0.75,
+          "hit@3": 0.85,
+          "hit@5": 0.95,
+          "mrr@5": 0.8225,
+          "ndcg@5": 0.8539694436225425,
+          "query_count": 20,
+          "recall@5": 0.95
+        },
+        "credit": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.9959860394574094,
+          "query_count": 20,
+          "recall@5": 1.0
+        },
+        "customer_relationship": {
+          "hit@1": 0.9,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "mrr@5": 0.95,
+          "ndcg@5": 0.9630929753571458,
+          "query_count": 20,
+          "recall@5": 1.0
+        },
+        "legal_compliance": {
+          "hit@1": 0.75,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "mrr@5": 0.8666666666666666,
+          "ndcg@5": 0.9011859507142915,
+          "query_count": 20,
+          "recall@5": 1.0
+        },
+        "risk_management": {
+          "hit@1": 0.75,
+          "hit@3": 0.9,
+          "hit@5": 0.9,
+          "mrr@5": 0.825,
+          "ndcg@5": 0.8446394630357187,
+          "query_count": 20,
+          "recall@5": 0.9
+        }
+      },
+      "candidate_depth": 20,
+      "metrics": {
+        "hit@1": 0.83,
+        "hit@3": 0.95,
+        "hit@5": 0.97,
+        "mrr@1": 0.83,
+        "mrr@3": 0.8883333333333333,
+        "mrr@5": 0.8928333333333334,
+        "ndcg@1": 0.83,
+        "ndcg@3": 0.9035994807843422,
+        "ndcg@5": 0.9117747744374215,
+        "recall@1": 0.825,
+        "recall@3": 0.95,
+        "recall@5": 0.97
+      },
+      "pair_workload_per_run": 2000
+    }
+  },
+  "artifacts": {
+    "candidate_artifact": "dataset\\evaluation\\results\\vector-top20-v2-expanded-candidates.jsonl",
+    "combined_summary": "dataset\\evaluation\\results\\reranker-depth-confirmation-v2-expanded-summary.json",
+    "documentation": "docs\\STAGE-13E3-RERANKER-DEPTH-CONFIRMATION.md",
+    "top10_run1": "dataset\\evaluation\\results\\reranker-top10-v2-expanded-run-1-traces.jsonl",
+    "top10_run2": "dataset\\evaluation\\results\\reranker-top10-v2-expanded-run-2-traces.jsonl",
+    "top10_summary": "dataset\\evaluation\\results\\reranker-top10-v2-expanded-summary.json",
+    "top20_run1": "dataset\\evaluation\\results\\reranker-top20-v2-expanded-run-1-traces.jsonl",
+    "top20_run2": "dataset\\evaluation\\results\\reranker-top20-v2-expanded-run-2-traces.jsonl",
+    "top20_summary": "dataset\\evaluation\\results\\reranker-top20-v2-expanded-summary.json"
+  },
+  "candidate_by_provenance": {
+    "real_authoritative": {
+      "hit@10": 0.95,
+      "hit@20": 0.9625,
+      "hit@5": 0.9125,
+      "query_count": 80,
+      "recall@10": 0.95,
+      "recall@20": 0.9625,
+      "recall@5": 0.9125
+    },
+    "synthetic": {
+      "hit@10": 0.95,
+      "hit@20": 1.0,
+      "hit@5": 0.75,
+      "query_count": 20,
+      "recall@10": 0.95,
+      "recall@20": 1.0,
+      "recall@5": 0.75
+    }
+  },
+  "candidate_by_scope": {
+    "collateral_appraisal": {
+      "hit@10": 0.95,
+      "hit@20": 0.95,
+      "hit@5": 0.9,
+      "query_count": 20,
+      "recall@10": 0.95,
+      "recall@20": 0.95,
+      "recall@5": 0.9
+    },
+    "credit": {
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "hit@5": 0.9,
+      "query_count": 20,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "recall@5": 0.9
+    },
+    "customer_relationship": {
+      "hit@10": 1.0,
+      "hit@20": 1.0,
+      "hit@5": 1.0,
+      "query_count": 20,
+      "recall@10": 1.0,
+      "recall@20": 1.0,
+      "recall@5": 1.0
+    },
+    "legal_compliance": {
+      "hit@10": 0.95,
+      "hit@20": 1.0,
+      "hit@5": 0.8,
+      "query_count": 20,
+      "recall@10": 0.95,
+      "recall@20": 1.0,
+      "recall@5": 0.8
+    },
+    "risk_management": {
+      "hit@10": 0.85,
+      "hit@20": 0.9,
+      "hit@5": 0.8,
+      "query_count": 20,
+      "recall@10": 0.85,
+      "recall@20": 0.9,
+      "recall@5": 0.8
+    }
+  },
+  "candidate_coverage": {
+    "hit@10": 0.95,
+    "hit@20": 0.97,
+    "hit@5": 0.88,
+    "recall@10": 0.95,
+    "recall@20": 0.97,
+    "recall@5": 0.88
+  },
+  "candidate_rank_groups": {
+    "1-10": 95,
+    "11-20": 2,
+    ">20": 3
+  },
+  "candidate_rows": 2000,
+  "candidate_trace_count": 100,
+  "classification": "B — TOP20 JUSTIFIED",
+  "constraints": {
+    "no_corpus_mutation": true,
+    "no_embedding_regeneration": true,
+    "no_fts": true,
+    "no_generation": true,
+    "no_gold_mutation": true,
+    "no_hnsw_mutation": true,
+    "no_hybrid": true,
+    "no_local_deletion": true,
+    "no_model_download": true,
+    "no_query_rewrite": true,
+    "no_rrf": true,
+    "no_sentence_transformer": true,
+    "no_top50": true
+  },
+  "delta_top10_minus_top20": {
+    "hit@1": 0.0,
+    "hit@3": 0.0,
+    "hit@5": -0.020000000000000018,
+    "mrr@1": 0.0,
+    "mrr@3": -0.0033333333333332993,
+    "mrr@5": -0.007833333333333359,
+    "ndcg@1": 0.0,
+    "ndcg@3": -0.0026185950714291417,
+    "ndcg@5": -0.010793888724508482,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": -0.020000000000000018
+  },
+  "generated_at": "2026-09-04T11:01:46.079280+00:00",
+  "gold_absent_top10_present_top20": 2,
+  "gold_absent_top20": 3,
+  "identity": {
+    "corpus": "policy-corpus-v2",
+    "corpus_chunks": 1610,
+    "corpus_documents": 10,
+    "corpus_manifest_sha256": "b8fe3f27040439f59709a77be11fca0bc697b7b96dc397185501e642e499e91a",
+    "corpus_version": "V2",
+    "embedding_artifact_sha256": "3d37b455b3e7fd5a0b90dc7ab97cd79503da08e8c89a1b085950953045fb9c1c",
+    "embedding_dimension": 1024,
+    "embedding_manifest_sha256": "cca62714c1726c16d15e9fa803cb747634b796bf05cecb0de397f8ddb4973863",
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "gold_path": "dataset/evaluation/retrieval-v2-gold-expanded.jsonl",
+    "gold_record_count": 100,
+    "gold_sha256": "1e6d169b220c5a35c66bd38e83af7279eb1bbe0cd2621f1c19a5fcf5c8f8ee69",
+    "gold_status": "REVIEWED",
+    "hnsw_ef_search": "40"
+  },
+  "interpretation": "CONFIRMATION BENCHMARK ON FROZEN 100-QUERY HUMAN-REVIEWED GOLD; PILOT / EXPLORATORY / DESCRIPTIVE ONLY",
+  "latency": {
+    "experimental_shared_candidate_collection": true,
+    "p50_reduction_ms": 1188.5860499987757,
+    "p50_reduction_percent": 48.89582824334162,
+    "p95_reduction_ms": 1393.121734998022,
+    "p95_reduction_percent": 44.029450669686824,
+    "production_top10_rpc_latency_not_measured": true,
+    "query_embedding_p50_ms": 64.61969999872963,
+    "query_embedding_p95_ms": 175.7330100006584,
+    "top10": {
+      "mean_ms": 1236.3249939999878,
+      "p50_ms": 1242.2676500009402,
+      "p95_ms": 1770.9462099994194
+    },
+    "top20": {
+      "mean_ms": 2539.848633000074,
+      "p50_ms": 2430.853699999716,
+      "p95_ms": 3164.0679449974414
+    },
+    "vector_retrieval_p50_ms": 271.16414999909466,
+    "vector_retrieval_p95_ms": 406.1241799985509
+  },
+  "query_embedding": {
+    "backend": "llama.cpp",
+    "endpoint": "http://127.0.0.1:8081/v1/embeddings",
+    "format": "Instruct: {instruction}\nQuery: {query}",
+    "instruction": "Given a Vietnamese banking legal question, retrieve authoritative passages that directly support the answer.",
+    "one_embedding_per_query": true
+  },
+  "query_level": {
+    "additional_top20_successes": [
+      "stage13e-041",
+      "stage13e-067"
+    ],
+    "gold_vector_rank_11_20": [
+      {
+        "evaluation_id": "stage13e-041",
+        "specialist_scope": "risk_management",
+        "top10_reranked_first_gold_rank": ">10",
+        "top20_reranked_first_gold_rank": 2,
+        "vector_first_gold_rank": 14
+      },
+      {
+        "evaluation_id": "stage13e-067",
+        "specialist_scope": "legal_compliance",
+        "top10_reranked_first_gold_rank": ">10",
+        "top20_reranked_first_gold_rank": 1,
+        "vector_first_gold_rank": 12
+      }
+    ],
+    "same": [
+      "stage12a-001",
+      "stage12a-002",
+      "stage12a-003",
+      "stage12a-004",
+      "stage12a-005",
+      "stage12a-006",
+      "stage12a-007",
+      "stage12a-008",
+      "stage12a-009",
+      "stage12a-010",
+      "stage12a-011",
+      "stage12a-012",
+      "stage12a-014",
+      "stage12a-015",
+      "stage12a-016",
+      "stage12a-017",
+      "stage12a-018",
+      "stage12a-019",
+      "stage12a-020",
+      "stage12a-021",
+      "stage12a-022",
+      "stage12a-023",
+      "stage12a-024",
+      "stage12a-025",
+      "stage13e-026",
+      "stage13e-027",
+      "stage13e-028",
+      "stage13e-029",
+      "stage13e-030",
+      "stage13e-031",
+      "stage13e-032",
+      "stage13e-033",
+      "stage13e-034",
+      "stage13e-035",
+      "stage13e-036",
+      "stage13e-037",
+      "stage13e-038",
+      "stage13e-039",
+      "stage13e-040",
+      "stage13e-042",
+      "stage13e-043",
+      "stage13e-044",
+      "stage13e-045",
+      "stage13e-046",
+      "stage13e-047",
+      "stage13e-048",
+      "stage13e-049",
+      "stage13e-050",
+      "stage13e-051",
+      "stage13e-052",
+      "stage13e-053",
+      "stage13e-054",
+      "stage13e-055",
+      "stage13e-056",
+      "stage13e-057",
+      "stage13e-058",
+      "stage13e-059",
+      "stage13e-060",
+      "stage13e-061",
+      "stage13e-062",
+      "stage13e-063",
+      "stage13e-064",
+      "stage13e-065",
+      "stage13e-066",
+      "stage13e-068",
+      "stage13e-069",
+      "stage13e-070",
+      "stage13e-071",
+      "stage13e-072",
+      "stage13e-073",
+      "stage13e-074",
+      "stage13e-075",
+      "stage13e-076",
+      "stage13e-077",
+      "stage13e-078",
+      "stage13e-079",
+      "stage13e-080",
+      "stage13e-081",
+      "stage13e-082",
+      "stage13e-083",
+      "stage13e-084",
+      "stage13e-085",
+      "stage13e-086",
+      "stage13e-087",
+      "stage13e-088",
+      "stage13e-089",
+      "stage13e-090",
+      "stage13e-091",
+      "stage13e-092",
+      "stage13e-093",
+      "stage13e-095",
+      "stage13e-096",
+      "stage13e-097",
+      "stage13e-099",
+      "stage13e-100"
+    ],
+    "top10_improved": [
+      "stage12a-013",
+      "stage13e-094",
+      "stage13e-098"
+    ],
+    "top20_candidate_failures": [
+      "stage12a-024",
+      "stage13e-040",
+      "stage13e-042"
+    ],
+    "top20_improved": [
+      "stage13e-041",
+      "stage13e-067"
+    ],
+    "top5_disagreements": [
+      "stage12a-001",
+      "stage12a-002",
+      "stage12a-003",
+      "stage12a-005",
+      "stage12a-006",
+      "stage12a-007",
+      "stage12a-008",
+      "stage12a-009",
+      "stage12a-010",
+      "stage12a-011",
+      "stage12a-012",
+      "stage12a-013",
+      "stage12a-014",
+      "stage12a-017",
+      "stage12a-018",
+      "stage12a-019",
+      "stage12a-020",
+      "stage12a-021",
+      "stage12a-022",
+      "stage12a-023",
+      "stage12a-024",
+      "stage12a-025",
+      "stage13e-029",
+      "stage13e-032",
+      "stage13e-033",
+      "stage13e-034",
+      "stage13e-036",
+      "stage13e-037",
+      "stage13e-038",
+      "stage13e-041",
+      "stage13e-042",
+      "stage13e-043",
+      "stage13e-044",
+      "stage13e-045",
+      "stage13e-047",
+      "stage13e-048",
+      "stage13e-049",
+      "stage13e-051",
+      "stage13e-052",
+      "stage13e-054",
+      "stage13e-055",
+      "stage13e-057",
+      "stage13e-058",
+      "stage13e-059",
+      "stage13e-061",
+      "stage13e-062",
+      "stage13e-063",
+      "stage13e-065",
+      "stage13e-067",
+      "stage13e-068",
+      "stage13e-069",
+      "stage13e-070",
+      "stage13e-072",
+      "stage13e-073",
+      "stage13e-076",
+      "stage13e-077",
+      "stage13e-078",
+      "stage13e-080",
+      "stage13e-086",
+      "stage13e-087",
+      "stage13e-089",
+      "stage13e-090",
+      "stage13e-093",
+      "stage13e-094",
+      "stage13e-095",
+      "stage13e-096",
+      "stage13e-097",
+      "stage13e-098",
+      "stage13e-099"
+    ]
+  },
+  "repeatability": {
+    "execution_order": {
+      "run1": [
+        "top10",
+        "top20"
+      ],
+      "run2": [
+        "top20",
+        "top10"
+      ]
+    },
+    "top10": {
+      "gold_rank_agreement": 1.0,
+      "max_score_drift": 0.0,
+      "metrics_equal": true,
+      "ordered_top5_agreement": 1.0
+    },
+    "top20": {
+      "gold_rank_agreement": 1.0,
+      "max_score_drift": 0.0,
+      "metrics_equal": true,
+      "ordered_top5_agreement": 1.0
+    }
+  },
+  "reranker": {
+    "build": "0.2.0-dev (build 10603, commit c060ca974)",
+    "bytes": 639153184,
+    "context": 4096,
+    "device": "Vulkan1 / NVIDIA GeForce RTX 2050",
+    "document_template": "Title: {title}\nSection: {heading_path}\nText:\n{content}",
+    "endpoint": "http://127.0.0.1:8082/v1/rerank",
+    "model": "Qwen3-Reranker-0.6B",
+    "parallel": 1,
+    "path": "D:\\llm-models\\qwen3-reranker-0.6b-q8_0.gguf",
+    "pooling": "rank",
+    "quantization": "Q8_0 GGUF",
+    "query": "exact human-reviewed Vietnamese question",
+    "runtime": "llama.cpp",
+    "score_blended": false,
+    "sha256": "22c9979ce4fbcdc5acdc310c6641c32797eff1aa980b8f7a2db8a8ea23429a48",
+    "tie_ordering": "relevance_score DESC, canonical_chunk_id ASC",
+    "warmup": true
+  },
+  "retrieval": {
+    "backend": "Supabase rag_v2",
+    "candidate_depth": 20,
+    "distance": "cosine",
+    "fts_used": false,
+    "hybrid_used": false,
+    "legacy_tables_used": false,
+    "one_rpc_per_query": true,
+    "rpc": "public.match_policy_chunks",
+    "scope_semantics": "SHARED or explicitly authorized SCOPED",
+    "top10_definition": "same ordered top20 result prefix [0:10]"
+  },
+  "stage": "13E3 — 100-Query Top10 vs Top20 Reranker Confirmation Benchmark",
+  "status": "CONFIRMATION / PILOT / EXPLORATORY / DESCRIPTIVE ONLY"
+}

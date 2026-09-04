@@ -1,12 +1,14 @@
 {
-  "chunker_version": "bank-rag-v2-chunker-1.0.0",
+  "chunker_version": "bank-rag-v2-chunker-2.0.0",
   "total_input_provisions": 3341,
-  "total_emitted_chunks": 1162,
-  "total_anomalies": 79,
+  "total_emitted_chunks": 1573,
+  "total_anomalies": 32,
   "anomalies_by_type": {
-    "ORPHAN_POINT_WITHOUT_CLAUSE": 5,
-    "DUPLICATE_HIERARCHY_KEY": 14,
-    "LONG_UNSPLITTABLE": 47,
-    "EXACT_DUPLICATE_CONTENT": 13
-  }
+    "REPEATED_HIERARCHY_LABEL": 14,
+    "DIRECT_ARTICLE_POINT": 5,
+    "EXACT_DUPLICATE_LEGAL_TEXT": 13
+  },
+  "context_mode": "metadata_only",
+  "hard_limit": 4800,
+  "max_emitted_characters": 2390
 }

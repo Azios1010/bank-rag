@@ -4,7 +4,7 @@ import uuid
 import pytest
 from app.db.models import AgentKnowledgeBase, Base, PolicyDocument, PolicyEmbedding
 from app.eval.contracts import RetrievalRequest
-from app.eval.retrievers import CanonicalVectorEvaluationRetriever
+from app.eval.legacy_retrievers import LegacyPolicyEmbeddingRetriever
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -107,7 +107,7 @@ def test_retrieval_eval_postgres_integration(db_session):
     
     # Run evaluation
     adapter = DummyEncoder()
-    retriever = CanonicalVectorEvaluationRetriever(db_session, adapter)
+    retriever = LegacyPolicyEmbeddingRetriever(db_session, adapter)
     
     req = RetrievalRequest(
         evaluation_id="eval_pg",

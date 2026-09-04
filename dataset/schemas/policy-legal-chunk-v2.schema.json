@@ -4,7 +4,7 @@
   "required": [
     "canonical_chunk_id", "chunker_version", "source_id", "version_id",
     "chapter", "section", "article", "clause", "point", "heading_path",
-    "content", "page_start", "page_end", "provenance", "is_long_unsplittable",
+    "hierarchy_instance", "hierarchy_classification", "context_mode", "content", "page_start", "page_end", "provenance", "is_long_unsplittable",
     "is_fragment", "fragment_index"
   ],
   "properties": {
@@ -17,6 +17,9 @@
     "article": { "type": ["string", "null"] },
     "clause": { "type": ["string", "null"] },
     "point": { "type": ["string", "null"] },
+    "hierarchy_instance": { "type": "string" },
+    "hierarchy_classification": { "enum": ["NORMAL", "REPEATED_LABEL_GENUINE", "DIRECT_ARTICLE_POINT"] },
+    "context_mode": { "const": "metadata_only" },
     "heading_path": {
       "type": "array",
       "items": { "type": "string" }

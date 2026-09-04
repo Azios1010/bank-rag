@@ -1,22 +1,36 @@
 # Retrieval Evaluation Harness (R02)
 
-This directory implements the retrieval evaluation harness for the `bank-rag` canonical corpus.
+This directory contains the retrieval evaluation contracts for the `bank-rag`
+canonical corpus.  Stage 11D freezes the real Corpus V2 runtime as
+`CanonicalV2Retriever` (llama.cpp query embedding followed by the Supabase
+`match_policy_chunks` RPC).  The historical SQLAlchemy harness below remains
+available only for R01 compatibility and is not a Corpus V2 retrieval path.
 
 ## Architecture
 
-The harness is strictly for **measurement only**. It evaluates the baseline vector-only pgvector retriever using the canonical `PolicyDocument` and `PolicyEmbedding` rows staged by the R01 pipeline.
+The harness is strictly for **measurement only**.  Stage 12 will evaluate the
+frozen V2 path without changing its embedding, routing, or ranking contract.
+The historical runner is explicitly tied to legacy `PolicyDocument`,
+`PolicyEmbedding`, and `AgentKnowledgeBase` rows and must not be used for V2.
 
 ### Components
 1. **Metrics**: Deterministic pure functions (`Hit@K`, `Recall@K`, `MRR@K`, `nDCG@K`) in `metrics.py`. Negative queries are excluded from macro averages but kept in traces.
-2. **Gold Parser**: `GoldParser` in `gold.py` parses and validates the retrieval evaluation schema, ensuring queries are well-formed and determining expected canonical chunk targets.
-3. **Embedding Adapter**: `QwenEvaluationEmbeddingAdapter` ensures we use the exact `Qwen3-Embedding-0.6B` model with `max_sequence_length=3072` and `dimension=1024`.
-4. **Preflight**: Validates the embedding model manifest against expected values before allowing a benchmark to run.
-5. **Retriever**: `CanonicalVectorEvaluationRetriever` fetches explicitly from `canonical_chunk_id IS NOT NULL` where `PolicyDocument.active == False`, deduplicating chunk IDs across multiple active specialist copies.
-6. **CLI Runner**: `python -m app.eval.retrieval vector-baseline` coordinates the pipeline, outputs `summary.json` and `traces.jsonl` into the `evaluation-results/<run-id>` directory.
+2. **Historical Gold Parser**: `GoldParser` in `gold.py` remains the R01 compatibility parser and resolves legacy database references. It is not the Corpus V2 gold contract.
+3. **Corpus V2 Gold Contract**: `CanonicalGoldValidator` in `gold_v2.py` validates evidence-first records against the frozen local Corpus V2 ID set and Stage 10 embedding identity. Stage 12A drafts are stored at `dataset/evaluation/retrieval-v2-gold-pilot.draft.jsonl`; all records are `DRAFT` and require human review.
+4. **V2 Embedding Adapter**: `LlamaV2QueryEmbeddingAdapter` sends the exact
+   instruction-formatted query to the local llama.cpp OpenAI-compatible API.
+5. **Preflight**: Validates the embedding model manifest against expected values before allowing a benchmark to run.
+6. **V2 Retriever**: `CanonicalV2Retriever` calls only Supabase
+   `public.match_policy_chunks`; Python does not reproduce cosine ranking or
+   scope routing.
+7. **Historical Runner**: `python -m app.eval.retrieval vector-baseline` is
+   retained for legacy R01 tests and is not a V2 baseline command.
 
 ## Execution
 
-Currently, the gold file `dataset/evaluation/retrieval.jsonl` does not exist. Running the CLI will properly fast-fail with an actionable error. 
+The Stage 12A pilot is a review input, not a benchmark input. Do not point the
+historical runner at `retrieval-v2-gold-pilot.draft.jsonl`. Only a separate
+human-reviewed export may be used for a later Stage 12 evaluation.
 
 ```bash
 python -m app.eval.retrieval vector-baseline \
